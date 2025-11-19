@@ -168,7 +168,7 @@
 
         <!-- Scroll indicator -->
         <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-            <a href="#about"
+            <a href="#projects"
                 class="text-white/60 hover:text-white transition-all duration-500 ease-in-out animate-bounce">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

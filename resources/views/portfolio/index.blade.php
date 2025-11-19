@@ -6,14 +6,14 @@
     {{-- Hero Section --}}
     <livewire:portfolio.hero />
 
-    {{-- About Section --}}
-    <livewire:portfolio.about />
+    {{-- Projects Section --}}
+    <livewire:portfolio.projects />
 
     {{-- Skills Section --}}
     <livewire:portfolio.skills />
 
-    {{-- Projects Section --}}
-    <livewire:portfolio.projects />
+    {{-- About Section --}}
+    <livewire:portfolio.about />
 
     {{-- Contact Section --}}
     <livewire:portfolio.contact />
