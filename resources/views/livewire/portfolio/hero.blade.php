@@ -26,9 +26,17 @@
                                 class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{{ $name }}</span>
                         </h1>
 
-                        <p class="text-2xl md:text-3xl text-purple-200 font-light">
-                            {{ $role }}
-                        </p>
+                        <div
+                            class="text-2xl md:text-3xl text-purple-200 font-light flex items-center justify-center lg:justify-start gap-3">
+                            <span>Desarrollador</span>
+                            <div class="role-carousel">
+                                <div class="role-carousel-inner">
+                                    <span class="role-item">Front End</span>
+                                    <span class="role-item">Back End</span>
+                                    <span class="role-item">Full Stack</span>
+                                </div>
+                            </div>
+                        </div>
 
                         <p class="text-lg md:text-xl text-slate-300 max-w-2xl">
                             {{ $description }}
@@ -201,6 +209,83 @@
             animation-delay: 4s;
         }
 
+      /* Role Carousel 3D - MODIFICADO */
+        /* Role Carousel 3D - VERTICAL (CORREGIDO) */
+        .role-carousel {
+            perspective: 1000px; /* CAMBIO 1: 1000px suaviza la distorsión 3D */
+            display: inline-block;
+            width: 220px; /* CAMBIO 2: Más ancho para que "Front End" respire */
+            height: 1.5em; /* CAMBIO 3: Un poco más de altura para evitar cortes */
+            position: relative;
+            vertical-align: bottom; 
+            overflow: hidden; 
+            margin-bottom: -5px; /* Ajuste fino de alineación vertical */
+        }
+
+        .role-carousel-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: rotateCarouselVertical 9s infinite cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .role-item {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            backface-visibility: hidden;
+            font-weight: 700;
+            font-size: 1.1em;
+            white-space: nowrap; /* CAMBIO 4: Obliga al texto a no comprimirse ni saltar línea */
+            
+            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* CONFIGURACIÓN DEL PRISMA VERTICAL
+           Aumentamos ligeramente translateZ a 30px porque aumentamos la altura del contenedor (height: 1.5em).
+           Esto mantiene la proporción del triángulo.
+        */
+        .role-item:nth-child(1) {
+            transform: rotateX(0deg) translateZ(30px);
+        }
+
+        .role-item:nth-child(2) {
+            transform: rotateX(120deg) translateZ(30px);
+        }
+
+        .role-item:nth-child(3) {
+            transform: rotateX(240deg) translateZ(30px);
+        }
+
+        /* Animación Vertical (Eje X) */
+        @keyframes rotateCarouselVertical {
+            /* Cara 1 */
+            0%, 30% {
+                transform: translateZ(-30px) rotateX(0deg);
+            }
+            /* Giro a Cara 2 */
+            33.33%, 63.33% {
+                transform: translateZ(-30px) rotateX(-120deg);
+            }
+            /* Giro a Cara 3 */
+            66.66%, 96.66% {
+                transform: translateZ(-30px) rotateX(-240deg);
+            }
+            /* Vuelta al inicio */
+            100% {
+                transform: translateZ(-30px) rotateX(-360deg);
+            }
+        }
+
         /* Robot Styles */
         .robot-container {
             position: relative;
@@ -320,19 +405,23 @@
 
         /* Boca */
         .robot-mouth {
-        width: 60px;
-        height: 8px;
-        background: #1e293b;
-        border-radius: 0 0 30px 30px; /* Sonrisa normal */
-        margin: 15px auto 0;
-        transition: all 0.3s ease;
-    }
-    .happy-mouth .robot-mouth {
-        height: 15px; /* Boca más abierta */
-        width: 50px;
-        border-radius: 0 0 50px 50px; /* Curva más pronunciada */
-        background: #000;
-    }
+            width: 60px;
+            height: 8px;
+            background: #1e293b;
+            border-radius: 0 0 30px 30px;
+            /* Sonrisa normal */
+            margin: 15px auto 0;
+            transition: all 0.3s ease;
+        }
+
+        .happy-mouth .robot-mouth {
+            height: 15px;
+            /* Boca más abierta */
+            width: 50px;
+            border-radius: 0 0 50px 50px;
+            /* Curva más pronunciada */
+            background: #000;
+        }
 
         @keyframes smile {
 
@@ -444,28 +533,49 @@
         }
 
         @keyframes waveHand {
-        0% { transform: rotate(-150deg); }
-        20% { transform: rotate(-100deg); }
-        40% { transform: rotate(-150deg); }
-        60% { transform: rotate(-100deg); }
-        80% { transform: rotate(-150deg); }
-        100% { transform: rotate(0deg); }
-    }
-    .waving .robot-arm-right {
-        /* Sobrescribimos la rotación manual mientras saluda */
-        animation: waveHand 2s ease-in-out forwards; 
-        transition: none; /* Importante para que no pelee con el JS */
-    }
+            0% {
+                transform: rotate(-150deg);
+            }
+
+            20% {
+                transform: rotate(-100deg);
+            }
+
+            40% {
+                transform: rotate(-150deg);
+            }
+
+            60% {
+                transform: rotate(-100deg);
+            }
+
+            80% {
+                transform: rotate(-150deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        .waving .robot-arm-right {
+            /* Sobrescribimos la rotación manual mientras saluda */
+            animation: waveHand 2s ease-in-out forwards;
+            transition: none;
+            /* Importante para que no pelee con el JS */
+        }
 
         /* Brazos */
         .robot-arm {
-        position: absolute;
-        top: 220px;
-        transform-origin: 12.5px 10px; /* Ajuste leve del pivote */
-        /* Cambiamos 0.3s a 0.1s. Esto elimina la sensación de lentitud */
-        transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        will-change: transform; /* Optimización de rendimiento */
-    }
+            position: absolute;
+            top: 220px;
+            transform-origin: 12.5px 10px;
+            /* Ajuste leve del pivote */
+            /* Cambiamos 0.3s a 0.1s. Esto elimina la sensación de lentitud */
+            transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+            /* Optimización de rendimiento */
+        }
 
         .robot-arm-left {
             left: -30px;
@@ -570,7 +680,7 @@
         }
     </style>
 
-   <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function () {
             const heroSection = document.getElementById('hero-section');
             const pupils = document.querySelectorAll('.pupil');
@@ -592,7 +702,7 @@
                 const deltaY = mouseY - shoulderY;
 
                 let angle = Math.atan2(deltaY, deltaX) * (180 / Math.PI);
-                
+
                 // Ajuste de offset inicial
                 angle = angle - 90;
 
@@ -616,9 +726,9 @@
 
                 const robotRect = robot.getBoundingClientRect();
                 const robotCenterX = robotRect.left + robotRect.width / 2;
-                
+
                 // Umbral de histeresis para evitar parpadeo justo en el centro
-                const threshold = 20; 
+                const threshold = 20;
                 const isMouseOnRight = mouseX > (robotCenterX - threshold);
 
                 const angleLeft = calculateArmRotation(mouseX, mouseY, armLeft, false);
@@ -671,7 +781,7 @@
             });
 
             heroSection.addEventListener('mouseleave', function () {
-                if(!isWaving) {
+                if (!isWaving) {
                     armLeft.style.transform = 'rotate(0deg)';
                     armRight.style.transform = 'rotate(0deg)';
                     pupils.forEach(p => p.style.transform = 'translate(-50%, -50%)');
