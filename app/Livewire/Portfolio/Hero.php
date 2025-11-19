@@ -6,7 +6,7 @@ use Livewire\Component;
 
 class Hero extends Component
 {
-    public $name = 'Tu Nombre';
+    public $name = 'Lizandro Britto';
     public $role = 'Desarrollador Full Stack';
     public $description = 'Apasionado por crear soluciones digitales innovadoras y escalables';
     public $cvUrl = '#';

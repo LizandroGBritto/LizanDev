@@ -5,40 +5,44 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     @hasSection('title')
-        <title>@yield('title') | Grafitec</title>
+        <title>@yield('title') | LizanDev</title>
     @else
-        <title>Grafitec</title>
+        <title>LizanDev | Desarrollador Full Stack</title>
     @endif
 
     <meta name="description"
-        content="Grafitec S.A. ofrece impresión de alta calidad con máxima confidencialidad, profesionalismo y rapidez.">
-    <meta name="author" content="Porta Agencia Web">
+        content="Portfolio personal de desarrollador de software especializado en Laravel, PHP, JavaScript y tecnologías web modernas.">
+    <meta name="author" content="Lizandro Britto">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="">
-    <meta property="og:title" content="Grafitec">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="LizanDev | Desarrollador Full Stack">
     <meta property="og:description"
-        content="Grafitec S.A. ofrece impresión de alta calidad con máxima confidencialidad, profesionalismo y rapidez.">
-    <meta property="og:image" content="{{ asset('assets_front/images/social_seo.png') }}">
+        content="Portfolio personal del desarrollador de software Lizandro Britto, especializado en Laravel, PHP, JavaScript y tecnologías web modernas.">
+    <meta property="og:image" content="{{ asset('images/social-preview.png') }}">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="">
-    <meta property="twitter:title" content="Grafitec">
+    <meta property="twitter:url" content="{{ url('/') }}">
+    <meta property="twitter:title" content="LizanDev | Desarrollador Full Stack">
     <meta property="twitter:description"
-        content="Grafitec S.A. ofrece impresión de alta calidad con máxima confidencialidad, profesionalismo y rapidez.">
-    <meta property="twitter:image" content="{{ asset('assets_front/images/social_seo.png') }}">
+        content="Portfolio personal del desarrollador de software Lizandro Britto especializado en Laravel, PHP, JavaScript y tecnologías web modernas.">
+    <meta property="twitter:image" content="{{ asset('images/social-preview.png') }}">
 
-    <link rel="icon" type="image/png" href="{{ url('assets_front/favicon/favicon-96x96.png') }}" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="{{ url('assets_front/favicon/favicon.svg') }}" />
-    <link rel="shortcut icon" href="{{ url('assets_front/favicon/favicon.ico') }}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('assets_front/favicon/apple-touch-icon.png') }}" />
-    <link rel="manifest" href="{{ url('assets_front/favicon/site.webmanifest') }}" />
-    {{-- <link rel="mask-icon" href="{{ url('assets_front/favicon/safari-pinned-tab.svg') }}" color="#0D1D41"> --}}
-    <meta name="msapplication-TileColor" content="#0D1D41">
+    <link rel="icon" type="image/png" href="{{ url('favicon/favicon-96x96.png') }}" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="{{ url('favicon/favicon.svg') }}" />
+    <link rel="shortcut icon" href="{{ url('favicon/favicon.ico') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('favicon/apple-touch-icon.png') }}" />
+    <link rel="manifest" href="{{ url('favicon/site.webmanifest') }}" />
+    <meta name="msapplication-TileColor" content="#7c3aed">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="{{ url('assets_front/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets_front/css/swiper-bundle.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets_front/css/style.css?v=0.1') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.bunny.net">
+    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
 
+    <!-- Spline 3D Viewer -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.6/build/spline-viewer.js"></script>
+
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @livewireStyles
 </head>
