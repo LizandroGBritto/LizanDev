@@ -15,10 +15,10 @@
         </div>
 
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
 
                 <!-- Columna Izquierda: Contenido -->
-                <div class="text-center lg:text-left space-y-8 order-2 lg:order-1">
+                <div class="text-center lg:text-left space-y-8 order-1 lg:order-1">
                     <!-- Contenido principal -->
                     <div class="space-y-4">
                         <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
@@ -83,7 +83,7 @@
                 </div>
 
                 <!-- Columna Derecha: Robot CSS Animado -->
-                <div class="relative h-[500px] lg:h-[600px] order-1 lg:order-2 flex items-center justify-center"
+                <div class="relative h-[300px] lg:h-[600px] order-2 lg:order-2 flex items-center justify-center scale-[0.5] lg:scale-100"
                     id="robot-area">
                     <div class="robot-container" id="robot">
                         <!-- Cabeza del Robot -->
@@ -209,17 +209,21 @@
             animation-delay: 4s;
         }
 
-      /* Role Carousel 3D - MODIFICADO */
+        /* Role Carousel 3D - MODIFICADO */
         /* Role Carousel 3D - VERTICAL (CORREGIDO) */
         .role-carousel {
-            perspective: 1000px; /* CAMBIO 1: 1000px suaviza la distorsión 3D */
+            perspective: 1000px;
+            /* CAMBIO 1: 1000px suaviza la distorsión 3D */
             display: inline-block;
-            width: 220px; /* CAMBIO 2: Más ancho para que "Front End" respire */
-            height: 1.5em; /* CAMBIO 3: Un poco más de altura para evitar cortes */
+            width: 220px;
+            /* CAMBIO 2: Más ancho para que "Front End" respire */
+            height: 1.5em;
+            /* CAMBIO 3: Un poco más de altura para evitar cortes */
             position: relative;
-            vertical-align: bottom; 
-            overflow: hidden; 
-            margin-bottom: -5px; /* Ajuste fino de alineación vertical */
+            vertical-align: bottom;
+            overflow: hidden;
+            margin-bottom: -5px;
+            /* Ajuste fino de alineación vertical */
         }
 
         .role-carousel-inner {
@@ -242,8 +246,9 @@
             backface-visibility: hidden;
             font-weight: 700;
             font-size: 1.1em;
-            white-space: nowrap; /* CAMBIO 4: Obliga al texto a no comprimirse ni saltar línea */
-            
+            white-space: nowrap;
+            /* CAMBIO 4: Obliga al texto a no comprimirse ni saltar línea */
+
             background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -268,18 +273,25 @@
 
         /* Animación Vertical (Eje X) */
         @keyframes rotateCarouselVertical {
+
             /* Cara 1 */
-            0%, 30% {
+            0%,
+            30% {
                 transform: translateZ(-30px) rotateX(0deg);
             }
+
             /* Giro a Cara 2 */
-            33.33%, 63.33% {
+            33.33%,
+            63.33% {
                 transform: translateZ(-30px) rotateX(-120deg);
             }
+
             /* Giro a Cara 3 */
-            66.66%, 96.66% {
+            66.66%,
+            96.66% {
                 transform: translateZ(-30px) rotateX(-240deg);
             }
+
             /* Vuelta al inicio */
             100% {
                 transform: translateZ(-30px) rotateX(-360deg);

@@ -26,13 +26,16 @@
     <meta property="twitter:title" content="LizanDev | Desarrollador Full Stack">
     <meta property="twitter:description"
         content="Portfolio personal del desarrollador de software Lizandro Britto especializado en Laravel, PHP, JavaScript y tecnologías web modernas.">
-    <meta property="twitter:image" content="{{ asset('images/social-preview.png') }}">
+    {{--
+    <meta property="twitter:image" content="{{ asset('images/social-preview.png') }}"> --}}
 
+    {{-- Favicons - Uncomment when files are generated
     <link rel="icon" type="image/png" href="{{ url('favicon/favicon-96x96.png') }}" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="{{ url('favicon/favicon.svg') }}" />
     <link rel="shortcut icon" href="{{ url('favicon/favicon.ico') }}" />
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url('favicon/apple-touch-icon.png') }}" />
     <link rel="manifest" href="{{ url('favicon/site.webmanifest') }}" />
+    --}}
     <meta name="msapplication-TileColor" content="#7c3aed">
     <meta name="theme-color" content="#ffffff">
 
@@ -40,8 +43,9 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
 
-    <!-- Spline 3D Viewer -->
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.6/build/spline-viewer.js"></script>
+    <!-- Spline 3D Viewer (Removed as we use CSS Robot) -->
+    {{--
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.6/build/spline-viewer.js"></script> --}}
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
