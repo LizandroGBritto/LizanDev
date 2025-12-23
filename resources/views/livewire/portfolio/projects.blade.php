@@ -11,40 +11,40 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="max-w-7xl mx-auto">
             <!-- Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">
                     Proyectos <span
                         class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Destacados</span>
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
-                <p class="text-slate-300 mt-4 max-w-2xl mx-auto">
+                <div class="w-20 h-1 bg-gradient-to-r from-purple-500 to-pink-500 mx-auto rounded-full"></div>
+                <p class="text-slate-300 text-sm mt-3 max-w-2xl mx-auto">
                     Una selección de proyectos en los que he trabajado recientemente
                 </p>
             </div>
 
             <!-- 3D Carousel Container -->
-            <div class="relative" style="perspective: 2000px; height: 600px;">
+            <div class="relative" style="perspective: 1600px; height: 480px;">
                 <div id="carousel-3d" class="carousel-3d-wrapper">
                     @foreach($projects as $index => $project)
                         <div class="carousel-card" data-index="{{ $index }}" data-project="{{ json_encode($project) }}">
                             <!-- Card Front (Compacta) -->
                             <div class="card-front">
-                                <div class="relative h-64 overflow-hidden bg-slate-800 rounded-t-2xl">
+                                <div class="relative h-48 overflow-hidden bg-slate-800 rounded-t-xl">
                                     <img src="{{ $project['image'] }}" alt="{{ $project['title'] }}"
                                         class="w-full h-full object-cover">
                                     <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
                                 </div>
-                                <div class="p-6 bg-slate-800/90 backdrop-blur-sm rounded-b-2xl">
-                                    <h3 class="text-2xl font-bold text-white mb-2">
+                                <div class="p-4 bg-slate-800/90 backdrop-blur-sm rounded-b-xl">
+                                    <h3 class="text-lg font-bold text-white mb-2">
                                         {{ $project['title'] }}
                                     </h3>
-                                    <p class="text-slate-300 text-sm line-clamp-2 mb-4">
+                                    <p class="text-slate-300 text-xs line-clamp-2 mb-3">
                                         {{ $project['description'] }}
                                     </p>
-                                    <div class="flex flex-wrap gap-2">
+                                    <div class="flex flex-wrap gap-1.5">
                                         @foreach(array_slice($project['tags'], 0, 3) as $tag)
                                             <span
-                                                class="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
+                                                class="px-2 py-0.5 bg-purple-500/20 text-purple-300 rounded-full text-xs font-medium">
                                                 {{ $tag }}
                                             </span>
                                         @endforeach
@@ -55,86 +55,90 @@
                             <!-- Card Back (Expandida) -->
                             <div class="card-back">
                                 <div
-                                    class="h-full flex flex-col bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8">
+                                    class="h-full flex flex-col bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl p-6">
                                     <button
-                                        class="close-btn self-end text-slate-400 hover:text-white transition-colors mb-4">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        class="close-btn self-end text-slate-400 hover:text-white transition-colors mb-3">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M6 18L18 6M6 6l12 12" />
                                         </svg>
                                     </button>
-                                    <h3 class="text-3xl font-bold text-white mb-4">
+                                    <h3 class="text-2xl font-bold text-white mb-3">
                                         {{ $project['title'] }}
                                     </h3>
 
                                     <!-- Mini Carrusel de Imágenes -->
-                                    <div class="relative mb-6 mini-carousel-container" data-mini-carousel="{{ $index }}">
-                                        <div class="overflow-hidden rounded-xl">
+                                    <div class="relative mb-4 mini-carousel-container" data-mini-carousel="{{ $index }}">
+                                        <div class="overflow-hidden rounded-lg">
                                             <div
                                                 class="mini-carousel-wrapper flex transition-transform duration-500 ease-in-out">
                                                 <div class="mini-carousel-slide flex-shrink-0 w-full">
                                                     <img src="{{ $project['image'] }}"
                                                         alt="{{ $project['title'] }} - Vista 1"
-                                                        class="w-full h-24 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity mini-carousel-img">
+                                                        class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity mini-carousel-img">
                                                 </div>
                                                 <div class="mini-carousel-slide flex-shrink-0 w-full">
                                                     <img src="{{ $project['image'] }}"
                                                         alt="{{ $project['title'] }} - Vista 2"
-                                                        class="w-full h-24 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity mini-carousel-img">
+                                                        class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity mini-carousel-img">
                                                 </div>
                                                 <div class="mini-carousel-slide flex-shrink-0 w-full">
                                                     <img src="{{ $project['image'] }}"
                                                         alt="{{ $project['title'] }} - Vista 3"
-                                                        class="w-full h-24 object-cover rounded-xl cursor-pointer hover:opacity-90 transition-opacity mini-carousel-img">
+                                                        class="w-full h-20 object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity mini-carousel-img">
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- Navegación del mini carrusel -->
                                         <button
-                                            class="mini-carousel-prev absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            class="mini-carousel-prev absolute left-1.5 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-all">
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M15 19l-7-7 7-7" />
                                             </svg>
                                         </button>
                                         <button
-                                            class="mini-carousel-next absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all">
-                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            class="mini-carousel-next absolute right-1.5 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 rounded-full transition-all">
+                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M9 5l7 7-7 7" />
                                             </svg>
                                         </button>
                                         <!-- Indicadores -->
-                                        <div class="flex flex-col items-center gap-1 mt-3">
-                                            <div class="flex justify-center gap-2">
-                                                <div class="mini-indicator w-2 h-2 rounded-full bg-white transition-all">
+                                        <div class="flex flex-col items-center gap-0.5 mt-2">
+                                            <div class="flex justify-center gap-1.5">
+                                                <div
+                                                    class="mini-indicator w-1.5 h-1.5 rounded-full bg-white transition-all">
                                                 </div>
-                                                <div class="mini-indicator w-2 h-2 rounded-full bg-white/40 transition-all">
+                                                <div
+                                                    class="mini-indicator w-1.5 h-1.5 rounded-full bg-white/40 transition-all">
                                                 </div>
-                                                <div class="mini-indicator w-2 h-2 rounded-full bg-white/40 transition-all">
+                                                <div
+                                                    class="mini-indicator w-1.5 h-1.5 rounded-full bg-white/40 transition-all">
                                                 </div>
                                             </div>
-                                            <p class="text-slate-400 text-xs italic mt-1">*Toque la imagen para ampliar</p>
+                                            <p class="text-slate-400" style="font-size: 0.65rem; font-style: italic;">*Toque
+                                                la imagen para ampliar</p>
                                         </div>
                                     </div>
 
-                                    <div class="flex-1 overflow-y-auto mb-6">
-                                        <p class="text-slate-300 mb-6 leading-relaxed">
+                                    <div class="flex-1 overflow-y-auto mb-4">
+                                        <p class="text-slate-300 text-sm mb-4 leading-relaxed">
                                             {{ $project['description'] }}
                                         </p>
-                                        <div class="flex flex-wrap gap-2 mb-6">
+                                        <div class="flex flex-wrap gap-1.5 mb-4">
                                             @foreach($project['tags'] as $tag)
                                                 <span
-                                                    class="px-3 py-1 bg-purple-500/30 text-purple-200 rounded-full text-sm font-medium">
+                                                    class="px-2.5 py-0.5 bg-purple-500/30 text-purple-200 rounded-full text-xs font-medium">
                                                     {{ $tag }}
                                                 </span>
                                             @endforeach
                                         </div>
                                     </div>
-                                    <div class="flex gap-4">
+                                    <div class="flex gap-3">
                                         <a href="{{ $project['github'] }}" target="_blank"
-                                            class="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                            class="flex-1 flex items-center justify-center gap-1.5 px-4 py-2 bg-white/10 hover:bg-white/20 text-white text-sm rounded-full transition-all">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                                                 <path fill-rule="evenodd"
                                                     d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                                     clip-rule="evenodd" />
@@ -142,8 +146,8 @@
                                             Código
                                         </a>
                                         <a href="{{ $project['demo'] }}" target="_blank"
-                                            class="flex-1 flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all">
-                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            class="flex-1 flex items-center justify-center gap-1.5 px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-600 text-white text-sm rounded-full hover:shadow-lg hover:shadow-purple-500/50 transition-all">
+                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                     d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>
@@ -169,12 +173,12 @@
 
                 <!-- Navigation Controls -->
                 <button id="prev-btn" class="carousel-nav-btn left-4">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                     </svg>
                 </button>
                 <button id="next-btn" class="carousel-nav-btn right-4">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                     </svg>
                 </button>
@@ -188,11 +192,11 @@
             </div>
 
             <!-- Call to Action -->
-            <div class="mt-16 text-center">
-                <p class="text-slate-300 mb-4">¿Quieres ver más proyectos?</p>
+            <div class="mt-12 text-center">
+                <p class="text-slate-300 text-sm mb-3">¿Quieres ver más proyectos?</p>
                 <a href="https://github.com" target="_blank"
-                    class="inline-flex items-center gap-2 px-6 py-3 bg-white/10 backdrop-blur-sm text-white rounded-full hover:bg-white/20 border-2 border-white/20 transition-all">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/10 backdrop-blur-sm text-white text-sm rounded-full hover:bg-white/20 border-2 border-white/20 transition-all">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                         <path fill-rule="evenodd"
                             d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                             clip-rule="evenodd" />
@@ -214,22 +218,22 @@
 
         .carousel-card {
             position: absolute;
-            width: 340px;
-            height: 425px;
+            width: 272px;
+            height: 340px;
             left: 50%;
             top: 50%;
-            margin-left: -170px;
-            margin-top: -212.5px;
+            margin-left: -136px;
+            margin-top: -170px;
             transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
             transform-style: preserve-3d;
             cursor: pointer;
         }
 
         .carousel-card.expanded {
-            width: 420px;
-            height: 480px;
-            margin-left: -210px;
-            margin-top: -240px;
+            width: 336px;
+            height: 384px;
+            margin-left: -168px;
+            margin-top: -192px;
             z-index: 100 !important;
             cursor: default;
         }
@@ -240,8 +244,8 @@
             width: 100%;
             height: 100%;
             backface-visibility: hidden;
-            border-radius: 1rem;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border-radius: 0.75rem;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
             overflow: hidden;
         }
 
@@ -266,8 +270,8 @@
             backdrop-filter: blur(10px);
             border: 2px solid rgba(255, 255, 255, 0.2);
             color: white;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -328,7 +332,7 @@
 
         .mini-indicator.active {
             background: white;
-            width: 1rem;
+            width: 0.75rem;
         }
 
         /* Modal para ampliar imagen */
@@ -381,17 +385,17 @@
 
         @media (max-width: 768px) {
             .carousel-card {
-                width: 255px;
-                height: 357px;
-                margin-left: -127.5px;
-                margin-top: -178.5px;
+                width: 204px;
+                height: 286px;
+                margin-left: -102px;
+                margin-top: -143px;
             }
 
             .carousel-card.expanded {
-                width: 280px;
-                height: 400px;
-                margin-left: -140px;
-                margin-top: -200px;
+                width: 224px;
+                height: 320px;
+                margin-left: -112px;
+                margin-top: -160px;
             }
         }
     </style>
@@ -420,7 +424,7 @@
 
                 cards.forEach((card, index) => {
                     const angle = (index * angleStep) - currentRotation;
-                    const distance = 600;
+                    const distance = 480;
 
                     // Normalizar el ángulo para determinar si está al frente
                     const normalizedAngle = ((angle % 360) + 360) % 360;
