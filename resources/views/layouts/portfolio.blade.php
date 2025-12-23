@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ app()->getLocale() }}">
 
 @include('partials.head')
 
 <body class="antialiased">
+    <!-- Language Switcher -->
+    @livewire('language-switcher')
+
     <div id="app">
         <main>
             @yield('content')
