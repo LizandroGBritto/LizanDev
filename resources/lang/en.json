@@ -31,5 +31,10 @@
     "Your Name": "Your Name",
     "Your Email": "Your Email",
     "Your Message": "Your Message",
-    "Send Message": "Send Message"
+    "Send Message": "Send Message",
+    "Developer": "Developer",
+    "Front End": "Front End",
+    "Back End": "Back End",
+    "Full Stack": "Full Stack",
+    "Contact Me": "Contact Me"
 }

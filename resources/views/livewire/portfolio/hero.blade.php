@@ -22,20 +22,33 @@
                     <!-- Contenido principal -->
                     <div class="space-y-4">
                         <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
-                            Hola, soy <span
+                            {{ __("Hello, I'm") }} <span
                                 class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{{ $name }}</span>
                         </h1>
 
                         <div
                             class="text-2xl md:text-3xl text-purple-200 font-light flex items-center justify-center lg:justify-start gap-3">
-                            <span>Desarrollador</span>
-                            <div class="role-carousel">
-                                <div class="role-carousel-inner">
-                                    <span class="role-item">Front End</span>
-                                    <span class="role-item">Back End</span>
-                                    <span class="role-item">Full Stack</span>
+                            @if(app()->getLocale() === 'en')
+                                <!-- Inglés: "Front End" Developer -->
+                                <div class="role-carousel">
+                                    <div class="role-carousel-inner">
+                                        <span class="role-item">{{ __("Front End") }}</span>
+                                        <span class="role-item">{{ __("Back End") }}</span>
+                                        <span class="role-item">{{ __("Full Stack") }}</span>
+                                    </div>
                                 </div>
-                            </div>
+                                <span>{{ __("Developer") }}</span>
+                            @else
+                                <!-- Español: "Desarrollador" Front End -->
+                                <span>{{ __("Developer") }}</span>
+                                <div class="role-carousel">
+                                    <div class="role-carousel-inner">
+                                        <span class="role-item">{{ __("Front End") }}</span>
+                                        <span class="role-item">{{ __("Back End") }}</span>
+                                        <span class="role-item">{{ __("Full Stack") }}</span>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
 
                         <p class="text-lg md:text-xl text-slate-300 max-w-2xl">
@@ -47,11 +60,11 @@
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-8">
                         <a href="#projects"
                             class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300">
-                            Ver Proyectos
+                            {{ __("View Projects") }}
                         </a>
                         <a href="#contact"
                             class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold border-2 border-white/20 hover:bg-white/20 transform hover:-translate-y-1 transition-all duration-300">
-                            Contáctame
+                            {{ __("Contact Me") }}
                         </a>
                     </div>
 
@@ -216,8 +229,8 @@
             perspective: 1000px;
             /* CAMBIO 1: 1000px suaviza la distorsión 3D */
             display: inline-block;
-            width: 220px;
-            /* CAMBIO 2: Más ancho para que "Front End" respire */
+            width: 160px;
+            /* CAMBIO 2: Ancho optimizado para ambos idiomas */
             height: 1.5em;
             /* CAMBIO 3: Un poco más de altura para evitar cortes */
             position: relative;
