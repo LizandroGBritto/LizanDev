@@ -1,16 +1,16 @@
 <div>
     <section id="hero-section"
-        class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+        class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-green-900 to-slate-900 overflow-hidden">
         <!-- Animated background -->
         <div class="absolute inset-0 w-full h-full">
             <div
-                class="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
+                class="absolute top-0 -left-4 w-72 h-72 bg-emerald-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob">
             </div>
             <div
-                class="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
+                class="absolute top-0 -right-4 w-72 h-72 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000">
             </div>
             <div
-                class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
+                class="absolute -bottom-8 left-20 w-72 h-72 bg-teal-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000">
             </div>
         </div>
 
@@ -23,11 +23,11 @@
                     <div class="space-y-4">
                         <h1 class="text-5xl md:text-7xl font-bold text-white leading-tight">
                             {{ __("Hello, I'm") }} <span
-                                class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{{ $name }}</span>
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-green-600">{{ $name }}</span>
                         </h1>
 
                         <div
-                            class="text-2xl md:text-3xl text-purple-200 font-light flex items-center justify-center lg:justify-start gap-3">
+                            class="text-2xl md:text-3xl text-emerald-200 font-light flex items-center justify-center lg:justify-start gap-3">
                             @if(app()->getLocale() === 'en')
                                 <!-- Inglés: "Front End" Developer -->
                                 <div class="role-carousel">
@@ -59,7 +59,7 @@
                     <!-- Botones de acción -->
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-8">
                         <a href="#projects"
-                            class="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-purple-500/50 transform hover:-translate-y-1 transition-all duration-300">
+                            class="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transform hover:-translate-y-1 transition-all duration-300">
                             {{ __("View Projects") }}
                         </a>
                         <a href="#contact"
@@ -263,7 +263,7 @@
             white-space: nowrap;
             /* CAMBIO 4: Obliga al texto a no comprimirse ni saltar línea */
 
-            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -335,11 +335,11 @@
         .robot-head {
             width: 120px;
             height: 120px;
-            background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
             border-radius: 20px;
             margin: 0 auto;
             position: relative;
-            box-shadow: 0 10px 30px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4);
             animation: headTilt 4s ease-in-out infinite;
         }
 
@@ -364,7 +364,7 @@
             position: absolute;
             width: 3px;
             height: 25px;
-            background: linear-gradient(180deg, #a855f7, #ec4899);
+            background: linear-gradient(180deg, #10b981, #059669);
             top: -25px;
         }
 
@@ -467,11 +467,11 @@
         .robot-body {
             width: 150px;
             height: 180px;
-            background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
             border-radius: 15px;
             margin: 15px auto;
             position: relative;
-            box-shadow: 0 15px 35px rgba(124, 58, 237, 0.4);
+            box-shadow: 0 15px 35px rgba(5, 150, 105, 0.4);
         }
 
         /* Panel de Control */
@@ -614,16 +614,16 @@
         .arm-upper {
             width: 25px;
             height: 60px;
-            background: linear-gradient(135deg, #a855f7, #ec4899);
+            background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
             transform-origin: center top;
         }
 
         .arm-lower {
             width: 20px;
             height: 50px;
-            background: linear-gradient(135deg, #7c3aed, #db2777);
+            background: linear-gradient(135deg, #059669, #047857);
             border-radius: 10px;
             margin: 5px 2.5px 0;
             transform-origin: center top;
@@ -633,7 +633,7 @@
         .hand {
             width: 25px;
             height: 20px;
-            background: linear-gradient(135deg, #a855f7, #ec4899);
+            background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 8px;
             margin: 5px 0 0 -2.5px;
             display: flex;
@@ -647,7 +647,7 @@
         .finger {
             width: 4px;
             height: 10px;
-            background: #ec4899;
+            background: #059669;
             border-radius: 2px;
         }
 
@@ -682,16 +682,16 @@
         .leg-upper {
             width: 30px;
             height: 60px;
-            background: linear-gradient(135deg, #7c3aed, #db2777);
+            background: linear-gradient(135deg, #059669, #047857);
             border-radius: 10px;
             margin: 0 auto;
-            box-shadow: 0 5px 15px rgba(124, 58, 237, 0.3);
+            box-shadow: 0 5px 15px rgba(5, 150, 105, 0.3);
         }
 
         .leg-lower {
             width: 25px;
             height: 50px;
-            background: linear-gradient(135deg, #a855f7, #ec4899);
+            background: linear-gradient(135deg, #10b981, #059669);
             border-radius: 8px;
             margin: 5px auto 0;
         }
@@ -699,10 +699,10 @@
         .foot {
             width: 40px;
             height: 15px;
-            background: linear-gradient(135deg, #ec4899, #f43f5e);
+            background: linear-gradient(135deg, #059669, #047857);
             border-radius: 8px 8px 4px 4px;
             margin: 5px auto 0;
-            box-shadow: 0 5px 10px rgba(236, 72, 153, 0.3);
+            box-shadow: 0 5px 10px rgba(5, 150, 105, 0.3);
         }
     </style>
 
