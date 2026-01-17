@@ -44,5 +44,7 @@
     "Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital": "Sistema de gestión de pacientes y citas desarrollado en conjunto con la Universidad Autónoma de Encarnación y el Proyecto Europeo HEIComp, creado para su uso en el hospital oncológico Lazos del Sur",
     "Technologies Used": "Tecnologías Utilizadas",
     "View Images": "Ver Imágenes",
-    "Community Project": "Proyecto Comunitario"
+    "Community Project": "Proyecto Comunitario",
+    "Cloud SIS System": "Sistema SIS en la nube",
+    "Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.": "Sistema de gestión hospitalaria, desarrollado para su uso una unidad de salud familiar de la ciudad de Encarnación, cuenta con módulos de citas, médicos, gestión de salas, especialidades, usuarios, reportes, controles de acceso por roles con paneles de control adaptados al rol, además de soporte para operaciones en tiempo real con protecciones frente a múltiples modificaciones frente al mismo valor."
 }

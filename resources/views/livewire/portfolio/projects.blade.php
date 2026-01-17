@@ -67,7 +67,7 @@
 
                     <!-- Proyecto SIS/HIS -->
                     <div
-                        class="bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
+                        class="mb-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
                         <div class="grid md:grid-cols-2 gap-0">
                             <!-- Contenido -->
                             <div class="p-8 md:p-10 flex flex-col justify-center">
@@ -88,27 +88,27 @@
                                     </p>
                                     <div class="flex flex-wrap gap-2">
                                         <span
-                                            class="px-3 py-1.5 bg-red-50 text-red-700 rounded-lg text-sm font-medium border border-red-200">
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
                                             Laravel
                                         </span>
                                         <span
-                                            class="px-3 py-1.5 bg-yellow-50 text-yellow-700 rounded-lg text-sm font-medium border border-yellow-200">
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
                                             JavaScript
                                         </span>
                                         <span
-                                            class="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-lg text-sm font-medium border border-blue-200">
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
                                             PHP
                                         </span>
                                         <span
-                                            class="px-3 py-1.5 bg-orange-50 text-orange-700 rounded-lg text-sm font-medium border border-orange-200">
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
                                             HTML/CSS
                                         </span>
                                         <span
-                                            class="px-3 py-1.5 bg-purple-50 text-purple-700 rounded-lg text-sm font-medium border border-purple-200">
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
                                             Bootstrap
                                         </span>
                                         <span
-                                            class="px-3 py-1.5 bg-gray-50 text-gray-700 rounded-lg text-sm font-medium border border-gray-200">
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
                                             Git/GitHub
                                         </span>
                                     </div>
@@ -116,8 +116,8 @@
                             </div>
 
                             <!-- Carrusel de Imágenes -->
-                            <div class="relative h-full min-h-[400px] bg-white p-6 flex items-center justify-center">
-                                <div class="relative w-full h-full overflow-hidden rounded-xl" id="sis-carousel">
+                            <div class="relative h-full min-h-[400px] flex items-center justify-center">
+                                <div class="relative w-full h-full overflow-hidden" id="sis-carousel">
                                     <!-- Slides -->
                                     <div class="carousel-slide active cursor-pointer"
                                         onclick="openImageModal('/assets/project_img/image.png', 'Reporte de citas')">
@@ -148,13 +148,15 @@
                                     </div>
 
                                     <!-- Controles -->
-                                    <button class="carousel-btn carousel-prev" onclick="changeSlide(-1, event)">
+                                    <button class="carousel-btn carousel-prev"
+                                        onclick="changeSlide('sis-carousel', -1, event)">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M15 19l-7-7 7-7" />
                                         </svg>
                                     </button>
-                                    <button class="carousel-btn carousel-next" onclick="changeSlide(1, event)">
+                                    <button class="carousel-btn carousel-next"
+                                        onclick="changeSlide('sis-carousel', 1, event)">
                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                 d="M9 5l7 7-7 7" />
@@ -164,9 +166,192 @@
                                     <!-- Indicadores -->
                                     <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
                                         <button class="carousel-indicator active"
-                                            onclick="goToSlide(0, event)"></button>
-                                        <button class="carousel-indicator" onclick="goToSlide(1, event)"></button>
-                                        <button class="carousel-indicator" onclick="goToSlide(2, event)"></button>
+                                            onclick="goToSlide('sis-carousel', 0, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('sis-carousel', 1, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('sis-carousel', 2, event)"></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto Cloud SIS -->
+                    <div
+                        class="mb-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
+                        <div class="grid md:grid-cols-2 gap-0">
+                            <!-- Carrusel de Imágenes -->
+                            <div
+                                class="relative h-full min-h-[400px] flex items-center justify-center order-2 md:order-1">
+                                <div class="relative w-full h-full overflow-hidden" id="cloud-sis-carousel">
+                                    <!-- Slides -->
+                                    <div class="carousel-slide active cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image.png', 'Vista Principal')">
+                                        <img src="/assets/project2_img/image.png" alt="Vista Principal"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Vista Principal</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image1.png', 'Panel de Control')">
+                                        <img src="/assets/project2_img/image1.png" alt="Panel de Control"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Panel de Control</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image2.png', 'Gestión de Citas')">
+                                        <img src="/assets/project2_img/image2.png" alt="Gestión de Citas"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Gestión de Citas</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image3.png', 'Gestión de Usuarios')">
+                                        <img src="/assets/project2_img/image3.png" alt="Gestión de Usuarios"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Gestión de Usuarios</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image4.png', 'Vista de Detalles')">
+                                        <img src="/assets/project2_img/image4.png" alt="Vista de Detalles"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Vista de Detalles</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image5.png', 'Reportes')">
+                                        <img src="/assets/project2_img/image5.png" alt="Reportes"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Reportes</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image6.png', 'Configuración')">
+                                        <img src="/assets/project2_img/image6.png" alt="Configuración"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Configuración</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image7.png', 'Perfil')">
+                                        <img src="/assets/project2_img/image7.png" alt="Perfil"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Perfil</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/project2_img/image8.png', 'Vista General')">
+                                        <img src="/assets/project2_img/image8.png" alt="Vista General"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Vista General</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Controles -->
+                                    <button class="carousel-btn carousel-prev"
+                                        onclick="changeSlide('cloud-sis-carousel', -1, event)">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    <button class="carousel-btn carousel-next"
+                                        onclick="changeSlide('cloud-sis-carousel', 1, event)">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Indicadores -->
+                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                                        <button class="carousel-indicator active"
+                                            onclick="goToSlide('cloud-sis-carousel', 0, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 1, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 2, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 3, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 4, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 5, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 6, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 7, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('cloud-sis-carousel', 8, event)"></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Contenido -->
+                            <div class="p-8 md:p-10 flex flex-col justify-center order-1 md:order-2">
+                                <div
+                                    class="inline-block px-4 py-1 bg-emerald-500/20 text-emerald-700 rounded-full text-sm font-semibold mb-4 w-fit">
+                                    {{ __('Community Project') }}
+                                </div>
+                                <h4 class="text-3xl font-bold text-gray-900 mb-4">
+                                    {{ __('Cloud SIS System') }}
+                                </h4>
+                                <p class="text-gray-700 text-base leading-relaxed mb-6">
+                                    {{ __('Cloud-based patient and appointment management system, an evolution of the SIS System, designed for greater scalability and accessibility. Developed for the Lazos del Sur oncology hospital.') }}
+                                </p>
+
+                                <!-- Tecnologías -->
+                                <div class="mb-6">
+                                    <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                            Laravel
+                                        </span>
+                                        <span
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                            Vue.js
+                                        </span>
+                                        <span
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                            PHP
+                                        </span>
+                                        <span
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                            TailwindCSS
+                                        </span>
+                                        <span
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                            MySQL
+                                        </span>
+                                        <span
+                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                            Git/GitHub
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -269,7 +454,14 @@
             border-radius: 50%;
             cursor: pointer;
             transition: all 0.3s;
-            z-index: 10;
+            z-index: 20;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        [id$="-carousel"]:hover .carousel-btn {
+            opacity: 1;
+            visibility: visible;
         }
 
         .carousel-btn:hover {
@@ -304,71 +496,93 @@
     </style>
 
     <script>
-        let currentSlide = 0;
-        let autoSlideInterval;
+        const carousels = {};
 
-        function showSlide(index) {
-            const slides = document.querySelectorAll('.carousel-slide');
-            const indicators = document.querySelectorAll('.carousel-indicator');
+        function initCarousel(id) {
+            if (!carousels[id]) {
+                const element = document.getElementById(id);
+                if (element) {
+                    carousels[id] = {
+                        currentSlide: 0,
+                        interval: null,
+                        element: element
+                    };
+                    // Auto slide
+                    showSlide(id, 0); // Show initial slide
+                    startAutoSlide(id);
+                    // Hover events
+                    element.addEventListener('mouseenter', () => stopAutoSlide(id));
+                    element.addEventListener('mouseleave', () => startAutoSlide(id));
+                }
+            }
+        }
+
+        function showSlide(id, index) {
+            const carousel = carousels[id];
+            if (!carousel || !carousel.element) return;
+
+            const slides = carousel.element.querySelectorAll('.carousel-slide');
+            const indicators = carousel.element.querySelectorAll('.carousel-indicator');
 
             if (index >= slides.length) {
-                currentSlide = 0;
+                carousel.currentSlide = 0;
             } else if (index < 0) {
-                currentSlide = slides.length - 1;
+                carousel.currentSlide = slides.length - 1;
             } else {
-                currentSlide = index;
+                carousel.currentSlide = index;
             }
 
             slides.forEach((slide, i) => {
                 slide.classList.remove('active');
-                if (i === currentSlide) {
+                if (i === carousel.currentSlide) {
                     slide.classList.add('active');
                 }
             });
 
             indicators.forEach((indicator, i) => {
                 indicator.classList.remove('active');
-                if (i === currentSlide) {
+                if (i === carousel.currentSlide) {
                     indicator.classList.add('active');
                 }
             });
         }
 
-        function changeSlide(direction, event) {
+        function changeSlide(id, direction, event) {
             if (event) event.stopPropagation();
-            stopAutoSlide();
-            showSlide(currentSlide + direction);
-            startAutoSlide();
-        }
-
-        function goToSlide(index, event) {
-            if (event) event.stopPropagation();
-            stopAutoSlide();
-            showSlide(index);
-            startAutoSlide();
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(() => {
-                showSlide(currentSlide + 1);
-            }, 4000);
-        }
-
-        function stopAutoSlide() {
-            clearInterval(autoSlideInterval);
-        }
-
-        // Iniciar carrusel automático al cargar
-        document.addEventListener('DOMContentLoaded', function() {
-            showSlide(0);
-            startAutoSlide();
-
-            // Pausar en hover
-            const carousel = document.getElementById('sis-carousel');
-            if (carousel) {
-                carousel.addEventListener('mouseenter', stopAutoSlide);
-                carousel.addEventListener('mouseleave', startAutoSlide);
+            stopAutoSlide(id);
+            if (carousels[id]) {
+                showSlide(id, carousels[id].currentSlide + direction);
             }
+            startAutoSlide(id);
+        }
+
+        function goToSlide(id, index, event) {
+            if (event) event.stopPropagation();
+            stopAutoSlide(id);
+            showSlide(id, index);
+            startAutoSlide(id);
+        }
+
+        function startAutoSlide(id) {
+            if (carousels[id]) {
+                stopAutoSlide(id);
+                carousels[id].interval = setInterval(() => {
+                    showSlide(id, carousels[id].currentSlide + 1);
+                }, 4000);
+            }
+        }
+
+        function stopAutoSlide(id) {
+            if (carousels[id] && carousels[id].interval) {
+                clearInterval(carousels[id].interval);
+                carousels[id].interval = null;
+            }
+        }
+
+        // Iniciar carruseles al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            initCarousel('sis-carousel');
+            initCarousel('cloud-sis-carousel');
         });
 
         function openImageModal(src, caption) {
