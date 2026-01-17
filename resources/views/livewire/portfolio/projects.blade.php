@@ -87,28 +87,28 @@
                                     <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
                                     </p>
                                     <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             Laravel
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             JavaScript
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             PHP
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             HTML/CSS
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             Bootstrap
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             Git/GitHub
                                         </span>
                                     </div>
@@ -124,7 +124,7 @@
                                         <img src="/assets/project_img/image.png" alt="Reporte de citas"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Reporte de citas</p>
                                         </div>
                                     </div>
@@ -133,7 +133,7 @@
                                         <img src="/assets/project_img/image1.jpg" alt="Gestión de usuarios"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Gestión de usuarios</p>
                                         </div>
                                     </div>
@@ -142,7 +142,7 @@
                                         <img src="/assets/project_img/image2.jpg" alt="Sistema de citas"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Sistema de citas</p>
                                         </div>
                                     </div>
@@ -191,7 +191,7 @@
                                         <img src="/assets/project2_img/image.png" alt="Vista Principal"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Vista Principal</p>
                                         </div>
                                     </div>
@@ -200,7 +200,7 @@
                                         <img src="/assets/project2_img/image1.png" alt="Panel de Control"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Panel de Control</p>
                                         </div>
                                     </div>
@@ -209,7 +209,7 @@
                                         <img src="/assets/project2_img/image2.png" alt="Gestión de Citas"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Gestión de Citas</p>
                                         </div>
                                     </div>
@@ -218,7 +218,7 @@
                                         <img src="/assets/project2_img/image3.png" alt="Gestión de Usuarios"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Gestión de Usuarios</p>
                                         </div>
                                     </div>
@@ -227,7 +227,7 @@
                                         <img src="/assets/project2_img/image4.png" alt="Vista de Detalles"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Vista de Detalles</p>
                                         </div>
                                     </div>
@@ -236,7 +236,7 @@
                                         <img src="/assets/project2_img/image5.png" alt="Reportes"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Reportes</p>
                                         </div>
                                     </div>
@@ -245,7 +245,7 @@
                                         <img src="/assets/project2_img/image6.png" alt="Configuración"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Configuración</p>
                                         </div>
                                     </div>
@@ -254,7 +254,7 @@
                                         <img src="/assets/project2_img/image7.png" alt="Perfil"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Perfil</p>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@
                                         <img src="/assets/project2_img/image8.png" alt="Vista General"
                                             class="w-full h-full object-cover">
                                         <div
-                                            class="absolute bottom-4 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
                                             <p class="text-sm font-medium">Vista General</p>
                                         </div>
                                     </div>
@@ -320,7 +320,7 @@
                                     {{ __('Cloud SIS System') }}
                                 </h4>
                                 <p class="text-gray-700 text-base leading-relaxed mb-6">
-                                    {{ __('Cloud-based patient and appointment management system, an evolution of the SIS System, designed for greater scalability and accessibility. Developed for the Lazos del Sur oncology hospital.') }}
+                                    {{ __('Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.') }}
                                 </p>
 
                                 <!-- Tecnologías -->
@@ -328,29 +328,37 @@
                                     <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
                                     </p>
                                     <div class="flex flex-wrap gap-2">
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
-                                            Laravel
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            React JS
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
-                                            Vue.js
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Flowbite
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
-                                            PHP
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Express JS
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
-                                            TailwindCSS
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Node.js
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
-                                            MySQL
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            AWS EC2
                                         </span>
-                                        <span
-                                            class="px-3 py-1.5 bg-emerald-50 text-emerald-700 rounded-lg text-sm font-medium border border-emerald-200">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Tailwind
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
                                             Git/GitHub
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Socket.io
                                         </span>
                                     </div>
                                 </div>
