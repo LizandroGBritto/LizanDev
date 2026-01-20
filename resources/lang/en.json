@@ -7,7 +7,7 @@
     "Featured Projects": "Featured Projects",
     "A selection of projects I've recently worked on": "A selection of projects I've recently worked on",
     "Code": "Code",
-    "Demo": "Demo",
+    "Demo": "View Project",
     "Want to see more projects?": "Want to see more projects?",
     "View on GitHub": "View on GitHub",
     "Skills & Technologies": "Skills & Technologies",
@@ -46,5 +46,7 @@
     "View Images": "View Images",
     "Community Project": "Community Project",
     "Cloud SIS System": "Cloud Hospital Information System",
-    "Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.": "Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value."
+    "Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.": "Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.",
+    "Barbershop Management System": "Barbershop Management System",
+    "Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.": "Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks."
 }

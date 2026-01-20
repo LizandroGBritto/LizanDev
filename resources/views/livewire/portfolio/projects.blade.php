@@ -367,7 +367,7 @@
                     </div>
                 </div>
 
-                <!-- Trabajando en Porta Agencia WEB -->
+                <!-- Freelance -->
                 <div class="mb-20">
                     <div class="flex items-center gap-3 mb-8">
                         <div
@@ -381,15 +381,161 @@
                         <h3 class="text-3xl font-bold text-gray-900">{{ __('Working at Porta Web Agency') }}</h3>
                     </div>
 
-                    <!-- Aquí irán los proyectos de Porta -->
+                    <!-- Proyecto Alonzo Style -->
                     <div
-                        class="text-center py-12 bg-white rounded-2xl shadow-lg border border-gray-200 relative overflow-hidden">
-                        <!-- Decoración sutil -->
-                        <div class="absolute inset-0 opacity-100">
-                            <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500 rounded-full blur-2xl"></div>
-                            <div class="absolute bottom-0 left-0 w-32 h-32 bg-green-500 rounded-full blur-2xl"></div>
+                        class="mb-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
+                        <div class="grid md:grid-cols-2 gap-0">
+                            <!-- Contenido -->
+                            <div class="p-8 md:p-10 flex flex-col justify-center">
+                                <div
+                                    class="inline-block px-4 py-1 bg-emerald-500/20 text-emerald-700 rounded-full text-sm font-semibold mb-4 w-fit">
+                                    {{ __('Freelance Project') }}
+                                </div>
+                                <h4 class="text-3xl font-bold text-gray-900 mb-4">
+                                    Alonzo Style
+                                </h4>
+                                <p class="text-gray-700 text-base leading-relaxed mb-6">
+                                    {{ __('Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.') }}
+                                </p>
+
+                                <!-- Tecnologías -->
+                                <div class="mb-6">
+                                    <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
+                                    </p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            MongoDB
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Express
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            React.js
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Node.js
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Flowbite
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Tailwind
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            JWT
+                                        </span>
+                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
+                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                                            Git/GitHub
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Acciones -->
+                                <div class="flex flex-wrap gap-4">
+                                    <a href="http://alonzostyle.com/" target="_blank"
+                                        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-green-700 transition-all shadow-md hover:shadow-lg">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 00-2 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                        {{ __('Demo') }}
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Carrusel de Imágenes -->
+                            <div class="relative h-full min-h-[400px] flex items-center justify-center">
+                                <div class="relative w-full h-full overflow-hidden" id="barber-carousel">
+                                    <!-- Slides -->
+                                    <div class="carousel-slide active cursor-pointer"
+                                        onclick="openImageModal('/assets/freelance_img/alonzo1.png', 'Panel de Control')">
+                                        <img src="/assets/freelance_img/alonzo1.png" alt="Panel de Control"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Panel de Control</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/freelance_img/alonzo2.png', 'Gestión de Turnos')">
+                                        <img src="/assets/freelance_img/alonzo2.png" alt="Gestión de Turnos"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Gestión de Turnos</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/freelance_img/alonzo3.png', 'Agenda de Clientes')">
+                                        <img src="/assets/freelance_img/alonzo3.png" alt="Agenda de Clientes"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Agenda de Clientes</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/freelance_img/alonzo4.png', 'Notificaciones')">
+                                        <img src="/assets/freelance_img/alonzo4.png" alt="Notificaciones"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Notificaciones</p>
+                                        </div>
+                                    </div>
+                                    <div class="carousel-slide cursor-pointer"
+                                        onclick="openImageModal('/assets/freelance_img/alonzo5.png', 'Configuración de Barberos')">
+                                        <img src="/assets/freelance_img/alonzo5.png" alt="Configuración de Barberos"
+                                            class="w-full h-full object-cover">
+                                        <div
+                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
+                                            <p class="text-sm font-medium">Configuración de Barberos</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Controles -->
+                                    <button class="carousel-btn carousel-prev"
+                                        onclick="changeSlide('barber-carousel', -1, event)">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M15 19l-7-7 7-7" />
+                                        </svg>
+                                    </button>
+                                    <button class="carousel-btn carousel-next"
+                                        onclick="changeSlide('barber-carousel', 1, event)">
+                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                            viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M9 5l7 7-7 7" />
+                                        </svg>
+                                    </button>
+
+                                    <!-- Indicadores -->
+                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                                        <button class="carousel-indicator active"
+                                            onclick="goToSlide('barber-carousel', 0, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('barber-carousel', 1, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('barber-carousel', 2, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('barber-carousel', 3, event)"></button>
+                                        <button class="carousel-indicator"
+                                            onclick="goToSlide('barber-carousel', 4, event)"></button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="text-gray-500 text-lg relative z-10">Próximamente...</p>
                     </div>
                 </div>
 
@@ -591,6 +737,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             initCarousel('sis-carousel');
             initCarousel('cloud-sis-carousel');
+            initCarousel('barber-carousel');
         });
 
         function openImageModal(src, caption) {
