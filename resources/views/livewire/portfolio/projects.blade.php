@@ -66,501 +66,374 @@
                     </div>
 
                     <!-- Proyecto SIS/HIS -->
-                    <div
-                        class="mb-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
-                        <div class="grid md:grid-cols-2 gap-0">
-                            <!-- Contenido -->
-                            <div class="p-8 md:p-10 flex flex-col justify-center">
-                                <div
-                                    class="inline-block px-4 py-1 bg-emerald-500/20 text-emerald-700 rounded-full text-sm font-semibold mb-4 w-fit">
-                                    {{ __('Community Project') }}
-                                </div>
-                                <h4 class="text-3xl font-bold text-gray-900 mb-4">
-                                    {{ __('SIS System') }}
-                                </h4>
-                                <p class="text-gray-700 text-base leading-relaxed mb-6">
-                                    {{ __('Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital') }}
-                                </p>
+                    <div class="project-card mb-16 group">
+                        <div
+                            class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                            <div class="grid md:grid-cols-2 gap-0">
+                                <!-- Contenido -->
+                                <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                    <div class="flex items-center gap-2 mb-4">
+                                        <span class="relative flex h-2 w-2">
+                                            <span
+                                                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                            <span
+                                                class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                        </span>
+                                        <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                                            {{ __('Community Project') }}
+                                        </span>
+                                    </div>
 
-                                <!-- Tecnologías -->
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
+                                    <h4
+                                        class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
+                                        {{ __('SIS System') }}
+                                        <div
+                                            class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
+                                        </div>
+                                    </h4>
+
+                                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                        {{ __('Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital') }}
                                     </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Laravel
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            JavaScript
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            PHP
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            HTML/CSS
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Bootstrap
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Git/GitHub
-                                        </span>
+
+                                    <!-- Tecnologías -->
+                                    <div class="mb-2">
+                                        <div class="flex flex-wrap gap-2">
+                                            @foreach (['Laravel', 'JavaScript', 'PHP', 'HTML/CSS', 'Bootstrap', 'Git/GitHub'] as $tech)
+                                                <span
+                                                    class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
+                                                    {{ $tech }}
+                                                </span>
+                                            @endforeach
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Carrusel de Imágenes -->
-                            <div class="relative h-full min-h-[400px] flex items-center justify-center">
-                                <div class="relative w-full h-full overflow-hidden" id="sis-carousel">
-                                    <!-- Slides -->
-                                    <div class="carousel-slide active cursor-pointer"
-                                        onclick="openImageModal('/assets/project_img/image.png', 'Reporte de citas')">
-                                        <img src="/assets/project_img/image.png" alt="Reporte de citas"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Reporte de citas</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project_img/image1.jpg', 'Gestión de usuarios')">
-                                        <img src="/assets/project_img/image1.jpg" alt="Gestión de usuarios"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Gestión de usuarios</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project_img/image2.jpg', 'Sistema de citas')">
-                                        <img src="/assets/project_img/image2.jpg" alt="Sistema de citas"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Sistema de citas</p>
-                                        </div>
-                                    </div>
+                                <!-- Carrusel de Imágenes -->
+                                <div class="relative h-full min-h-[450px] overflow-hidden">
+                                    <div class="absolute inset-0 bg-gray-100 animate-pulse active-loader"></div>
+                                    <div class="relative w-full h-full" id="sis-carousel">
+                                        <!-- Slides -->
+                                        @php
+                                            $sisSlides = [
+                                                ['path' => 'image.png', 'cap' => 'Reporte de citas'],
+                                                ['path' => 'image1.jpg', 'cap' => 'Gestión de usuarios'],
+                                                ['path' => 'image2.jpg', 'cap' => 'Sistema de citas'],
+                                            ];
+                                        @endphp
+                                        @foreach ($sisSlides as $index => $slide)
+                                            <div class="carousel-slide {{ $index === 0 ? 'active' : '' }} cursor-pointer group/img"
+                                                onclick="openImageModal('/assets/project_img/{{ $slide['path'] }}', '{{ $slide['cap'] }}')">
+                                                <img src="/assets/project_img/{{ $slide['path'] }}"
+                                                    alt="{{ $slide['cap'] }}"
+                                                    class="w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110">
+                                                <div
+                                                    class="absolute bottom-4 left-6 right-6 bg-black/40 backdrop-blur-md text-white px-5 py-3 rounded-2xl border border-white/10 opacity-0 group-hover/img:opacity-100 transition-all duration-500 transform translate-y-4 group-hover/img:translate-y-0">
+                                                    <p class="text-sm font-semibold tracking-wide uppercase">
+                                                        {{ $slide['cap'] }}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
 
-                                    <!-- Controles -->
-                                    <button class="carousel-btn carousel-prev"
-                                        onclick="changeSlide('sis-carousel', -1, event)">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 19l-7-7 7-7" />
-                                        </svg>
-                                    </button>
-                                    <button class="carousel-btn carousel-next"
-                                        onclick="changeSlide('sis-carousel', 1, event)">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
+                                        <!-- Controles -->
+                                        <button class="carousel-btn carousel-prev"
+                                            onclick="changeSlide('sis-carousel', -1, event)">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M15 19l-7-7 7-7" />
+                                            </svg>
+                                        </button>
+                                        <button class="carousel-btn carousel-next"
+                                            onclick="changeSlide('sis-carousel', 1, event)">
+                                            <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M9 5l7 7-7 7" />
+                                            </svg>
+                                        </button>
 
-                                    <!-- Indicadores -->
-                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                                        <button class="carousel-indicator active"
-                                            onclick="goToSlide('sis-carousel', 0, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('sis-carousel', 1, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('sis-carousel', 2, event)"></button>
+                                        <!-- Indicadores -->
+                                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+                                            <button class="carousel-indicator active"
+                                                onclick="goToSlide('sis-carousel', 0, event)"></button>
+                                            <button class="carousel-indicator"
+                                                onclick="goToSlide('sis-carousel', 1, event)"></button>
+                                            <button class="carousel-indicator"
+                                                onclick="goToSlide('sis-carousel', 2, event)"></button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- Proyecto Cloud SIS -->
-                    <div
-                        class="mb-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
-                        <div class="grid md:grid-cols-2 gap-0">
-                            <!-- Carrusel de Imágenes -->
+                        <!-- Proyecto Cloud SIS -->
+                        <div class="project-card mb-16 group">
                             <div
-                                class="relative h-full min-h-[400px] flex items-center justify-center order-2 md:order-1">
-                                <div class="relative w-full h-full overflow-hidden" id="cloud-sis-carousel">
-                                    <!-- Slides -->
-                                    <div class="carousel-slide active cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image.png', 'Vista Principal')">
-                                        <img src="/assets/project2_img/image.png" alt="Vista Principal"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Vista Principal</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image1.png', 'Panel de Control')">
-                                        <img src="/assets/project2_img/image1.png" alt="Panel de Control"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Panel de Control</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image2.png', 'Gestión de Citas')">
-                                        <img src="/assets/project2_img/image2.png" alt="Gestión de Citas"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Gestión de Citas</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image3.png', 'Gestión de Usuarios')">
-                                        <img src="/assets/project2_img/image3.png" alt="Gestión de Usuarios"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Gestión de Usuarios</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image4.png', 'Vista de Detalles')">
-                                        <img src="/assets/project2_img/image4.png" alt="Vista de Detalles"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Vista de Detalles</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image5.png', 'Reportes')">
-                                        <img src="/assets/project2_img/image5.png" alt="Reportes"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Reportes</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image6.png', 'Configuración')">
-                                        <img src="/assets/project2_img/image6.png" alt="Configuración"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Configuración</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image7.png', 'Perfil')">
-                                        <img src="/assets/project2_img/image7.png" alt="Perfil"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Perfil</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/project2_img/image8.png', 'Vista General')">
-                                        <img src="/assets/project2_img/image8.png" alt="Vista General"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Vista General</p>
+                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <!-- Carrusel de Imágenes -->
+                                    <div class="relative h-full min-h-[450px] overflow-hidden order-2 md:order-1">
+                                        <div class="absolute inset-0 bg-gray-100 animate-pulse active-loader"></div>
+                                        <div class="relative w-full h-full" id="cloud-sis-carousel">
+                                            <!-- Slides -->
+                                            @php
+                                                $cloudSlides = [
+                                                    ['path' => 'image.png', 'cap' => 'Vista Principal'],
+                                                    ['path' => 'image1.png', 'cap' => 'Panel de Control'],
+                                                    ['path' => 'image2.png', 'cap' => 'Gestión de Citas'],
+                                                    ['path' => 'image3.png', 'cap' => 'Gestión de Usuarios'],
+                                                    ['path' => 'image4.png', 'cap' => 'Vista de Detalles'],
+                                                    ['path' => 'image5.png', 'cap' => 'Reportes'],
+                                                    ['path' => 'image6.png', 'cap' => 'Configuración'],
+                                                    ['path' => 'image7.png', 'cap' => 'Perfil'],
+                                                    ['path' => 'image8.png', 'cap' => 'Vista General'],
+                                                ];
+                                            @endphp
+                                            @foreach ($cloudSlides as $index => $slide)
+                                                <div class="carousel-slide {{ $index === 0 ? 'active' : '' }} cursor-pointer group/img"
+                                                    onclick="openImageModal('/assets/project2_img/{{ $slide['path'] }}', '{{ $slide['cap'] }}')">
+                                                    <img src="/assets/project2_img/{{ $slide['path'] }}"
+                                                        alt="{{ $slide['cap'] }}"
+                                                        class="w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110">
+                                                    <div
+                                                        class="absolute bottom-4 left-6 right-6 bg-black/40 backdrop-blur-md text-white px-5 py-3 rounded-2xl border border-white/10 opacity-0 group-hover/img:opacity-100 transition-all duration-500 transform translate-y-4 group-hover/img:translate-y-0">
+                                                        <p class="text-sm font-semibold tracking-wide uppercase">
+                                                            {{ $slide['cap'] }}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                            <!-- Controles -->
+                                            <button class="carousel-btn carousel-prev"
+                                                onclick="changeSlide('cloud-sis-carousel', -1, event)">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15 19l-7-7 7-7" />
+                                                </svg>
+                                            </button>
+                                            <button class="carousel-btn carousel-next"
+                                                onclick="changeSlide('cloud-sis-carousel', 1, event)">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+
+                                            <!-- Indicadores -->
+                                            <div
+                                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+                                                @foreach ($cloudSlides as $index => $slide)
+                                                    <button
+                                                        class="carousel-indicator {{ $index === 0 ? 'active' : '' }}"
+                                                        onclick="goToSlide('cloud-sis-carousel', {{ $index }}, event)"></button>
+                                                @endforeach
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <!-- Controles -->
-                                    <button class="carousel-btn carousel-prev"
-                                        onclick="changeSlide('cloud-sis-carousel', -1, event)">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 19l-7-7 7-7" />
-                                        </svg>
-                                    </button>
-                                    <button class="carousel-btn carousel-next"
-                                        onclick="changeSlide('cloud-sis-carousel', 1, event)">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
+                                    <!-- Contenido -->
+                                    <div
+                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 order-1 md:order-2">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <span class="relative flex h-2 w-2">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            </span>
+                                            <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                                                {{ __('Community Project') }}
+                                            </span>
+                                        </div>
 
-                                    <!-- Indicadores -->
-                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                                        <button class="carousel-indicator active"
-                                            onclick="goToSlide('cloud-sis-carousel', 0, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 1, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 2, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 3, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 4, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 5, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 6, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 7, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('cloud-sis-carousel', 8, event)"></button>
-                                    </div>
-                                </div>
-                            </div>
+                                        <h4
+                                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
+                                            {{ __('Cloud SIS System') }}
+                                            <div
+                                                class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
+                                            </div>
+                                        </h4>
 
-                            <!-- Contenido -->
-                            <div class="p-8 md:p-10 flex flex-col justify-center order-1 md:order-2">
-                                <div
-                                    class="inline-block px-4 py-1 bg-emerald-500/20 text-emerald-700 rounded-full text-sm font-semibold mb-4 w-fit">
-                                    {{ __('Community Project') }}
-                                </div>
-                                <h4 class="text-3xl font-bold text-gray-900 mb-4">
-                                    {{ __('Cloud SIS System') }}
-                                </h4>
-                                <p class="text-gray-700 text-base leading-relaxed mb-6">
-                                    {{ __('Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.') }}
-                                </p>
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                            {{ __('Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.') }}
+                                        </p>
 
-                                <!-- Tecnologías -->
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            React JS
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Flowbite
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Express JS
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Node.js
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            AWS EC2
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Tailwind
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Git/GitHub
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Socket.io
-                                        </span>
+                                        <!-- Tecnologías -->
+                                        <div class="mb-2">
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach (['React JS', 'Flowbite', 'Express JS', 'Node.js', 'AWS EC2', 'Tailwind', 'Git/GitHub', 'Socket.io'] as $tech)
+                                                    <span
+                                                        class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
+                                                        {{ $tech }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Freelance -->
-                <div class="mb-20">
-                    <div class="flex items-center gap-3 mb-8">
+                    <!-- Freelance -->
+                    <div class="mb-20">
+                        <div class="flex items-center gap-3 mb-8">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900">{{ __('Working at Porta Web Agency') }}</h3>
+                        </div>
+
+                        <!-- Proyecto Alonzo Style -->
+                        <div class="project-card mb-16 group">
+                            <div
+                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <!-- Contenido -->
+                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <span class="relative flex h-2 w-2">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            </span>
+                                            <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                                                {{ __('Freelance Project') }}
+                                            </span>
+                                        </div>
+
+                                        <h4
+                                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
+                                            Alonzo Style
+                                            <div
+                                                class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
+                                            </div>
+                                        </h4>
+
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                            {{ __('Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.') }}
+                                        </p>
+
+                                        <!-- Tecnologías -->
+                                        <div class="mb-8">
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach (['MongoDB', 'Express', 'React.js', 'Node.js', 'Flowbite', 'Tailwind', 'JWT', 'Git/GitHub'] as $tech)
+                                                    <span
+                                                        class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
+                                                        {{ $tech }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+
+                                        <!-- Acciones -->
+                                        <div class="flex flex-wrap gap-4">
+                                            <a href="http://alonzostyle.com/" target="_blank"
+                                                class="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white font-bold rounded-2xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20 active:scale-95 group/btn">
+                                                <svg class="w-5 h-5 transition-transform group-hover/btn:translate-x-1"
+                                                    fill="none" stroke="currentColor" stroke-width="2"
+                                                    viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 00-2 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                </svg>
+                                                {{ __('Demo') }}
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Carrusel de Imágenes -->
+                                    <div class="relative h-full min-h-[450px] overflow-hidden">
+                                        <div class="absolute inset-0 bg-gray-100 animate-pulse active-loader"></div>
+                                        <div class="relative w-full h-full" id="barber-carousel">
+                                            <!-- Slides -->
+                                            @php
+                                                $barberSlides = [
+                                                    ['path' => 'alonzo1.png', 'cap' => 'Panel de Control'],
+                                                    ['path' => 'alonzo2.png', 'cap' => 'Gestión de Turnos'],
+                                                    ['path' => 'alonzo3.png', 'cap' => 'Agenda de Clientes'],
+                                                    ['path' => 'alonzo4.png', 'cap' => 'Notificaciones'],
+                                                    ['path' => 'alonzo5.png', 'cap' => 'Configuración de Barberos'],
+                                                ];
+                                            @endphp
+                                            @foreach ($barberSlides as $index => $slide)
+                                                <div class="carousel-slide {{ $index === 0 ? 'active' : '' }} cursor-pointer group/img"
+                                                    onclick="openImageModal('/assets/freelance_img/{{ $slide['path'] }}', '{{ $slide['cap'] }}')">
+                                                    <img src="/assets/freelance_img/{{ $slide['path'] }}"
+                                                        alt="{{ $slide['cap'] }}"
+                                                        class="w-full h-full object-cover transition-transform duration-1000 group-hover/img:scale-110">
+                                                    <div
+                                                        class="absolute bottom-4 left-6 right-6 bg-black/40 backdrop-blur-md text-white px-5 py-3 rounded-2xl border border-white/10 opacity-0 group-hover/img:opacity-100 transition-all duration-500 transform translate-y-4 group-hover/img:translate-y-0">
+                                                        <p class="text-sm font-semibold tracking-wide uppercase">
+                                                            {{ $slide['cap'] }}</p>
+                                                    </div>
+                                                </div>
+                                            @endforeach
+
+                                            <!-- Controles -->
+                                            <button class="carousel-btn carousel-prev"
+                                                onclick="changeSlide('barber-carousel', -1, event)">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15 19l-7-7 7-7" />
+                                                </svg>
+                                            </button>
+                                            <button class="carousel-btn carousel-next"
+                                                onclick="changeSlide('barber-carousel', 1, event)">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor"
+                                                    stroke-width="1.5" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M9 5l7 7-7 7" />
+                                                </svg>
+                                            </button>
+
+                                            <!-- Indicadores -->
+                                            <div
+                                                class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-2">
+                                                @foreach ($barberSlides as $index => $slide)
+                                                    <button
+                                                        class="carousel-indicator {{ $index === 0 ? 'active' : '' }}"
+                                                        onclick="goToSlide('barber-carousel', {{ $index }}, event)"></button>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Otros Proyectos -->
+                    <div class="mb-12">
+                        <div class="flex items-center gap-3 mb-8">
+                            <div
+                                class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                </svg>
+                            </div>
+                            <h3 class="text-3xl font-bold text-gray-900">{{ __('Other Projects') }}</h3>
+                        </div>
+
+                        <!-- Aquí irán otros proyectos -->
                         <div
-                            class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
+                            class="text-center py-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg border border-emerald-200">
+                            <p class="text-gray-700 text-lg">Próximamente...</p>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900">{{ __('Working at Porta Web Agency') }}</h3>
-                    </div>
-
-                    <!-- Proyecto Alonzo Style -->
-                    <div
-                        class="mb-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden border border-emerald-200">
-                        <div class="grid md:grid-cols-2 gap-0">
-                            <!-- Contenido -->
-                            <div class="p-8 md:p-10 flex flex-col justify-center">
-                                <div
-                                    class="inline-block px-4 py-1 bg-emerald-500/20 text-emerald-700 rounded-full text-sm font-semibold mb-4 w-fit">
-                                    {{ __('Freelance Project') }}
-                                </div>
-                                <h4 class="text-3xl font-bold text-gray-900 mb-4">
-                                    Alonzo Style
-                                </h4>
-                                <p class="text-gray-700 text-base leading-relaxed mb-6">
-                                    {{ __('Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.') }}
-                                </p>
-
-                                <!-- Tecnologías -->
-                                <div class="mb-6">
-                                    <p class="text-sm font-semibold text-gray-700 mb-3">{{ __('Technologies Used') }}
-                                    </p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            MongoDB
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Express
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            React.js
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Node.js
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Flowbite
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Tailwind
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            JWT
-                                        </span>
-                                        <span class="px-3 py-1.5 text-white rounded-lg text-sm font-medium"
-                                            style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
-                                            Git/GitHub
-                                        </span>
-                                    </div>
-                                </div>
-
-                                <!-- Acciones -->
-                                <div class="flex flex-wrap gap-4">
-                                    <a href="http://alonzostyle.com/" target="_blank"
-                                        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-emerald-600 to-green-600 text-white font-semibold rounded-xl hover:from-emerald-700 hover:to-green-700 transition-all shadow-md hover:shadow-lg">
-                                        <svg class="w-5 h-5" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 00-2 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                        </svg>
-                                        {{ __('Demo') }}
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Carrusel de Imágenes -->
-                            <div class="relative h-full min-h-[400px] flex items-center justify-center">
-                                <div class="relative w-full h-full overflow-hidden" id="barber-carousel">
-                                    <!-- Slides -->
-                                    <div class="carousel-slide active cursor-pointer"
-                                        onclick="openImageModal('/assets/freelance_img/alonzo1.png', 'Panel de Control')">
-                                        <img src="/assets/freelance_img/alonzo1.png" alt="Panel de Control"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Panel de Control</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/freelance_img/alonzo2.png', 'Gestión de Turnos')">
-                                        <img src="/assets/freelance_img/alonzo2.png" alt="Gestión de Turnos"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Gestión de Turnos</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/freelance_img/alonzo3.png', 'Agenda de Clientes')">
-                                        <img src="/assets/freelance_img/alonzo3.png" alt="Agenda de Clientes"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Agenda de Clientes</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/freelance_img/alonzo4.png', 'Notificaciones')">
-                                        <img src="/assets/freelance_img/alonzo4.png" alt="Notificaciones"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Notificaciones</p>
-                                        </div>
-                                    </div>
-                                    <div class="carousel-slide cursor-pointer"
-                                        onclick="openImageModal('/assets/freelance_img/alonzo5.png', 'Configuración de Barberos')">
-                                        <img src="/assets/freelance_img/alonzo5.png" alt="Configuración de Barberos"
-                                            class="w-full h-full object-cover">
-                                        <div
-                                            class="absolute bottom-2 left-4 right-4 bg-black/70 backdrop-blur-sm text-white px-4 py-2 rounded-lg">
-                                            <p class="text-sm font-medium">Configuración de Barberos</p>
-                                        </div>
-                                    </div>
-
-                                    <!-- Controles -->
-                                    <button class="carousel-btn carousel-prev"
-                                        onclick="changeSlide('barber-carousel', -1, event)">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M15 19l-7-7 7-7" />
-                                        </svg>
-                                    </button>
-                                    <button class="carousel-btn carousel-next"
-                                        onclick="changeSlide('barber-carousel', 1, event)">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor"
-                                            viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                d="M9 5l7 7-7 7" />
-                                        </svg>
-                                    </button>
-
-                                    <!-- Indicadores -->
-                                    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                                        <button class="carousel-indicator active"
-                                            onclick="goToSlide('barber-carousel', 0, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('barber-carousel', 1, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('barber-carousel', 2, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('barber-carousel', 3, event)"></button>
-                                        <button class="carousel-indicator"
-                                            onclick="goToSlide('barber-carousel', 4, event)"></button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Otros Proyectos -->
-                <div class="mb-12">
-                    <div class="flex items-center gap-3 mb-8">
-                        <div
-                            class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                            </svg>
-                        </div>
-                        <h3 class="text-3xl font-bold text-gray-900">{{ __('Other Projects') }}</h3>
-                    </div>
-
-                    <!-- Aquí irán otros proyectos -->
-                    <div
-                        class="text-center py-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg border border-emerald-200">
-                        <p class="text-gray-700 text-lg">Próximamente...</p>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- Modal para ampliar imágenes -->
@@ -600,14 +473,14 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
             color: white;
-            border: none;
-            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px;
             border-radius: 50%;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 20;
             opacity: 0;
             visibility: hidden;
@@ -619,33 +492,40 @@
         }
 
         .carousel-btn:hover {
-            background: rgba(16, 185, 129, 0.7);
+            background: rgba(16, 185, 129, 0.9);
+            border-color: rgba(16, 185, 129, 0.2);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
             transform: translateY(-50%) scale(1.1);
         }
 
         .carousel-prev {
-            left: 16px;
+            left: 20px;
         }
 
         .carousel-next {
-            right: 16px;
+            right: 20px;
         }
 
         .carousel-indicator {
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            border: none;
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.4s;
             z-index: 10;
         }
 
         .carousel-indicator.active {
-            background: white;
-            width: 24px;
-            border-radius: 5px;
+            background: #10b981;
+            width: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(16, 185, 129, 0.5);
+        }
+
+        .project-card:hover .active-loader {
+            opacity: 0;
         }
     </style>
 
