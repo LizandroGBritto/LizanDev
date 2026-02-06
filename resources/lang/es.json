@@ -39,14 +39,8 @@
     "Contact Me": "Contáctame",
     "For the Community": "Para la Comunidad",
     "Working at Porta Web Agency": "Freelance",
-    "Other Projects": "Otros Proyectos",
-    "SIS System": "Sistema de Informacion en Salud",
-    "Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital": "Sistema de gestión de pacientes y citas desarrollado en conjunto con la Universidad Autónoma de Encarnación y el Proyecto Europeo HEIComp, creado para su uso en el hospital oncológico Lazos del Sur",
-    "Technologies Used": "Tecnologías Utilizadas",
-    "View Images": "Ver Imágenes",
-    "Community Project": "Proyecto Comunitario",
-    "Cloud SIS System": "Sistema de Informacion en Salud en la nube",
-    "Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.": "Sistema de gestión hospitalaria, desarrollado para su uso en una unidad de salud familiar de la ciudad de Encarnación, cuenta con módulos de citas, médicos, gestión de salas, especialidades, usuarios, reportes, controles de acceso por roles con paneles de control adaptados al rol, además de soporte para operaciones en tiempo real con protecciones frente a múltiples modificaciones frente al mismo valor.",
-    "Barbershop Management System": "Sistema de gestión para Barbería",
-    "Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.": "Sistema de gestión de clientes, turnos, servicios y barberos con agenda para clientes. Envía notificaciones push al barbero para informar sobre clientes, además de contactar a los clientes vía WhatsApp de forma automatizada para confirmar, reagendar o cancelar citas, automatizando prácticamente toda la labor de gestión."
+    "Agency Project": "Proyecto de Agencia",
+    "Working at Porta": "Trabajando en Porta",
+    "Institutional Pages": "Páginas Institucionales",
+    "Development, maintenance and optimization of high-traffic Institutional pages, with content control panels and translations into various languages.": "Desarrollo, mantenimiento y optimizaciones de páginas Institucionales de alta concurrencia, con paneles de control de contenido y traducciones a diversos lenguajes."
 }

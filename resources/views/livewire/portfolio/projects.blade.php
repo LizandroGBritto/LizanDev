@@ -289,7 +289,7 @@
                                         d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
                             </div>
-                            <h3 class="text-3xl font-bold text-gray-900">{{ __('Working at Porta Web Agency') }}</h3>
+                            <h3 class="text-3xl font-bold text-gray-900">{{ __('Freelance') }}</h3>
                         </div>
 
                         <!-- Proyecto Alonzo Style -->
@@ -412,7 +412,7 @@
                         </div>
                     </div>
 
-                    <!-- Otros Proyectos -->
+                    <!-- Trabajando en Porta -->
                     <div class="mb-12">
                         <div class="flex items-center gap-3 mb-8">
                             <div
@@ -423,13 +423,68 @@
                                         d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                                 </svg>
                             </div>
-                            <h3 class="text-3xl font-bold text-gray-900">{{ __('Other Projects') }}</h3>
+                            <h3 class="text-3xl font-bold text-gray-900">{{ __('Working at Porta') }}</h3>
                         </div>
 
-                        <!-- Aquí irán otros proyectos -->
-                        <div
-                            class="text-center py-12 bg-gradient-to-br from-emerald-50 to-green-100 rounded-2xl shadow-lg border border-emerald-200">
-                            <p class="text-gray-700 text-lg">Próximamente...</p>
+                        <!-- Proyecto Paginas Institucionales -->
+                        <div class="project-card mb-16 group">
+                            <div
+                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <!-- Contenido -->
+                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <span class="relative flex h-2 w-2">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            </span>
+                                            <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                                                {{ __('Agency Project') }}
+                                            </span>
+                                        </div>
+
+                                        <h4
+                                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
+                                            {{ __('Institutional Pages') }}
+                                            <div
+                                                class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
+                                            </div>
+                                        </h4>
+
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                            {{ __('Development, maintenance and optimization of high-traffic Institutional pages, with content control panels and translations into various languages.') }}
+                                        </p>
+
+                                        <!-- Tecnologías -->
+                                        <div class="mb-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach (['Laravel', 'Blade', 'Tailwind CSS', 'Alpine.js', 'MySQL', 'Git'] as $tech)
+                                                    <span
+                                                        class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
+                                                        {{ $tech }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Imagen Placeholder -->
+                                    <div
+                                        class="relative h-full min-h-[400px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                        <svg class="w-32 h-32 text-emerald-500/30" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9-9c1.657 0 3 4.03 3 9s-1.343 9-3 9m0-18c-1.657 0-3 4.03-3 9s1.343 9 3 9m-9-9a9 9 0 019-9" />
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-emerald-500/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
+                                            <p class="text-emerald-800 font-bold text-xl">{{ __('Porta Web Agency') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
