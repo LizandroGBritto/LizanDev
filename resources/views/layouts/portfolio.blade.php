@@ -8,6 +8,7 @@
     @livewire('language-switcher')
 
     <div id="app">
+        @include('partials.navigation')
         <main>
             @yield('content')
         </main>
