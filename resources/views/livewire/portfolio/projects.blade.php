@@ -116,9 +116,9 @@
                                         <!-- Slides -->
                                         @php
                                             $sisSlides = [
-                                                ['path' => 'image.png', 'cap' => 'Reporte de citas'],
-                                                ['path' => 'image1.jpg', 'cap' => 'Gestión de usuarios'],
-                                                ['path' => 'image2.jpg', 'cap' => 'Sistema de citas'],
+                                                ['path' => 'image.png', 'cap' => __('Appointment report')],
+                                                ['path' => 'image1.jpg', 'cap' => __('User management')],
+                                                ['path' => 'image2.jpg', 'cap' => __('Appointment system')],
                                             ];
                                         @endphp
                                         @foreach ($sisSlides as $index => $slide)
@@ -179,15 +179,15 @@
                                             <!-- Slides -->
                                             @php
                                                 $cloudSlides = [
-                                                    ['path' => 'image.png', 'cap' => 'Vista Principal'],
-                                                    ['path' => 'image1.png', 'cap' => 'Panel de Control'],
-                                                    ['path' => 'image2.png', 'cap' => 'Gestión de Citas'],
-                                                    ['path' => 'image3.png', 'cap' => 'Gestión de Usuarios'],
-                                                    ['path' => 'image4.png', 'cap' => 'Vista de Detalles'],
-                                                    ['path' => 'image5.png', 'cap' => 'Reportes'],
-                                                    ['path' => 'image6.png', 'cap' => 'Configuración'],
-                                                    ['path' => 'image7.png', 'cap' => 'Perfil'],
-                                                    ['path' => 'image8.png', 'cap' => 'Vista General'],
+                                                    ['path' => 'image.png', 'cap' => __('Main View')],
+                                                    ['path' => 'image1.png', 'cap' => __('Control Panel')],
+                                                    ['path' => 'image2.png', 'cap' => __('Appointment Management')],
+                                                    ['path' => 'image3.png', 'cap' => __('User Management')],
+                                                    ['path' => 'image4.png', 'cap' => __('Details View')],
+                                                    ['path' => 'image5.png', 'cap' => __('Reports')],
+                                                    ['path' => 'image6.png', 'cap' => __('Settings')],
+                                                    ['path' => 'image7.png', 'cap' => __('Profile')],
+                                                    ['path' => 'image8.png', 'cap' => __('Overview')],
                                                 ];
                                             @endphp
                                             @foreach ($cloudSlides as $index => $slide)
@@ -313,7 +313,7 @@
 
                                         <h4
                                             class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
-                                            Alonzo Style
+                                            {{ __('Alonzo Style') }}
                                             <div
                                                 class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
                                             </div>
@@ -357,11 +357,11 @@
                                             <!-- Slides -->
                                             @php
                                                 $barberSlides = [
-                                                    ['path' => 'alonzo1.png', 'cap' => 'Panel de Control'],
-                                                    ['path' => 'alonzo2.png', 'cap' => 'Gestión de Turnos'],
-                                                    ['path' => 'alonzo3.png', 'cap' => 'Agenda de Clientes'],
-                                                    ['path' => 'alonzo4.png', 'cap' => 'Notificaciones'],
-                                                    ['path' => 'alonzo5.png', 'cap' => 'Configuración de Barberos'],
+                                                    ['path' => 'alonzo1.png', 'cap' => __('Control Panel')],
+                                                    ['path' => 'alonzo2.png', 'cap' => __('Shift Management')],
+                                                    ['path' => 'alonzo3.png', 'cap' => __('Client Agenda')],
+                                                    ['path' => 'alonzo4.png', 'cap' => __('Notifications')],
+                                                    ['path' => 'alonzo5.png', 'cap' => __('Barber Settings')],
                                                 ];
                                             @endphp
                                             @foreach ($barberSlides as $index => $slide)
@@ -454,13 +454,13 @@
                                         </h4>
 
                                         <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                                            {{ __('Development, maintenance and optimization of high-traffic Institutional pages, with content control panels and translations into various languages.') }}
+                                            {{ __('Development and optimization of high-traffic institutional platforms, featuring specialized multilingual support, professional content management solutions, and integrated Meta and Google marketing analytics.') }}
                                         </p>
 
                                         <!-- Tecnologías -->
                                         <div class="mb-4">
                                             <div class="flex flex-wrap gap-2">
-                                                @foreach (['Laravel', 'Blade', 'Tailwind CSS', 'Alpine.js', 'MySQL', 'Git'] as $tech)
+                                                @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
                                                         class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
                                                         {{ $tech }}
@@ -480,6 +480,129 @@
                                         <div
                                             class="absolute inset-0 bg-emerald-500/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
                                             <p class="text-emerald-800 font-bold text-xl">{{ __('Porta Web Agency') }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto Catálogos Web -->
+                        <div class="project-card mb-16 group">
+                            <div
+                                class="relative bg-white/60 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <!-- Imagen Placeholder -->
+                                    <div
+                                        class="relative h-full min-h-[400px] bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700 order-2 md:order-1">
+                                        <svg class="w-24 h-24 text-emerald-600/20" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-emerald-500/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
+                                            <p class="text-emerald-800 font-bold text-xl">{{ __('Web Catalogs') }}</p>
+                                        </div>
+                                    </div>
+
+                                    <!-- Contenido -->
+                                    <div
+                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 order-1 md:order-2">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <span class="relative flex h-2 w-2">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            </span>
+                                            <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                                                {{ __('Agency Project') }}
+                                            </span>
+                                        </div>
+
+                                        <h4
+                                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
+                                            {{ __('Web Catalogs') }}
+                                            <div
+                                                class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
+                                            </div>
+                                        </h4>
+
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                            {{ __('Development of high-concurrency web catalogs designed for maximum performance and scalability with advanced caching. Features real-time product and stock synchronization via external API integrations, specialized multilingual support, and integrated logistics, powered by Meta and Google analytics.') }}
+                                        </p>
+
+                                        <!-- Tecnologías -->
+                                        <div class="mb-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
+                                                    <span
+                                                        class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
+                                                        {{ $tech }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Proyecto E-commerce -->
+                        <div class="project-card mb-16 group">
+                            <div
+                                class="relative bg-white/60 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0">
+                                    <!-- Contenido -->
+                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                        <div class="flex items-center gap-2 mb-4">
+                                            <span class="relative flex h-2 w-2">
+                                                <span
+                                                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                <span
+                                                    class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                                            </span>
+                                            <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                                                {{ __('Agency Project') }}
+                                            </span>
+                                        </div>
+
+                                        <h4
+                                            class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 group-hover:text-emerald-600 transition-colors duration-500">
+                                            {{ __('E-commerce') }}
+                                            <div
+                                                class="h-1 w-0 group-hover:w-20 bg-emerald-500 transition-all duration-500 rounded-full mt-1">
+                                            </div>
+                                        </h4>
+
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                            {{ __('Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.') }}
+                                        </p>
+
+                                        <!-- Tecnologías -->
+                                        <div class="mb-4">
+                                            <div class="flex flex-wrap gap-2">
+                                                @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
+                                                    <span
+                                                        class="px-4 py-1.5 bg-emerald-500/5 text-emerald-700 border border-emerald-500/10 rounded-full text-sm font-medium hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/20 transition-all duration-300 transform hover:-translate-y-0.5 cursor-default">
+                                                        {{ $tech }}
+                                                    </span>
+                                                @endforeach
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Imagen Placeholder -->
+                                    <div
+                                        class="relative h-full min-h-[400px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                        <svg class="w-32 h-32 text-emerald-500/30" fill="none"
+                                            stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                                d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                        </svg>
+                                        <div
+                                            class="absolute inset-0 bg-emerald-500/5 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center">
+                                            <p class="text-emerald-800 font-bold text-xl">{{ __('E-commerce') }}
                                             </p>
                                         </div>
                                     </div>

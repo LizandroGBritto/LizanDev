@@ -28,31 +28,31 @@
 
                         <div
                             class="text-2xl md:text-3xl text-emerald-200 font-light flex items-center justify-center lg:justify-start gap-3">
-                            @if(app()->getLocale() === 'en')
+                            @if (app()->getLocale() === 'en')
                                 <!-- Inglés: "Front End" Developer -->
                                 <div class="role-carousel">
                                     <div class="role-carousel-inner">
-                                        <span class="role-item">{{ __("Front End") }}</span>
-                                        <span class="role-item">{{ __("Back End") }}</span>
-                                        <span class="role-item">{{ __("Full Stack") }}</span>
+                                        <span class="role-item">{{ __('Front End') }}</span>
+                                        <span class="role-item">{{ __('Back End') }}</span>
+                                        <span class="role-item">{{ __('Full Stack') }}</span>
                                     </div>
                                 </div>
-                                <span>{{ __("Developer") }}</span>
+                                <span>{{ __('Developer') }}</span>
                             @else
                                 <!-- Español: "Desarrollador" Front End -->
-                                <span>{{ __("Developer") }}</span>
+                                <span>{{ __('Developer') }}</span>
                                 <div class="role-carousel">
                                     <div class="role-carousel-inner">
-                                        <span class="role-item">{{ __("Front End") }}</span>
-                                        <span class="role-item">{{ __("Back End") }}</span>
-                                        <span class="role-item">{{ __("Full Stack") }}</span>
+                                        <span class="role-item">{{ __('Front End') }}</span>
+                                        <span class="role-item">{{ __('Back End') }}</span>
+                                        <span class="role-item">{{ __('Full Stack') }}</span>
                                     </div>
                                 </div>
                             @endif
                         </div>
 
                         <p class="text-lg md:text-xl text-slate-300 max-w-2xl">
-                            {{ $description }}
+                            {{ __($description) }}
                         </p>
                     </div>
 
@@ -60,11 +60,11 @@
                     <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center pt-8">
                         <a href="#projects"
                             class="px-8 py-4 bg-gradient-to-r from-emerald-500 to-green-600 text-white rounded-full font-semibold hover:shadow-lg hover:shadow-emerald-500/50 transform hover:-translate-y-1 transition-all duration-300">
-                            {{ __("View Projects") }}
+                            {{ __('View Projects') }}
                         </a>
                         <a href="#contact"
                             class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white rounded-full font-semibold border-2 border-white/20 hover:bg-white/20 transform hover:-translate-y-1 transition-all duration-300">
-                            {{ __("Contact Me") }}
+                            {{ __('Contact Me') }}
                         </a>
                     </div>
 
@@ -707,7 +707,7 @@
     </style>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const heroSection = document.getElementById('hero-section');
             const pupils = document.querySelectorAll('.pupil');
             const armLeft = document.querySelector('.robot-arm-left');
@@ -801,12 +801,12 @@
                 }, 2000);
             }
 
-            heroSection.addEventListener('mousemove', function (e) {
+            heroSection.addEventListener('mousemove', function(e) {
                 movePupils(e.clientX, e.clientY);
                 updateArms(e.clientX, e.clientY);
             });
 
-            heroSection.addEventListener('mouseleave', function () {
+            heroSection.addEventListener('mouseleave', function() {
                 if (!isWaving) {
                     armLeft.style.transform = 'rotate(0deg)';
                     armRight.style.transform = 'rotate(0deg)';

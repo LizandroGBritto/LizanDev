@@ -7,7 +7,7 @@ use Livewire\Component;
 class Hero extends Component
 {
     public $name = 'Lizandro Britto';
-    public $description = 'Apasionado por crear soluciones digitales innovadoras y escalables';
+    public $description = 'Passionate about creating innovative and scalable digital solutions';
     public $cvUrl = '#';
 
     public function render()

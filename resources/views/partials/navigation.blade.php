@@ -2,7 +2,7 @@
     class="fixed top-0 left-0 w-full z-[9999] transition-all duration-500 transform -translate-y-full opacity-0 pointer-events-none">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div
-            class="bg-slate-900/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-2 flex items-center justify-between shadow-2xl">
+            class="bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-full px-6 py-2 flex items-center justify-between shadow-2xl">
             <!-- Logo/Name -->
             <a href="#" class="text-white font-bold text-xl tracking-tighter flex items-center gap-2 group"
                 onclick="scrollToSection('hero-section', event)">
