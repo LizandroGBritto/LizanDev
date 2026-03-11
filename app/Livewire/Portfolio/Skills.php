@@ -14,6 +14,7 @@ class Skills extends Component
                 ['name' => 'JavaScript/TypeScript', 'level' => 85],
                 ['name' => 'Vue.js / React', 'level' => 80],
                 ['name' => 'Tailwind CSS', 'level' => 95],
+                ['name' => 'Bootstrap', 'level' => 90],
             ]
         ],
         [
@@ -22,16 +23,19 @@ class Skills extends Component
                 ['name' => 'PHP / Laravel', 'level' => 90],
                 ['name' => 'Node.js', 'level' => 75],
                 ['name' => 'MySQL / PostgreSQL', 'level' => 85],
+                ['name' => 'Microservicios', 'level' => 80],
+                ['name' => 'Arquitectura MVC', 'level' => 95],
                 ['name' => 'RESTful APIs', 'level' => 88],
             ]
         ],
         [
-            'category' => 'DevOps & Tools',
+            'category' => 'Tools',
             'items' => [
                 ['name' => 'Git / GitHub', 'level' => 90],
                 ['name' => 'Docker', 'level' => 75],
                 ['name' => 'CI/CD', 'level' => 70],
                 ['name' => 'AWS / Cloud', 'level' => 65],
+                ['name' => 'IA', 'level' => 70],
             ]
         ],
     ];

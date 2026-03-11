@@ -53,7 +53,7 @@
                 </div>
 
                 <!-- Para la Comunidad -->
-                <div class="mb-20">
+                <div class="mb-16">
                     <div class="flex items-center gap-3 mb-8">
                         <div
                             class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
@@ -97,7 +97,7 @@
                                     </p>
 
                                     <!-- Tecnologías -->
-                                    <div class="mb-2">
+                                    <div class="mb-6">
                                         <div class="flex flex-wrap gap-2">
                                             @foreach (['Laravel', 'JavaScript', 'PHP', 'HTML/CSS', 'Bootstrap', 'Git/GitHub'] as $tech)
                                                 <span
@@ -262,7 +262,7 @@
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-2">
+                                        <div class="mb-6">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['React JS', 'Flowbite', 'Express JS', 'Node.js', 'AWS EC2', 'Tailwind', 'Git/GitHub', 'Socket.io'] as $tech)
                                                     <span
@@ -279,7 +279,7 @@
                     </div>
 
                     <!-- Freelance -->
-                    <div class="mb-20">
+                    <div class="mb-16">
                         <div class="flex items-center gap-3 mb-8">
                             <div
                                 class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
@@ -324,7 +324,7 @@
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-8">
+                                        <div class="mb-6">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['MongoDB', 'Express', 'React.js', 'Node.js', 'Flowbite', 'Tailwind', 'JWT', 'Git/GitHub'] as $tech)
                                                     <span
@@ -413,7 +413,7 @@
                     </div>
 
                     <!-- Trabajando en Porta -->
-                    <div class="mb-12">
+                    <div class="mb-16">
                         <div class="flex items-center gap-3 mb-8">
                             <div
                                 class="w-12 h-12 bg-gradient-to-br from-emerald-500 to-green-600 rounded-lg flex items-center justify-center">
@@ -458,7 +458,7 @@
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-4">
+                                        <div class="mb-6">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
@@ -471,7 +471,7 @@
                                     </div>
                                     <!-- Imagen Placeholder -->
                                     <div
-                                        class="relative h-full min-h-[400px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                        class="relative h-full min-h-[450px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                                         <svg class="w-32 h-32 text-emerald-500/30" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -490,11 +490,11 @@
                         <!-- Proyecto Catálogos Web -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
                                 <div class="grid md:grid-cols-2 gap-0">
                                     <!-- Imagen Placeholder -->
                                     <div
-                                        class="relative h-full min-h-[400px] bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700 order-2 md:order-1">
+                                        class="relative h-full min-h-[450px] bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700 order-2 md:order-1">
                                         <svg class="w-24 h-24 text-emerald-600/20" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -534,7 +534,7 @@
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-4">
+                                        <div class="mb-6">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
@@ -552,7 +552,7 @@
                         <!-- Proyecto E-commerce -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-2xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
                                 <div class="grid md:grid-cols-2 gap-0">
                                     <!-- Contenido -->
                                     <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
@@ -581,7 +581,7 @@
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-4">
+                                        <div class="mb-6">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
@@ -594,7 +594,7 @@
                                     </div>
                                     <!-- Imagen Placeholder -->
                                     <div
-                                        class="relative h-full min-h-[400px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                        class="relative h-full min-h-[450px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                                         <svg class="w-32 h-32 text-emerald-500/30" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
