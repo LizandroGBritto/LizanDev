@@ -68,10 +68,10 @@
                     <!-- Proyecto SIS/HIS -->
                     <div class="project-card mb-16 group">
                         <div
-                            class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
-                            <div class="grid md:grid-cols-2 gap-0">
+                            class="relative md:min-h-[550px] bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                            <div class="grid md:grid-cols-2 gap-0 h-full">
                                 <!-- Contenido -->
-                                <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                <div class="p-8 md:p-12 flex flex-col justify-center relative z-10 md:min-h-[550px] h-full">
                                     <div class="flex items-center gap-2 mb-4">
                                         <span class="relative flex h-2 w-2">
                                             <span
@@ -92,12 +92,12 @@
                                         </div>
                                     </h4>
 
-                                    <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                    <p class="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-4">
                                         {{ __('Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital') }}
                                     </p>
 
                                     <!-- Tecnologías -->
-                                    <div class="mb-6">
+                                    <div class="mb-6 mt-auto">
                                         <div class="flex flex-wrap gap-2">
                                             @foreach (['Laravel', 'JavaScript', 'PHP', 'HTML/CSS', 'Bootstrap', 'Git/GitHub'] as $tech)
                                                 <span
@@ -110,7 +110,7 @@
                                 </div>
 
                                 <!-- Carrusel de Imágenes -->
-                                <div class="relative h-full min-h-[450px] overflow-hidden">
+                                <div class="relative h-full md:min-h-[550px] overflow-hidden">
                                     <div class="absolute inset-0 bg-gray-100 animate-pulse active-loader"></div>
                                     <div class="relative w-full h-full" id="sis-carousel">
                                         <!-- Slides -->
@@ -170,10 +170,10 @@
                         <!-- Proyecto Cloud SIS -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
-                                <div class="grid md:grid-cols-2 gap-0">
+                                class="relative md:min-h-[550px] bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0 h-full">
                                     <!-- Carrusel de Imágenes -->
-                                    <div class="relative h-full min-h-[450px] overflow-hidden order-2 md:order-1">
+                                    <div class="relative h-full md:min-h-[550px] overflow-hidden order-2 md:order-1">
                                         <div class="absolute inset-0 bg-gray-100 animate-pulse active-loader"></div>
                                         <div class="relative w-full h-full" id="cloud-sis-carousel">
                                             <!-- Slides -->
@@ -236,7 +236,7 @@
 
                                     <!-- Contenido -->
                                     <div
-                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 order-1 md:order-2">
+                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 order-1 md:order-2 md:min-h-[550px] h-full">
                                         <div class="flex items-center gap-2 mb-4">
                                             <span class="relative flex h-2 w-2">
                                                 <span
@@ -257,12 +257,12 @@
                                             </div>
                                         </h4>
 
-                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-4">
                                             {{ __('Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.') }}
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-6">
+                                        <div class="mb-6 mt-auto">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['React JS', 'Flowbite', 'Express JS', 'Node.js', 'AWS EC2', 'Tailwind', 'Git/GitHub', 'Socket.io'] as $tech)
                                                     <span
@@ -295,10 +295,10 @@
                         <!-- Proyecto Alonzo Style -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
-                                <div class="grid md:grid-cols-2 gap-0">
+                                class="relative md:min-h-[550px] bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0 h-full">
                                     <!-- Contenido -->
-                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10 md:min-h-[550px] h-full">
                                         <div class="flex items-center gap-2 mb-4">
                                             <span class="relative flex h-2 w-2">
                                                 <span
@@ -319,12 +319,12 @@
                                             </div>
                                         </h4>
 
-                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-4">
                                             {{ __('Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.') }}
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-6">
+                                        <div class="mb-6 mt-auto">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['MongoDB', 'Express', 'React.js', 'Node.js', 'Flowbite', 'Tailwind', 'JWT', 'Git/GitHub'] as $tech)
                                                     <span
@@ -336,7 +336,7 @@
                                         </div>
 
                                         <!-- Acciones -->
-                                        <div class="flex flex-wrap gap-4">
+                                        <div class="flex flex-wrap gap-4 mt-auto">
                                             <a href="http://alonzostyle.com/" target="_blank"
                                                 class="inline-flex items-center gap-3 px-8 py-4 bg-emerald-600 text-white font-bold rounded-2xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-600/20 active:scale-95 group/btn">
                                                 <svg class="w-5 h-5 transition-transform group-hover/btn:translate-x-1"
@@ -351,7 +351,7 @@
                                     </div>
 
                                     <!-- Carrusel de Imágenes -->
-                                    <div class="relative h-full min-h-[450px] overflow-hidden">
+                                    <div class="relative h-full md:min-h-[550px] overflow-hidden">
                                         <div class="absolute inset-0 bg-gray-100 animate-pulse active-loader"></div>
                                         <div class="relative w-full h-full" id="barber-carousel">
                                             <!-- Slides -->
@@ -429,10 +429,11 @@
                         <!-- Proyecto Paginas Institucionales -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
-                                <div class="grid md:grid-cols-2 gap-0">
+                                class="relative md:min-h-[550px] bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0 h-full">
                                     <!-- Contenido -->
-                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                    <div
+                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 md:min-h-[550px] h-full">
                                         <div class="flex items-center gap-2 mb-4">
                                             <span class="relative flex h-2 w-2">
                                                 <span
@@ -453,12 +454,12 @@
                                             </div>
                                         </h4>
 
-                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-4">
                                             {{ __('Development and optimization of high-traffic institutional platforms, featuring specialized multilingual support, professional content management solutions, and integrated Meta and Google marketing analytics.') }}
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-6">
+                                        <div class="mb-6 mt-auto">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
@@ -471,7 +472,7 @@
                                     </div>
                                     <!-- Imagen Placeholder -->
                                     <div
-                                        class="relative h-full min-h-[450px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                        class="relative h-full md:min-h-[550px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                                         <svg class="w-32 h-32 text-emerald-500/30" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -490,11 +491,11 @@
                         <!-- Proyecto Catálogos Web -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
-                                <div class="grid md:grid-cols-2 gap-0">
+                                class="relative md:min-h-[550px] bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0 h-full">
                                     <!-- Imagen Placeholder -->
                                     <div
-                                        class="relative h-full min-h-[450px] bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700 order-2 md:order-1">
+                                        class="relative h-full md:min-h-[550px] bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700 order-2 md:order-1">
                                         <svg class="w-24 h-24 text-emerald-600/20" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -508,7 +509,7 @@
 
                                     <!-- Contenido -->
                                     <div
-                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 order-1 md:order-2">
+                                        class="p-8 md:p-12 flex flex-col justify-center relative z-10 order-1 md:order-2 md:min-h-[550px] h-full">
                                         <div class="flex items-center gap-2 mb-4">
                                             <span class="relative flex h-2 w-2">
                                                 <span
@@ -529,12 +530,12 @@
                                             </div>
                                         </h4>
 
-                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-4">
                                             {{ __('Development of high-concurrency web catalogs designed for maximum performance and scalability with advanced caching. Features real-time product and stock synchronization via external API integrations, specialized multilingual support, and integrated logistics, powered by Meta and Google analytics.') }}
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-6">
+                                        <div class="mb-6 mt-auto">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
@@ -552,10 +553,10 @@
                         <!-- Proyecto E-commerce -->
                         <div class="project-card mb-16 group">
                             <div
-                                class="relative bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
-                                <div class="grid md:grid-cols-2 gap-0">
+                                class="relative md:min-h-[550px] bg-white/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-white/40 shadow-xl hover:shadow-2xl hover:shadow-emerald-500/10 transition-all duration-700 hover:-translate-y-2">
+                                <div class="grid md:grid-cols-2 gap-0 h-full">
                                     <!-- Contenido -->
-                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10">
+                                    <div class="p-8 md:p-12 flex flex-col justify-center relative z-10 md:min-h-[550px] h-full">
                                         <div class="flex items-center gap-2 mb-4">
                                             <span class="relative flex h-2 w-2">
                                                 <span
@@ -576,12 +577,12 @@
                                             </div>
                                         </h4>
 
-                                        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                                        <p class="text-gray-600 text-lg leading-relaxed mb-8 line-clamp-4">
                                             {{ __('Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.') }}
                                         </p>
 
                                         <!-- Tecnologías -->
-                                        <div class="mb-6">
+                                        <div class="mb-6 mt-auto">
                                             <div class="flex flex-wrap gap-2">
                                                 @foreach (['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'] as $tech)
                                                     <span
@@ -594,7 +595,7 @@
                                     </div>
                                     <!-- Imagen Placeholder -->
                                     <div
-                                        class="relative h-full min-h-[450px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
+                                        class="relative h-full md:min-h-[550px] bg-gradient-to-br from-emerald-100 to-green-200 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
                                         <svg class="w-32 h-32 text-emerald-500/30" fill="none"
                                             stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
@@ -706,127 +707,4 @@
             opacity: 0;
         }
     </style>
-
-    <script>
-        const carousels = {};
-
-        function initCarousel(id) {
-            if (!carousels[id]) {
-                const element = document.getElementById(id);
-                if (element) {
-                    carousels[id] = {
-                        currentSlide: 0,
-                        interval: null,
-                        element: element
-                    };
-                    // Auto slide
-                    showSlide(id, 0); // Show initial slide
-                    startAutoSlide(id);
-                    // Hover events
-                    element.addEventListener('mouseenter', () => stopAutoSlide(id));
-                    element.addEventListener('mouseleave', () => startAutoSlide(id));
-                }
-            }
-        }
-
-        function showSlide(id, index) {
-            const carousel = carousels[id];
-            if (!carousel || !carousel.element) return;
-
-            const slides = carousel.element.querySelectorAll('.carousel-slide');
-            const indicators = carousel.element.querySelectorAll('.carousel-indicator');
-
-            if (index >= slides.length) {
-                carousel.currentSlide = 0;
-            } else if (index < 0) {
-                carousel.currentSlide = slides.length - 1;
-            } else {
-                carousel.currentSlide = index;
-            }
-
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === carousel.currentSlide) {
-                    slide.classList.add('active');
-                }
-            });
-
-            indicators.forEach((indicator, i) => {
-                indicator.classList.remove('active');
-                if (i === carousel.currentSlide) {
-                    indicator.classList.add('active');
-                }
-            });
-        }
-
-        function changeSlide(id, direction, event) {
-            if (event) event.stopPropagation();
-            stopAutoSlide(id);
-            if (carousels[id]) {
-                showSlide(id, carousels[id].currentSlide + direction);
-            }
-            startAutoSlide(id);
-        }
-
-        function goToSlide(id, index, event) {
-            if (event) event.stopPropagation();
-            stopAutoSlide(id);
-            showSlide(id, index);
-            startAutoSlide(id);
-        }
-
-        function startAutoSlide(id) {
-            if (carousels[id]) {
-                stopAutoSlide(id);
-                carousels[id].interval = setInterval(() => {
-                    showSlide(id, carousels[id].currentSlide + 1);
-                }, 4000);
-            }
-        }
-
-        function stopAutoSlide(id) {
-            if (carousels[id] && carousels[id].interval) {
-                clearInterval(carousels[id].interval);
-                carousels[id].interval = null;
-            }
-        }
-
-        // Iniciar carruseles al cargar
-        document.addEventListener('DOMContentLoaded', function() {
-            initCarousel('sis-carousel');
-            initCarousel('cloud-sis-carousel');
-            initCarousel('barber-carousel');
-        });
-
-        function openImageModal(src, caption) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('modalImage');
-            const modalCaption = document.getElementById('modalCaption');
-
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            modalImg.src = src;
-            modalImg.alt = caption;
-            modalCaption.textContent = caption;
-
-            // Prevenir scroll del body
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeImageModal() {
-            const modal = document.getElementById('imageModal');
-            modal.classList.add('hidden');
-            modal.classList.remove('flex');
-
-            // Restaurar scroll del body
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cerrar modal con tecla Escape
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeImageModal();
-            }
-        });
-    </script>
 </div>
