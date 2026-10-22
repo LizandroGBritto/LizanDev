@@ -1,0 +1,393 @@
+/*
+ * Robot animado hecho solo con CSS. Se usa en el hero y, en versión mini,
+ * en Sobre mí. Las interacciones (ojos, brazos, saludo) viven en js/features.
+ */
+.robot-container {
+    position: relative;
+    transform: scale(0.9);
+    animation: robot-float 3s ease-in-out infinite;
+}
+
+@keyframes robot-float {
+
+    0%,
+    100% {
+        transform: scale(0.9) translateY(0px);
+    }
+
+    50% {
+        transform: scale(0.9) translateY(-20px);
+    }
+}
+
+/* Cabeza */
+.robot-head {
+    width: 120px;
+    height: 120px;
+    background: var(--color-brand-500);
+    border-radius: 20px;
+    margin: 0 auto;
+    position: relative;
+    animation: head-tilt 4s ease-in-out infinite;
+}
+
+@keyframes head-tilt {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+}
+
+/* Antenas */
+.antenna {
+    position: absolute;
+    width: 3px;
+    height: 25px;
+    background: var(--color-brand-500);
+    top: -25px;
+}
+
+.antenna-left {
+    left: 30%;
+}
+
+.antenna-right {
+    right: 30%;
+}
+
+.antenna-ball {
+    width: 10px;
+    height: 10px;
+    background: var(--color-led-amber);
+    border-radius: 50%;
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: antenna-blink 1.5s ease-in-out infinite;
+}
+
+@keyframes antenna-blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.3;
+    }
+}
+
+/* Ojos */
+.robot-eyes {
+    display: flex;
+    justify-content: space-around;
+    padding: 25px 20px 0;
+}
+
+.eye {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    position: relative;
+}
+
+.pupil {
+    width: 15px;
+    height: 15px;
+    background: var(--color-ink-800);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease-out;
+}
+
+/* Boca */
+.robot-mouth {
+    width: 60px;
+    height: 8px;
+    background: var(--color-ink-800);
+    border-radius: 0 0 30px 30px;
+    margin: 15px auto 0;
+    transition: all 0.3s ease;
+}
+
+.happy-mouth .robot-mouth {
+    height: 15px;
+    width: 50px;
+    border-radius: 0 0 50px 50px;
+    background: #000;
+}
+
+/* Cuerpo */
+.robot-body {
+    width: 150px;
+    height: 180px;
+    background: var(--color-brand-600);
+    border-radius: 15px;
+    margin: 15px auto;
+    position: relative;
+}
+
+.control-panel {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 15px;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--color-led-amber);
+    animation: indicator-pulse 1.5s ease-in-out infinite;
+}
+
+.indicator-delay-1 {
+    animation-delay: 0.3s;
+    background: var(--color-brand-500);
+}
+
+.indicator-delay-2 {
+    animation-delay: 0.6s;
+    background: var(--color-led-blue);
+}
+
+@keyframes indicator-pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.5;
+        transform: scale(0.8);
+    }
+}
+
+/* Líneas de código simuladas */
+.code-lines {
+    padding: 0 20px;
+    margin-top: 10px;
+}
+
+.code-line {
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    animation: code-type 2s ease-in-out infinite;
+}
+
+.code-line:nth-child(1) {
+    width: 80%;
+}
+
+.code-line:nth-child(2) {
+    width: 60%;
+    animation-delay: 0.3s;
+}
+
+.code-line:nth-child(3) {
+    width: 70%;
+    animation-delay: 0.6s;
+}
+
+@keyframes code-type {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: var(--original-width, 80%);
+    }
+
+    100% {
+        width: var(--original-width, 80%);
+    }
+}
+
+/* Brazos */
+.robot-arm {
+    position: absolute;
+    top: 220px;
+    transform-origin: 12.5px 10px;
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform;
+}
+
+.robot-arm-left {
+    left: -30px;
+}
+
+.robot-arm-right {
+    right: -30px;
+}
+
+.arm-upper {
+    width: 25px;
+    height: 60px;
+    background: var(--color-brand-500);
+    border-radius: 12px;
+    transform-origin: center top;
+}
+
+.arm-lower {
+    width: 20px;
+    height: 50px;
+    background: var(--color-brand-600);
+    border-radius: 10px;
+    margin: 5px 2.5px 0;
+    transform-origin: center top;
+    transition: transform 0.2s ease-out;
+}
+
+.hand {
+    width: 25px;
+    height: 20px;
+    background: var(--color-brand-500);
+    border-radius: 8px;
+    margin: 5px 0 0 -2.5px;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 3px;
+    transform-origin: center top;
+    transition: transform 0.2s ease-out;
+}
+
+.finger {
+    width: 4px;
+    height: 10px;
+    background: var(--color-brand-600);
+    border-radius: 2px;
+}
+
+/* Saludo: pisa la rotación manual de js/features/hero-robot.js */
+@keyframes wave-hand {
+    0% {
+        transform: rotate(-150deg);
+    }
+
+    20% {
+        transform: rotate(-100deg);
+    }
+
+    40% {
+        transform: rotate(-150deg);
+    }
+
+    60% {
+        transform: rotate(-100deg);
+    }
+
+    80% {
+        transform: rotate(-150deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.waving .robot-arm-right {
+    animation: wave-hand 2s ease-in-out forwards;
+    transition: none;
+}
+
+/* Piernas */
+.robot-legs {
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.leg {
+    animation: leg-walk 1s ease-in-out infinite;
+}
+
+.leg-left {
+    animation-delay: 0.5s;
+}
+
+@keyframes leg-walk {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.leg-upper {
+    width: 30px;
+    height: 60px;
+    background: var(--color-brand-600);
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.leg-lower {
+    width: 25px;
+    height: 50px;
+    background: var(--color-brand-500);
+    border-radius: 8px;
+    margin: 5px auto 0;
+}
+
+.foot {
+    width: 40px;
+    height: 15px;
+    background: var(--color-brand-600);
+    border-radius: 8px 8px 4px 4px;
+    margin: 5px auto 0;
+}
+
+/* Versión mini de Sobre mí: sin piernas y con los brazos en pose fija */
+.robot-container--mini .robot-legs {
+    display: none;
+}
+
+.robot-container--mini .robot-arm-left {
+    top: 107px;
+    left: -35px;
+    transform: rotate(130deg);
+}
+
+.robot-container--mini .robot-arm-right {
+    top: 138px;
+    right: -35px;
+    transform: rotate(-30deg);
+}
+
+/* Entra desde la esquina inferior derecha de la foto (about-robot.js agrega .is-visible) */
+.about-robot {
+    scale: 0.55;
+    rotate: -30deg;
+    translate: 100% 100%;
+    transform-origin: bottom right;
+    transition: translate 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.about-robot.is-visible {
+    translate: 0 0;
+}

@@ -36,16 +36,12 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ url('favicon/apple-touch-icon.png') }}" />
     <link rel="manifest" href="{{ url('favicon/site.webmanifest') }}" />
     --}}
-    <meta name="msapplication-TileColor" content="#7c3aed">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-TileColor" content="#10b981">
+    <meta name="theme-color" content="#0b1511">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700&display=swap" rel="stylesheet" />
-
-    <!-- Spline 3D Viewer (Removed as we use CSS Robot) -->
-    {{--
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.11.6/build/spline-viewer.js"></script> --}}
+    <link href="https://fonts.bunny.net/css?family=bricolage-grotesque:600,700%7Cfigtree:400,500,600&display=swap" rel="stylesheet" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles

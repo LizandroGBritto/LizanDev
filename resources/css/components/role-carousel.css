@@ -1,0 +1,70 @@
+/* Prisma vertical 3D que rota entre los roles del hero */
+.role-carousel {
+    perspective: 1000px;
+    display: inline-block;
+    width: 160px;
+    height: 1.5em;
+    position: relative;
+    vertical-align: bottom;
+    overflow: hidden;
+    margin-bottom: -5px;
+}
+
+.role-carousel-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate-carousel-vertical 9s infinite cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.role-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    backface-visibility: hidden;
+    font-weight: 700;
+    font-size: 1.1em;
+    white-space: nowrap;
+    color: var(--color-brand-400);
+}
+
+/* Tres caras a 120° entre sí; translateZ(30px) mantiene la proporción del prisma */
+.role-item:nth-child(1) {
+    transform: rotateX(0deg) translateZ(30px);
+}
+
+.role-item:nth-child(2) {
+    transform: rotateX(120deg) translateZ(30px);
+}
+
+.role-item:nth-child(3) {
+    transform: rotateX(240deg) translateZ(30px);
+}
+
+@keyframes rotate-carousel-vertical {
+
+    0%,
+    30% {
+        transform: translateZ(-30px) rotateX(0deg);
+    }
+
+    33.33%,
+    63.33% {
+        transform: translateZ(-30px) rotateX(-120deg);
+    }
+
+    66.66%,
+    96.66% {
+        transform: translateZ(-30px) rotateX(-240deg);
+    }
+
+    100% {
+        transform: translateZ(-30px) rotateX(-360deg);
+    }
+}

@@ -1,0 +1,29 @@
+/*
+ * Tokens del sitio. Superficies planas y un solo acento (esmeralda); sin
+ * transparencias ni degradados. Los componentes de css/components leen estos
+ * valores con var().
+ *
+ * Contraste (WCAG): blanco sobre brand-700 = 5,5:1; brand-400 sobre ink = 9:1;
+ * brand-600 con texto blanco NO llega a 4,5:1, por eso los botones sobre claro
+ * usan brand-700 y brand-600 queda para superficies grandes.
+ */
+@theme {
+    --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji";
+    --font-display: "Bricolage Grotesque", "Figtree", ui-sans-serif, system-ui, sans-serif;
+
+    --color-ink: #0b1511;
+    --color-ink-raised: #12211a;
+    --color-line-dark: #223a30;
+    --color-paper: #f6f8f6;
+    --color-line: #dce4df;
+
+    --color-brand-400: #34d399;
+    --color-brand-500: #10b981;
+    --color-brand-600: #059669;
+    --color-brand-700: #047857;
+
+    --color-ink-800: #1e293b;
+    --color-led-amber: #fbbf24;
+    --color-led-blue: #3b82f6;
+}

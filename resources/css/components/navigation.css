@@ -1,0 +1,21 @@
+/* Barra fija: oculta hasta que se hace scroll (la alterna navigation.js) */
+.site-nav {
+    transform: translateY(-100%);
+    pointer-events: none;
+    transition: transform 0.25s ease-out;
+}
+
+.site-nav.is-visible {
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.nav-link {
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-link.active {
+    color: #fff;
+    border-bottom-color: var(--color-brand-400);
+}

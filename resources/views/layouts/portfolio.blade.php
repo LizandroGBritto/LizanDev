@@ -8,15 +8,14 @@
     @livewire('language-switcher')
 
     <div id="app">
-        @include('partials.navigation')
+        <x-navigation />
         <main>
             @yield('content')
         </main>
     </div>
 
     @livewireScripts
-    @include('partials.footer')
-    @include('partials.scripts')
+    <x-footer />
     @yield('especifico')
 </body>
 

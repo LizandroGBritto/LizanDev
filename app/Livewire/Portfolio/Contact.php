@@ -33,6 +33,13 @@ class Contact extends Component
 
     public function render()
     {
-        return view('livewire.portfolio.contact');
+        $contact = config('portfolio.contact');
+        $cards = [
+            ['icon' => 'mail', 'title' => 'Email', 'text' => $contact['email'], 'href' => 'mailto:'.$contact['email']],
+            ['icon' => 'location', 'title' => 'Ubicación', 'text' => $contact['location'], 'href' => null],
+            ['icon' => 'github', 'title' => 'GitHub', 'text' => $contact['github_handle'], 'href' => $contact['github_url']],
+        ];
+
+        return view('livewire.portfolio.contact', compact('cards'));
     }
 }

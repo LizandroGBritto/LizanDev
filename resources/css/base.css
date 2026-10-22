@@ -1,0 +1,42 @@
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 4rem;
+    }
+
+    body {
+        font-family: var(--font-sans);
+        background: var(--color-ink);
+    }
+
+    /* Tracking según tamaño: los títulos grandes se cierran un poco, el texto no */
+    h1,
+    h2,
+    h3,
+    h4 {
+        font-family: var(--font-display);
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+    }
+
+    :focus-visible {
+        outline: 2px solid var(--color-brand-400);
+        outline-offset: 3px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .role-carousel-inner,
+    .robot-container,
+    .robot-head,
+    .antenna-ball,
+    .indicator,
+    .code-line,
+    .leg {
+        animation: none !important;
+    }
+}
