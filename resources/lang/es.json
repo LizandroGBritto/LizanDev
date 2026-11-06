@@ -51,7 +51,7 @@
     "Next": "Siguiente",
     "No project associated in this selection.": "Sin proyecto asociado en esta selección.",
     "Pagination": "Paginación",
-    "Passionate about creating innovative and scalable digital solutions": "Apasionado por crear soluciones digitales innovadoras y escalables",
+    "Passionate about creating digital solutions with unique and functional designs": "Apasionado por crear soluciones digitales con diseños únicos y funcionales",
     "Password": "Contraseña",
     "Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital": "Sistema de gestión de pacientes y turnos desarrollado en conjunto con la Universidad Autónoma de Encarnación y el Proyecto Europeo HEIComp, creado para su uso en el hospital oncológico Lazos del Sur",
     "Personal portfolio of a software developer specialized in Laravel, PHP, JavaScript and modern web technologies.": "Portafolio personal de un desarrollador de software especializado en Laravel, PHP, JavaScript y tecnologías web modernas.",
@@ -89,5 +89,12 @@
     "Working at Porta Web Agency": "Trabajando en Porta Web Agency",
     "Your name": "Tu nombre",
     "{0} No unread messages|{1} 1 unread message|[2,*] :count unread messages": "{0} Ningún mensaje sin leer|{1} 1 mensaje sin leer|[2,*] :count mensajes sin leer",
-    "Show :project": "Ver :project"
+    "Show :project": "Ver :project",
+    "Amalia Acosta": "Amalia Acosta",
+    "Científica Ragusa": "Científica Ragusa",
+    "Ramirez Ramirez": "Ramirez Ramirez",
+    "Gisele Stephanie": "Gisele Stephanie",
+    "View on laptop": "Ver en notebook",
+    "View on phone": "Ver en celular",
+    "Device": "Dispositivo"
 }

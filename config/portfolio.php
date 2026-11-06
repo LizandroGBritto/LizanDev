@@ -20,9 +20,9 @@ return [
     'photo' => 'assets/about/lizandro.webp',
 
     'socials' => [
-        'github' => 'https://github.com',
+        'github' => 'https://github.com/LizandroGBritto',
         'linkedin' => 'https://linkedin.com',
-        'email' => 'tu@email.com',
+        'email' => 'brittolizandro@gmail.com',
     ],
 
     'navigation' => [
@@ -34,7 +34,7 @@ return [
     ],
 
     'hero' => [
-        'description' => 'Passionate about creating innovative and scalable digital solutions',
+        'description' => 'Passionate about creating digital solutions with unique and functional designs',
         'status' => 'Working at Porta Web Agency',
     ],
 
@@ -52,10 +52,10 @@ return [
     ],
 
     'contact' => [
-        'email' => 'tu@email.com',
-        'location' => 'Tu Ciudad, País',
-        'github_url' => 'https://github.com',
-        'github_handle' => '@tuusuario',
+        'email' => 'brittolizandro@gmail.com',
+        'location' => 'Paraguay',
+        'github_url' => 'https://github.com/LizandroGBritto',
+        'github_handle' => '@LizandroGBritto',
     ],
 
     /*
@@ -84,9 +84,56 @@ return [
     | Proyectos de la baraja, en orden.
     |
     | - image: ruta dentro de public/ (WebP, ver `npm run imagenes`).
+    | - mobile: captura en celular; si existe, la card ofrece alternar entre notebook y celular.
+    |   Sin `mobile` la captura va sola en un notebook; esos proyectos van al final.
     | - placeholder: etiqueta que se muestra cuando todavía no hay captura.
     */
     'projects' => [
+        [
+            'badge' => 'Freelance Project',
+            'title' => 'Alonzo Style',
+            'description' => 'Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.',
+            'tech' => ['MongoDB', 'Express', 'React.js', 'Node.js', 'Flowbite', 'Tailwind', 'JWT', 'Git/GitHub'],
+            'demo' => 'http://alonzostyle.com/',
+            'image' => 'assets/projects/alonzo-style-desktop.webp',
+            'mobile' => 'assets/projects/alonzo-style-mobile.webp',
+        ],
+        [
+            'badge' => 'Institutional Pages',
+            'title' => 'Amalia Acosta',
+            'description' => 'Development and optimization of high-traffic institutional platforms, featuring specialized multilingual support, professional content management solutions, and integrated Meta and Google marketing analytics.',
+            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
+            'demo' => 'https://amaliaacosta.com/',
+            'image' => 'assets/projects/amalia-acosta-desktop.webp',
+            'mobile' => 'assets/projects/amalia-acosta-mobile.webp',
+        ],
+        [
+            'badge' => 'Web Catalogs',
+            'title' => 'Científica Ragusa',
+            'description' => 'Development of high-concurrency web catalogs designed for maximum performance and scalability with advanced caching. Features real-time product and stock synchronization via external API integrations, specialized multilingual support, and integrated logistics, powered by Meta and Google analytics.',
+            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
+            'demo' => 'https://www.cientificaragusa.com/catalogo',
+            'image' => 'assets/projects/cientifica-ragusa-desktop.webp',
+            'mobile' => 'assets/projects/cientifica-ragusa-mobile.webp',
+        ],
+        [
+            'badge' => 'E-commerce',
+            'title' => 'Ramirez Ramirez',
+            'description' => 'Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.',
+            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
+            'demo' => 'https://ramirezramirez.com.py/',
+            'image' => 'assets/projects/ramirez-ramirez-desktop.webp',
+            'mobile' => 'assets/projects/ramirez-ramirez-mobile.webp',
+        ],
+        [
+            'badge' => 'E-commerce',
+            'title' => 'Gisele Stephanie',
+            'description' => 'Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.',
+            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
+            'demo' => 'https://giselestephanie.com.py/',
+            'image' => 'assets/projects/gisele-stephanie-desktop.webp',
+            'mobile' => 'assets/projects/gisele-stephanie-mobile.webp',
+        ],
         [
             'badge' => 'Community Project',
             'title' => 'SIS System',
@@ -100,35 +147,6 @@ return [
             'description' => 'Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.',
             'tech' => ['React JS', 'Flowbite', 'Express JS', 'Node.js', 'AWS EC2', 'Tailwind', 'Git/GitHub', 'Socket.io'],
             'image' => 'assets/projects/cloud-sis.webp',
-        ],
-        [
-            'badge' => 'Freelance Project',
-            'title' => 'Alonzo Style',
-            'description' => 'Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.',
-            'tech' => ['MongoDB', 'Express', 'React.js', 'Node.js', 'Flowbite', 'Tailwind', 'JWT', 'Git/GitHub'],
-            'demo' => 'http://alonzostyle.com/',
-            'image' => 'assets/projects/alonzo-style.webp',
-        ],
-        [
-            'badge' => 'Agency Project',
-            'title' => 'Institutional Pages',
-            'description' => 'Development and optimization of high-traffic institutional platforms, featuring specialized multilingual support, professional content management solutions, and integrated Meta and Google marketing analytics.',
-            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
-            'placeholder' => 'Porta',
-        ],
-        [
-            'badge' => 'Agency Project',
-            'title' => 'Web Catalogs',
-            'description' => 'Development of high-concurrency web catalogs designed for maximum performance and scalability with advanced caching. Features real-time product and stock synchronization via external API integrations, specialized multilingual support, and integrated logistics, powered by Meta and Google analytics.',
-            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
-            'placeholder' => 'Porta',
-        ],
-        [
-            'badge' => 'Agency Project',
-            'title' => 'E-commerce',
-            'description' => 'Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.',
-            'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
-            'placeholder' => 'Porta',
         ],
     ],
 ];

@@ -184,6 +184,7 @@
     background: var(--color-mint);
     border-radius: 4px;
     margin-bottom: 8px;
+    transform-origin: left;
     animation: code-type 2s ease-in-out infinite;
 }
 
@@ -201,17 +202,15 @@
     animation-delay: 0.6s;
 }
 
+/* scaleX en vez de width: no recalcula el layout en cada cuadro */
 @keyframes code-type {
     0% {
-        width: 0%;
+        transform: scaleX(0);
     }
 
-    50% {
-        width: var(--original-width, 80%);
-    }
-
+    50%,
     100% {
-        width: var(--original-width, 80%);
+        transform: scaleX(1);
     }
 }
 

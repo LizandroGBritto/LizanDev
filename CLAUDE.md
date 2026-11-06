@@ -37,6 +37,7 @@ Las vistas Blade **no llevan PHP, `<style>`, `<script>` ni `onclick`**; lo verif
 - **Agregar un proyecto = agregar una entrada en `projects`**, más la traducción de sus
   textos en `es.json`. **Agregar una tecnología al anillo = una entrada en `technologies`**;
   el «dónde la usé» sale solo de las etiquetas de los proyectos (`match`), sin inventar uso.
+- **Proyectos con captura en celular**: si la entrada de `projects` trae `mobile`, la card muestra un notebook 3D y un selector notebook/celular (`features/device.js` gira el objeto con `is-phone`); sin `mobile` solo se ve la captura plana. Capturas de escritorio 960 px y de celular 390 px.
 - Imágenes en WebP. Para convertir una nueva: `npm run imagenes -- <origen> <destino.webp> [ancho]`.
 
 ## CSS y JS
@@ -112,11 +113,11 @@ y las reglas de diseño (vistas sin PHP/CSS/JS, plano, colores solo desde tokens
 
 ## Trampas conocidas
 
-- **Datos de contacto de plantilla** en `config/portfolio.php`: `tu@email.com`,
-  `Tu Ciudad, País`, `@tuusuario`, y GitHub/LinkedIn apuntan a las portadas genéricas.
+- **Contacto real** en `config/portfolio.php`: email, Paraguay y GitHub (`LizandroGBritto`).
+  Falta LinkedIn: sigue apuntando a la portada genérica.
 - La foto es `public/assets/about/lizandro.webp` (carnet y Sobre mí); si no existe se
   muestra un avatar genérico.
-- No hay `og:image` ni favicons propios (comentados en `partials/head.blade.php`).
+- No hay `og:image`. El favicon es la «L» del encabezado (`public/favicon.svg`; `node scripts/favicon.mjs` regenera el `.ico` y el `apple-touch-icon`).
 - `welcome.blade.php` no tiene ruta: resto del esqueleto. `axios` sigue en `package.json`
   pero ya nadie lo importa.
 - La baraja de proyectos muestra una sola captura por proyecto; las galerías anteriores

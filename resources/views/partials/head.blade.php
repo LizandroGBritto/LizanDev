@@ -15,12 +15,9 @@
     <meta property="og:locale" content="{{ app()->getLocale() === 'es' ? 'es_ES' : 'en_US' }}">
     <meta name="twitter:card" content="summary">
 
-    {{-- Favicons - Uncomment when files are generated
-    <link rel="icon" type="image/png" href="{{ url('favicon/favicon-96x96.png') }}" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="{{ url('favicon/favicon.svg') }}" />
-    <link rel="shortcut icon" href="{{ url('favicon/favicon.ico') }}" />
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('favicon/apple-touch-icon.png') }}" />
-    --}}
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="48x48">
+    <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <meta name="theme-color" content="#f3f7f4">
 
     <!-- Fonts -->

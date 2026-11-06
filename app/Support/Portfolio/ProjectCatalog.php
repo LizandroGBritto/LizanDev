@@ -18,6 +18,7 @@ class ProjectCatalog
             'tech' => $project['tech'],
             'demo' => $project['demo'] ?? null,
             'image' => isset($project['image']) ? asset($project['image']) : null,
+            'mobile' => isset($project['mobile']) ? asset($project['mobile']) : null,
             'placeholder' => $project['placeholder'] ?? null,
         ], config('portfolio.projects'));
     }

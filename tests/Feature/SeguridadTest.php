@@ -8,7 +8,7 @@ class SeguridadTest extends TestCase
 {
     public function test_public_only_contains_what_the_web_server_may_serve(): void
     {
-        $permitidos = ['.htaccess', 'assets', 'build', 'favicon.ico', 'index.php', 'robots.txt', 'storage', 'hot'];
+        $permitidos = ['.htaccess', 'assets', 'build', 'apple-touch-icon.png', 'favicon.ico', 'favicon.svg', 'index.php', 'robots.txt', 'storage', 'hot'];
 
         foreach (scandir(public_path()) as $entrada) {
             if (in_array($entrada, ['.', '..'], true)) {

@@ -1,5 +1,5 @@
 <div>
-    <section id="projects" class="border-t border-line px-5 py-10 lg:px-12 lg:py-[72px]">
+    <section id="projects" class="overflow-x-clip border-t border-line px-5 py-10 lg:px-12 lg:py-[72px]">
         <div class="mx-auto grid max-w-7xl gap-[22px]">
             <div>
                 <p class="eyebrow">{{ __('Projects') }}</p>
@@ -32,8 +32,32 @@
                 <div class="deck" data-deck>
                     @foreach ($projects as $project)
                         <article class="deck__slide" style="--o:{{ $loop->index }}"
-                            data-description="{{ $project['description'] }}">
+                            data-description="{{ $project['description'] }}" @if ($project['mobile']) data-device @endif>
                             @if ($project['image'])
+                                <div class="deck__captura deck__captura--dispositivo">
+                                    <div class="dispositivo">
+                                        <div class="dispositivo__cara">
+                                            <div class="laptop">
+                                                <div class="laptop__pantalla">
+                                                    <img src="{{ $project['image'] }}"
+                                                        alt="{{ __('Screenshot of :project', ['project' => $project['title']]) }}"
+                                                        width="960" height="600" @unless ($loop->first) loading="lazy" @endunless
+                                                        decoding="async">
+                                                </div>
+                                                <div class="laptop__base"></div>
+                                            </div>
+                                        </div>
+                                        @if ($project['mobile'])
+                                            <div class="dispositivo__cara dispositivo__cara--atras" aria-hidden="true">
+                                                <div class="phone">
+                                                    <img src="{{ $project['mobile'] }}" alt="" width="390" height="844"
+                                                        loading="lazy" decoding="async">
+                                                </div>
+                                            </div>
+                                        @endif
+                                    </div>
+                                </div>
+                            @elseif ($project['image'])
                                 <div class="deck__captura">
                                     <img src="{{ $project['image'] }}" alt="{{ __('Screenshot of :project', ['project' => $project['title']]) }}"
                                         width="960" height="540" @unless ($loop->first) loading="lazy" @endunless
@@ -45,8 +69,26 @@
                             @endif
 
                             <div class="grid gap-1.5 px-[18px] pt-3.5 pb-4">
-                                <h3 class="text-xl font-bold">{{ $project['title'] }}</h3>
-                                <p class="text-[13.5px] text-muted">{{ $project['badge'] }}</p>
+                                <div class="flex items-start justify-between gap-3">
+                                    <div class="grid gap-1.5">
+                                        <h3 class="text-xl font-bold">{{ $project['title'] }}</h3>
+                                        <p class="text-[13.5px] text-muted">{{ $project['badge'] }}</p>
+                                    </div>
+
+                                    @if ($project['mobile'])
+                                        <div class="deck__vista" role="group" aria-label="{{ __('Device') }}"
+                                            data-device-toggle>
+                                            <button type="button" data-device-view="laptop" aria-pressed="true"
+                                                aria-label="{{ __('View on laptop') }}">
+                                                <x-icon name="laptop" class="h-4 w-4" />
+                                            </button>
+                                            <button type="button" data-device-view="phone" aria-pressed="false"
+                                                aria-label="{{ __('View on phone') }}">
+                                                <x-icon name="phone" class="h-4 w-4" />
+                                            </button>
+                                        </div>
+                                    @endif
+                                </div>
 
                                 <ul class="mt-0.5 flex flex-wrap gap-1.5">
                                     @foreach (array_slice($project['tech'], 0, 4) as $tech)
