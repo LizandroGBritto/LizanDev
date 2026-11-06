@@ -18,7 +18,10 @@ grep -q '^APP_ENV=production' .env || { echo "APP_ENV debe ser production"; exit
 # el servidor no tiene Node.
 [ -f public/build/manifest.json ] || { echo "Falta public/build: corré npm run build antes de subir"; exit 1; }
 
-sudo -u "$USUARIO" env COMPOSER_HOME=/var/lib/lizandev-composer composer install --no-dev --optimize-autoloader --no-interaction
+# El código recién subido llega como root: composer y artisan necesitan escribir acá.
+chown -R "$USUARIO":"$USUARIO" storage bootstrap/cache
+
+sudo -u "$USUARIO" env COMPOSER_HOME=/var/lib/lizandev-composer $PHP /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
 sudo -u "$USUARIO" -H $PHP artisan migrate --force
 sudo -u "$USUARIO" -H $PHP artisan db:seed --class=AdministradorSeeder --force
 
@@ -27,6 +30,10 @@ sudo -u "$USUARIO" -H $PHP artisan db:seed --class=AdministradorSeeder --force
 chown -R root:"$USUARIO" "$APP"
 find "$APP" -type d -exec chmod 750 {} +
 find "$APP" -type f -exec chmod 640 {} +
+# nginx (www-data) solo necesita recorrer la carpeta del sitio y leer public/, que no guarda nada sensible.
+chmod 751 "$APP"
+find public -type d -exec chmod 755 {} +
+find public -type f -exec chmod 644 {} +
 chown -R "$USUARIO":"$USUARIO" storage bootstrap/cache
 chmod -R u+rwX,g-w storage bootstrap/cache
 chmod 600 .env
