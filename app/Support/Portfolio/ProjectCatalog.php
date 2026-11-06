@@ -13,6 +13,7 @@ class ProjectCatalog
     {
         return array_map(fn (array $project) => [
             'badge' => __($project['badge']),
+            'slug' => $project['slug'],
             'title' => __($project['title']),
             'description' => __($project['description']),
             'tech' => $project['tech'],

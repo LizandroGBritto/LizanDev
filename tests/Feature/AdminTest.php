@@ -25,26 +25,26 @@ class AdminTest extends TestCase
 
     public function test_guests_are_sent_to_the_login(): void
     {
-        $this->get('/admin')->assertRedirect('/admin/ingresar');
-        $this->get('/admin/mensajes')->assertRedirect('/admin/ingresar');
-        $this->patch('/admin/mensajes/1/leido')->assertRedirect('/admin/ingresar');
-        $this->delete('/admin/mensajes/1')->assertRedirect('/admin/ingresar');
+        $this->get('/admin')->assertRedirect('/login');
+        $this->get('/admin/mensajes')->assertRedirect('/login');
+        $this->patch('/admin/mensajes/1/leido')->assertRedirect('/login');
+        $this->delete('/admin/mensajes/1')->assertRedirect('/login');
     }
 
     public function test_the_login_page_is_not_indexable(): void
     {
-        $this->get('/admin/ingresar')->assertOk()->assertSee('noindex', false);
+        $this->get('/login')->assertOk()->assertSee('noindex', false);
     }
 
     public function test_the_administrator_can_sign_in_and_out(): void
     {
         $usuario = User::factory()->create(['password' => 'clave-segura-123']);
 
-        $this->post('/admin/ingresar', ['email' => $usuario->email, 'password' => 'clave-segura-123'])
-            ->assertRedirect('/admin/mensajes');
+        $this->post('/login', ['email' => $usuario->email, 'password' => 'clave-segura-123'])
+            ->assertRedirect('/admin');
         $this->assertAuthenticatedAs($usuario);
 
-        $this->post('/admin/salir')->assertRedirect('/admin/ingresar');
+        $this->post('/logout')->assertRedirect('/login');
         $this->assertGuest();
     }
 
@@ -52,9 +52,9 @@ class AdminTest extends TestCase
     {
         $usuario = User::factory()->create(['password' => 'clave-segura-123']);
 
-        $this->from('/admin/ingresar')
-            ->post('/admin/ingresar', ['email' => $usuario->email, 'password' => 'otra'])
-            ->assertRedirect('/admin/ingresar')
+        $this->from('/login')
+            ->post('/login', ['email' => $usuario->email, 'password' => 'otra'])
+            ->assertRedirect('/login')
             ->assertSessionHasErrors('email');
         $this->assertGuest();
     }
@@ -62,15 +62,15 @@ class AdminTest extends TestCase
     public function test_the_login_is_throttled(): void
     {
         for ($i = 0; $i < 5; $i++) {
-            $this->post('/admin/ingresar', ['email' => 'x@example.com', 'password' => 'mala']);
+            $this->post('/login', ['email' => 'x@example.com', 'password' => 'mala']);
         }
 
-        $this->post('/admin/ingresar', ['email' => 'x@example.com', 'password' => 'mala'])->assertStatus(429);
+        $this->post('/login', ['email' => 'x@example.com', 'password' => 'mala'])->assertStatus(429);
     }
 
     public function test_signed_in_users_skip_the_login_page(): void
     {
-        $this->actingAs(User::factory()->create())->get('/admin/ingresar')->assertRedirect('/admin/mensajes');
+        $this->actingAs(User::factory()->create())->get('/login')->assertRedirect('/admin');
     }
 
     public function test_the_administrator_sees_the_requests_and_the_unread_count(): void
@@ -134,7 +134,27 @@ class AdminTest extends TestCase
 
         $this->seed(AdministradorSeeder::class);
 
-        $this->post('/admin/ingresar', ['email' => 'panel@example.com', 'password' => 'clave-del-seeder'])
-            ->assertRedirect('/admin/mensajes');
+        $this->post('/login', ['email' => 'panel@example.com', 'password' => 'clave-del-seeder'])
+            ->assertRedirect('/admin');
+    }
+
+    public function test_me07_the_list_is_paginated_newest_first(): void
+    {
+        foreach (range(1, 17) as $i) {
+            $this->mensaje(['nombre' => "Persona {$i}", 'created_at' => now()->subMinutes(20 - $i)]);
+        }
+
+        $this->actingAs(User::factory()->create());
+
+        $this->get('/admin/mensajes')->assertSee('Persona 17')->assertDontSee('Persona 2<', false)->assertSee('1 / 2');
+        $this->get('/admin/mensajes?page=2')->assertSee('Persona 2')->assertDontSee('Persona 17');
+    }
+
+    public function test_me12_acting_on_a_message_that_does_not_exist_gives_404(): void
+    {
+        $this->actingAs(User::factory()->create());
+
+        $this->patch('/admin/mensajes/999/leido')->assertNotFound();
+        $this->delete('/admin/mensajes/999')->assertNotFound();
     }
 }

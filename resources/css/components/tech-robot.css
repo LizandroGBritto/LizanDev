@@ -260,6 +260,9 @@
 .tech.is-holding .bot-held__chip {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
+    /* .bot-held ignora el mouse; el recuadro, ya sostenido, se toca para soltarlo */
+    pointer-events: auto;
+    cursor: pointer;
 }
 
 .bot-held__chip.pop {

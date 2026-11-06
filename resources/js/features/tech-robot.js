@@ -1,6 +1,7 @@
 /**
  * Robot de «Tecnologías»: al tocar una del anillo, el robot la sostiene y el
- * panel cuenta dónde se usó. Tocar la misma, «Soltar» o Escape la devuelve.
+ * panel cuenta dónde se usó. Tocar la misma, el recuadro que sostiene el robot,
+ * «Soltar» o Escape la devuelve.
  * Los datos viajan en atributos data-* de cada botón (los arma TechCatalog).
  */
 export function initTechRobot() {
@@ -59,6 +60,8 @@ export function initTechRobot() {
 
         buttons.forEach((button, index) => button.addEventListener('click', () => pick(index)));
         release.addEventListener('click', drop);
+        // El recuadro que sostiene el robot también se toca para soltarlo.
+        held.addEventListener('click', drop);
         root.addEventListener('keydown', (event) => {
             if (event.key === 'Escape' && current >= 0) drop();
         });

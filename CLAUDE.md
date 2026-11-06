@@ -89,12 +89,24 @@ Las vistas Blade **no llevan PHP, `<style>`, `<script>` ni `onclick`**; lo verif
   formulario, pide el token (acción `contacto`) y lo pone en `recaptchaToken` antes del
   submit. **Sin claves solo se puede enviar en `local`/`testing`; en producción falla
   cerrado.** Hay que cargar las claves antes de publicar.
-- **Panel** en `/admin` (login en `/admin/ingresar`, con `throttle:5,1`): lista, filtra
-  sin leer, marca leído/no leído y elimina (con confirmación `data-confirm`). Sin registro;
-  el administrador se crea con `php artisan db:seed --class=AdministradorSeeder` leyendo
-  `ADMIN_EMAIL` / `ADMIN_PASSWORD` / `ADMIN_NAME` del `.env` (vía `config/panel.php`).
-  Lleva `noindex`. No sigue la identidad del panel de Porta a propósito: es un proyecto
-  personal y no hay otro panel contra el cual mantener paridad.
+- **Login en `/login`** (`/admin/ingresar` redirige ahí) con límite de 5 intentos por minuto
+  por cuenta+IP (`RateLimiter::for('login')` en `AppServiceProvider`). **Solo login: no hay
+  registro ni recuperación de contraseña.** Los usuarios se crean con
+  `php artisan panel:usuario "Nombre" correo@dominio.com` (contraseña aleatoria, se imprime una
+  sola vez; `--actualizar` la rota). El seeder `AdministradorSeeder` (`ADMIN_*` del `.env`)
+  sigue existiendo pero ya no es el camino normal.
+- **Panel** en `/admin` (Resumen) y `/admin/mensajes`: lista, filtra sin leer, marca
+  leído/no leído y elimina (con confirmación `data-confirm`). Lleva `noindex`. No sigue la
+  identidad del panel de Porta a propósito: es un proyecto personal.
+- **Visitas e interacciones** (tablas `visitas` e `interacciones`, sin IP ni cookies; el
+  visitante es un hash de IP+navegador+día): `RegistrarVisita` cuenta una visita por
+  visitante cada 30 min solo en `/`; `features/tracking.js` manda por `sendBeacon` a
+  `POST /seguimiento` el proyecto visto, el cambio notebook/celular, el clic en la demo y la
+  tecnología tocada. Se ignoran robots, `DNT`/`Sec-GPC` y al administrador con sesión. **Cada
+  proyecto necesita un `slug` único en `config/portfolio.php`**: el servidor valida los eventos
+  contra esa lista.
+- **Casos de uso y checklist de producción:** `docs/casos-de-uso-panel.md` (cada caso apunta a
+  su test; los marcados «Manual» se repiten tras cada despliegue).
 
 ## Despliegue
 
@@ -113,8 +125,8 @@ y las reglas de diseño (vistas sin PHP/CSS/JS, plano, colores solo desde tokens
 
 ## Trampas conocidas
 
-- **Contacto real** en `config/portfolio.php`: email, Paraguay y GitHub (`LizandroGBritto`).
-  Falta LinkedIn: sigue apuntando a la portada genérica.
+- **Contacto real** en `config/portfolio.php`: email, Paraguay, GitHub (`LizandroGBritto`) y
+  LinkedIn (`lizandro-britto`, sin parámetros `utm_*`). Aparecen en el pie y en las tarjetas del formulario.
 - La foto es `public/assets/about/lizandro.webp` (carnet y Sobre mí); si no existe se
   muestra un avatar genérico.
 - No hay `og:image`. El favicon es la «L» del encabezado (`public/favicon.svg`; `node scripts/favicon.mjs` regenera el `.ico` y el `apple-touch-icon`).

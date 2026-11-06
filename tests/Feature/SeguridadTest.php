@@ -62,7 +62,7 @@ class SeguridadTest extends TestCase
 
     public function test_security_endpoints_are_not_indexable_and_errors_do_not_leak(): void
     {
-        $this->get('/admin/ingresar')->assertSee('noindex', false);
+        $this->get('/login')->assertSee('noindex', false);
         $this->get('/ruta-que-no-existe')->assertNotFound()->assertDontSee('vendor/laravel', false);
     }
 }

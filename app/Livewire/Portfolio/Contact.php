@@ -83,6 +83,7 @@ class Contact extends Component
             ['icon' => 'mail', 'title' => 'Email', 'text' => $contact['email'], 'href' => 'mailto:'.$contact['email']],
             ['icon' => 'location', 'title' => __('Location'), 'text' => $contact['location'], 'href' => null],
             ['icon' => 'github', 'title' => 'GitHub', 'text' => $contact['github_handle'], 'href' => $contact['github_url']],
+            ['icon' => 'linkedin', 'title' => 'LinkedIn', 'text' => $contact['linkedin_handle'], 'href' => $contact['linkedin_url']],
         ];
         $recaptchaSiteKey = app(Recaptcha::class)->habilitado() ? config('services.recaptcha.site_key') : null;
         $recaptchaNotice = $recaptchaSiteKey ? $this->recaptchaNotice() : null;

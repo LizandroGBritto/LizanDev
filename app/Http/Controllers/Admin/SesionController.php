@@ -18,8 +18,8 @@ class SesionController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $credenciales = $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required', 'string'],
+            'email' => ['required', 'email', 'max:255'],
+            'password' => ['required', 'string', 'max:255'],
         ]);
 
         if (! Auth::attempt($credenciales, $request->boolean('recordar'))) {
@@ -30,7 +30,7 @@ class SesionController extends Controller
 
         $request->session()->regenerate();
 
-        return redirect()->intended(route('admin.mensajes.index'));
+        return redirect()->intended(route('admin.resumen'));
     }
 
     public function destroy(Request $request): RedirectResponse
@@ -40,6 +40,6 @@ class SesionController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('admin.ingresar');
+        return redirect()->route('login');
     }
 }

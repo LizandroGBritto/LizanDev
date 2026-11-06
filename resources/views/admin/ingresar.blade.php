@@ -10,7 +10,7 @@
                 LizanDev
             </a>
 
-            <form method="POST" action="{{ route('admin.ingresar.store') }}"
+            <form method="POST" action="{{ route('login.store') }}"
                 class="grid gap-5 rounded-2xl border border-line bg-card p-6">
                 @csrf
                 <h1 class="text-2xl font-bold">{{ __('Admin panel') }}</h1>

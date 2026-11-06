@@ -14,6 +14,7 @@ const lazy = [
     ['[data-device-toggle]', () => import('./features/device').then((m) => m.initDevice())],
     ['[data-tech]', () => import('./features/tech-robot').then((m) => m.initTechRobot())],
     ['[data-about-robot]', () => import('./features/about-robot').then((m) => m.initAboutRobot())],
+    ['[data-project]', () => import('./features/tracking').then((m) => m.initTracking())],
     ['[data-confirm]', () => import('./features/confirm').then((m) => m.initConfirm())],
     ['[data-recaptcha-site-key]', () => import('./features/recaptcha').then((m) => m.initRecaptcha())],
 ];

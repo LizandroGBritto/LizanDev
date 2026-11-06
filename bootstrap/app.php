@@ -15,8 +15,8 @@ return Application::configure(basePath: dirname(__DIR__))
             \App\Http\Middleware\SetLocale::class,
         ]);
 
-        $middleware->redirectGuestsTo(fn () => route('admin.ingresar'));
-        $middleware->redirectUsersTo(fn () => route('admin.mensajes.index'));
+        $middleware->redirectGuestsTo(fn () => route('login'));
+        $middleware->redirectUsersTo(fn () => route('admin.resumen'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //

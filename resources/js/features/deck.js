@@ -36,6 +36,9 @@ export function initDeck() {
 
             descriptions.forEach((text, index) => text.classList.toggle('is-active', index === active));
 
+            // Lo escucha features/tracking.js para saber qué proyecto está al frente.
+            document.dispatchEvent(new CustomEvent('deck:active', { detail: { project: slides[active].dataset.project } }));
+
             steps.forEach((step, index) => {
                 step.classList.toggle('is-done', index < active);
                 step.classList.toggle('is-current', index === active);

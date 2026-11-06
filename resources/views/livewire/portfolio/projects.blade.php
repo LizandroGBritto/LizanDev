@@ -9,7 +9,7 @@
             </div>
 
             <div class="grid gap-[18px] lg:grid-cols-[300px_1fr] lg:items-center lg:gap-10" data-deck-root>
-                <div class="grid content-start gap-4">
+                <div class="deck__texto grid content-start gap-4">
                     {{-- Todas las descripciones comparten la misma celda: la más larga fija el alto y los controles no se mueven --}}
                     <div class="deck__descs">
                         @foreach ($projects as $project)
@@ -31,7 +31,7 @@
 
                 <div class="deck" data-deck>
                     @foreach ($projects as $project)
-                        <article class="deck__slide" style="--o:{{ $loop->index }}"
+                        <article class="deck__slide" style="--o:{{ $loop->index }}" data-project="{{ $project['slug'] }}"
                             data-description="{{ $project['description'] }}" @if ($project['mobile']) data-device @endif>
                             @if ($project['image'])
                                 <div class="deck__captura deck__captura--dispositivo">
@@ -98,7 +98,7 @@
                                 </ul>
 
                                 @if ($project['demo'])
-                                    <a href="{{ $project['demo'] }}" target="_blank" rel="noopener"
+                                    <a href="{{ $project['demo'] }}" target="_blank" rel="noopener" data-demo
                                         class="mt-1.5 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-700 underline underline-offset-4 hover:text-deep">
                                         <x-icon name="external-link" class="h-4 w-4" />
                                         {{ __('Demo') }}

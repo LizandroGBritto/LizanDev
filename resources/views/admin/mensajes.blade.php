@@ -3,22 +3,7 @@
 @section('title', __('Contact requests'))
 
 @section('body')
-    <header class="border-b border-line bg-paper">
-        <div class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-3 px-4">
-            <a href="{{ route('inicio') }}" class="flex items-center gap-2.5 font-display text-lg font-bold">
-                <span class="grid h-[30px] w-[30px] place-items-center rounded-full bg-deep text-mint" aria-hidden="true">L</span>
-                <span class="hidden sm:inline">LizanDev</span>
-            </a>
-
-            <form method="POST" action="{{ route('admin.salir') }}">
-                @csrf
-                <button type="submit"
-                    class="rounded-full border-[1.5px] border-ink px-4 py-2 text-sm font-semibold transition-colors hover:bg-ink hover:text-white">
-                    {{ __('Sign out') }}
-                </button>
-            </form>
-        </div>
-    </header>
+    @include('admin.partials.cabecera', ['activo' => 'mensajes'])
 
     <main class="mx-auto grid max-w-5xl gap-6 px-4 py-8">
         <div class="flex flex-wrap items-end justify-between gap-3">

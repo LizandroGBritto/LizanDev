@@ -21,7 +21,7 @@ return [
 
     'socials' => [
         'github' => 'https://github.com/LizandroGBritto',
-        'linkedin' => 'https://linkedin.com',
+        'linkedin' => 'https://www.linkedin.com/in/lizandro-britto',
         'email' => 'brittolizandro@gmail.com',
     ],
 
@@ -56,6 +56,8 @@ return [
         'location' => 'Paraguay',
         'github_url' => 'https://github.com/LizandroGBritto',
         'github_handle' => '@LizandroGBritto',
+        'linkedin_url' => 'https://www.linkedin.com/in/lizandro-britto',
+        'linkedin_handle' => 'lizandro-britto',
     ],
 
     /*
@@ -83,6 +85,7 @@ return [
     /*
     | Proyectos de la baraja, en orden.
     |
+    | - slug: identificador estable (no se traduce) para el registro de interacciones.
     | - image: ruta dentro de public/ (WebP, ver `npm run imagenes`).
     | - mobile: captura en celular; si existe, la card ofrece alternar entre notebook y celular.
     |   Sin `mobile` la captura va sola en un notebook; esos proyectos van al final.
@@ -92,6 +95,7 @@ return [
         [
             'badge' => 'Freelance Project',
             'title' => 'Alonzo Style',
+            'slug' => 'alonzo-style',
             'description' => 'Customer, appointment, service, and barber management system with a scheduling agenda for clients. It sends push notifications to barbers and enables automated WhatsApp contact for appointment confirmation, rescheduling, or cancellation, automating virtually all management tasks.',
             'tech' => ['MongoDB', 'Express', 'React.js', 'Node.js', 'Flowbite', 'Tailwind', 'JWT', 'Git/GitHub'],
             'demo' => 'http://alonzostyle.com/',
@@ -99,8 +103,9 @@ return [
             'mobile' => 'assets/projects/alonzo-style-mobile.webp',
         ],
         [
-            'badge' => 'Institutional Pages',
+            'badge' => 'Institutional',
             'title' => 'Amalia Acosta',
+            'slug' => 'amalia-acosta',
             'description' => 'Development and optimization of high-traffic institutional platforms, featuring specialized multilingual support, professional content management solutions, and integrated Meta and Google marketing analytics.',
             'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
             'demo' => 'https://amaliaacosta.com/',
@@ -110,6 +115,7 @@ return [
         [
             'badge' => 'Web Catalogs',
             'title' => 'Científica Ragusa',
+            'slug' => 'cientifica-ragusa',
             'description' => 'Development of high-concurrency web catalogs designed for maximum performance and scalability with advanced caching. Features real-time product and stock synchronization via external API integrations, specialized multilingual support, and integrated logistics, powered by Meta and Google analytics.',
             'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
             'demo' => 'https://www.cientificaragusa.com/catalogo',
@@ -119,6 +125,7 @@ return [
         [
             'badge' => 'E-commerce',
             'title' => 'Ramirez Ramirez',
+            'slug' => 'ramirez-ramirez',
             'description' => 'Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.',
             'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
             'demo' => 'https://ramirezramirez.com.py/',
@@ -128,6 +135,7 @@ return [
         [
             'badge' => 'E-commerce',
             'title' => 'Gisele Stephanie',
+            'slug' => 'gisele-stephanie',
             'description' => 'Architected high-performance e-commerce ecosystems leveraging advanced caching and specialized shipping workflows. Integrated real-time synchronization with external web services via API to ensure stock consistency, coupled with mass import tools and Meta/Google tracking for maximized ROI.',
             'tech' => ['Laravel', 'Blade', 'Bootstrap', 'MySQL', 'Git'],
             'demo' => 'https://giselestephanie.com.py/',
@@ -137,6 +145,7 @@ return [
         [
             'badge' => 'Community Project',
             'title' => 'SIS System',
+            'slug' => 'sis',
             'description' => 'Patient and appointment management system developed in collaboration with the Autonomous University of Encarnación and the European HEIComp Project, created for use at the Lazos del Sur oncology hospital',
             'tech' => ['Laravel', 'JavaScript', 'PHP', 'HTML/CSS', 'Bootstrap', 'Git/GitHub'],
             'image' => 'assets/projects/sis.webp',
@@ -144,6 +153,7 @@ return [
         [
             'badge' => 'Community Project',
             'title' => 'Cloud SIS System',
+            'slug' => 'cloud-sis',
             'description' => 'Hospital management system developed for use in a Family Health Unit in the city of Encarnación. It features modules for appointments, doctors, room management, specialties, users, reports, role-based access control with dashboards adapted to each role, as well as support for real-time operations with protection against multiple modifications to the same value.',
             'tech' => ['React JS', 'Flowbite', 'Express JS', 'Node.js', 'AWS EC2', 'Tailwind', 'Git/GitHub', 'Socket.io'],
             'image' => 'assets/projects/cloud-sis.webp',
