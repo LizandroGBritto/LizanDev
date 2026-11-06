@@ -245,3 +245,23 @@
         height: 493px;
     }
 }
+
+/*
+ * En celular las líneas no se ven (se cambia de card arrastrando) y las cards
+ * se corren a la derecha. Las líneas siguen en el DOM, fuera de la vista: son
+ * el temporizador del avance automático y los botones del teclado.
+ */
+@media (max-width: 1023px) {
+    .deck__pasos {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    .deck__slide {
+        left: 14%;
+    }
+}
