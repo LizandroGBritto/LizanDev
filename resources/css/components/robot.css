@@ -1,6 +1,6 @@
 /*
- * Robot animado hecho solo con CSS. Se usa en el hero y, en versión mini,
- * en Sobre mí. Las interacciones (ojos, brazos, saludo) viven en js/features.
+ * Robot 2D hecho solo con CSS, en versión mini junto a la foto de Sobre mí.
+ * Las pupilas siguen al mouse desde js/features/about-robot.js.
  */
 .robot-container {
     position: relative;
@@ -106,7 +106,7 @@
 .pupil {
     width: 15px;
     height: 15px;
-    background: var(--color-ink-800);
+    background: var(--color-robot-pupil);
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -119,17 +119,10 @@
 .robot-mouth {
     width: 60px;
     height: 8px;
-    background: var(--color-ink-800);
+    background: var(--color-robot-pupil);
     border-radius: 0 0 30px 30px;
     margin: 15px auto 0;
     transition: all 0.3s ease;
-}
-
-.happy-mouth .robot-mouth {
-    height: 15px;
-    width: 50px;
-    border-radius: 0 0 50px 50px;
-    background: #000;
 }
 
 /* Cuerpo */
@@ -188,7 +181,7 @@
 
 .code-line {
     height: 8px;
-    background: rgba(255, 255, 255, 0.3);
+    background: var(--color-mint);
     border-radius: 4px;
     margin-bottom: 8px;
     animation: code-type 2s ease-in-out infinite;
@@ -276,38 +269,6 @@
     height: 10px;
     background: var(--color-brand-600);
     border-radius: 2px;
-}
-
-/* Saludo: pisa la rotación manual de js/features/hero-robot.js */
-@keyframes wave-hand {
-    0% {
-        transform: rotate(-150deg);
-    }
-
-    20% {
-        transform: rotate(-100deg);
-    }
-
-    40% {
-        transform: rotate(-150deg);
-    }
-
-    60% {
-        transform: rotate(-100deg);
-    }
-
-    80% {
-        transform: rotate(-150deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
-}
-
-.waving .robot-arm-right {
-    animation: wave-hand 2s ease-in-out forwards;
-    transition: none;
 }
 
 /* Piernas */

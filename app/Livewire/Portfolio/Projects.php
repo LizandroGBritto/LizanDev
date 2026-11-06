@@ -9,8 +9,8 @@ class Projects extends Component
 {
     public function render()
     {
-        $groups = ProjectCatalog::groups();
+        $projects = ProjectCatalog::all();
 
-        return view('livewire.portfolio.projects', compact('groups'));
+        return view('livewire.portfolio.projects', compact('projects'));
     }
 }

@@ -1,0 +1,11 @@
+/* Resaltado del nombre: subrayado grueso y plano detrás de las letras (sin degradado) */
+.hero-mark {
+    background: none;
+    color: inherit;
+    padding-inline: 0.06em;
+    text-decoration: underline;
+    text-decoration-color: var(--color-amber);
+    text-decoration-thickness: 0.2em;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -0.14em;
+}

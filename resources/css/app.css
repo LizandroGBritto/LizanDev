@@ -4,9 +4,12 @@
 @import "./base.css";
 @import "./components/navigation.css";
 @import "./components/language-switcher.css";
-@import "./components/role-carousel.css";
+@import "./components/hero.css";
+@import "./components/carnet.css";
+@import "./components/deck.css";
+@import "./components/tech-robot.css";
 @import "./components/robot.css";
-@import "./components/carousel.css";
+@import "./components/form.css";
 
 @source '../**/*.blade.php';
 @source '../**/*.js';

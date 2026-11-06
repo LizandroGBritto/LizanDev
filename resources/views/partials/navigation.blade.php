@@ -1,23 +1,26 @@
-<nav class="site-nav fixed top-0 left-0 w-full z-[9999] bg-ink border-b border-line-dark" data-site-nav>
-    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-2 sm:gap-3">
-        <a href="#hero-section" data-scroll-to="hero-section" class="flex-none flex items-center gap-2.5 text-white">
-            <span
-                class="w-8 h-8 bg-brand-500 rounded-md flex items-center justify-center text-ink font-display font-bold">L</span>
-            <span class="hidden sm:block font-display font-semibold tracking-tight">LizanDev</span>
+<nav class="site-nav sticky top-0 z-50" data-site-nav aria-label="{{ __('Main') }}">
+    <div class="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-12">
+        <a href="#hero-section" data-scroll-to="hero-section" class="flex flex-none items-center gap-2.5 font-display text-lg font-bold">
+            <span class="grid h-[30px] w-[30px] place-items-center rounded-full bg-deep text-mint" aria-hidden="true">L</span>
+            <span class="hidden lg:inline">LizanDev</span>
         </a>
 
-        <div class="flex items-center sm:gap-2 min-w-0 overflow-x-auto [scrollbar-width:none] h-full">
+        <div class="hidden h-full items-center gap-6 lg:flex">
             @foreach ($items as $item)
                 <a href="#{{ $item['id'] }}" data-section="{{ $item['id'] }}" data-scroll-to="{{ $item['id'] }}"
-                    class="nav-link h-full inline-flex items-center px-1.5 sm:px-3 text-[12.5px] sm:text-sm font-medium whitespace-nowrap text-slate-400 hover:text-white">
+                    class="nav-link inline-flex h-full items-center text-sm whitespace-nowrap">
                     {{ $item['label'] }}
                 </a>
             @endforeach
         </div>
 
-        <a href="#contact" data-scroll-to="contact"
-            class="hidden md:inline-block flex-none bg-brand-500 hover:bg-brand-400 text-ink px-4 py-2 rounded-md text-sm font-semibold transition-colors">
-            {{ __('Let\'s Talk') }}
-        </a>
+        <div class="flex items-center gap-2.5">
+            <livewire:language-switcher />
+
+            <a href="#contact" data-scroll-to="contact"
+                class="flex-none rounded-full bg-deep px-5 py-[11px] text-sm font-semibold text-white transition-colors hover:bg-brand-800">
+                {{ __("Let's Talk") }}
+            </a>
+        </div>
     </div>
 </nav>

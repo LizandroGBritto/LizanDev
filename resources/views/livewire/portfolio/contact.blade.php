@@ -1,87 +1,86 @@
-<section id="contact" class="py-24 bg-paper">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-4xl mx-auto">
-            <div class="mb-16 max-w-2xl">
-                <h2 class="text-4xl md:text-5xl font-semibold text-slate-900 mb-4">
-                    ¡Trabajemos <span class="text-brand-700">Juntos!</span>
+<section id="contact" class="px-4 pb-10 lg:px-12 lg:pb-16">
+    <div class="on-deep mx-auto grid max-w-7xl gap-8 rounded-[18px] bg-deep px-[22px] py-7 text-mint lg:grid-cols-[1fr_1.1fr] lg:gap-12 lg:px-12 lg:py-11">
+        <div class="grid content-start gap-6">
+            <div class="grid gap-1.5">
+                <h2 class="text-[clamp(1.65rem,3.4vw,2.5rem)] leading-[1.04] font-bold text-white">
+                    {{ __("Let's work together!") }}
                 </h2>
-                <p class="text-slate-600 text-lg">
-                    ¿Tienes un proyecto en mente? Hablemos sobre cómo puedo ayudarte
-                </p>
+                <p class="text-mint-soft">{{ __('Do you have a project in mind? Let us talk about how I can help you.') }}</p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="md:col-span-1 space-y-4">
-                    @foreach ($cards as $card)
-                        <div class="bg-white border border-line p-6 rounded-xl">
-                            <div class="w-11 h-11 bg-emerald-50 rounded-lg flex items-center justify-center mb-4">
-                                <x-icon :name="$card['icon']" class="w-5 h-5 text-brand-700" />
-                            </div>
-                            <h3 class="font-semibold text-slate-900 mb-1">{{ $card['title'] }}</h3>
+            <ul class="grid gap-3">
+                @foreach ($cards as $card)
+                    <li class="flex items-center gap-3.5 rounded-xl border border-deep-line bg-deep-raised px-4 py-3.5">
+                        <span class="grid h-10 w-10 flex-none place-items-center rounded-lg bg-amber text-amber-ink">
+                            <x-icon :name="$card['icon']" class="h-5 w-5" />
+                        </span>
+                        <div class="min-w-0">
+                            <h3 class="text-sm font-semibold text-white">{{ $card['title'] }}</h3>
                             @if ($card['href'])
                                 <a href="{{ $card['href'] }}"
                                     @if (str_starts_with($card['href'], 'http')) target="_blank" rel="noopener" @endif
-                                    class="text-brand-700 hover:text-emerald-900 underline underline-offset-4 break-all">{{ $card['text'] }}</a>
+                                    class="break-all text-mint underline underline-offset-4 hover:text-white">{{ $card['text'] }}</a>
                             @else
-                                <p class="text-slate-600">{{ $card['text'] }}</p>
+                                <p class="text-mint">{{ $card['text'] }}</p>
                             @endif
                         </div>
-                    @endforeach
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+
+        <div class="rounded-2xl bg-card p-6 text-ink lg:p-8">
+            @if (session()->has('success'))
+                <div role="status" class="mb-5 rounded-lg border border-brand-600 bg-mint px-4 py-3 text-deep">
+                    {{ session('success') }}
+                </div>
+            @endif
+
+            <form wire:submit="submit" class="grid gap-5" data-contact-form
+                @if ($recaptchaSiteKey) data-recaptcha-site-key="{{ $recaptchaSiteKey }}" @endif novalidate>
+                <div>
+                    <label for="nombre" class="mb-1.5 block text-sm font-medium">{{ __('Full name') }}</label>
+                    <input type="text" id="nombre" wire:model="nombre" autocomplete="name" required
+                        class="form-field" placeholder="{{ __('Your name') }}">
+                    @error('nombre')
+                        <span class="mt-1 block text-sm text-red-700">{{ $message }}</span>
+                    @enderror
                 </div>
 
-                <div class="md:col-span-2">
-                    <div class="bg-white border border-line p-8 rounded-xl">
-                        @if (session()->has('success'))
-                            <div class="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-900 rounded-lg">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        <form wire:submit="submit" class="space-y-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-slate-700 mb-2">
-                                    Nombre completo
-                                </label>
-                                <input type="text" id="name" wire:model="name"
-                                    class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-700 focus:ring-2 focus:ring-emerald-100 outline-none transition-colors"
-                                    placeholder="Tu nombre">
-                                @error('name')
-                                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-slate-700 mb-2">
-                                    Email
-                                </label>
-                                <input type="email" id="email" wire:model="email"
-                                    class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-700 focus:ring-2 focus:ring-emerald-100 outline-none transition-colors"
-                                    placeholder="tu@email.com">
-                                @error('email')
-                                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-slate-700 mb-2">
-                                    Mensaje
-                                </label>
-                                <textarea id="message" wire:model="message" rows="5"
-                                    class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-brand-700 focus:ring-2 focus:ring-emerald-100 outline-none transition-colors resize-none"
-                                    placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                                @error('message')
-                                    <span class="text-red-600 text-sm mt-1">{{ $message }}</span>
-                                @enderror
-                            </div>
-
-                            <button type="submit"
-                                class="w-full px-8 py-3.5 bg-brand-700 hover:bg-emerald-800 text-white rounded-lg font-semibold transition-colors">
-                                Enviar Mensaje
-                            </button>
-                        </form>
-                    </div>
+                <div>
+                    <label for="correo" class="mb-1.5 block text-sm font-medium">Email</label>
+                    <input type="email" id="correo" wire:model="correo" autocomplete="email" required
+                        class="form-field" placeholder="tu@email.com">
+                    @error('correo')
+                        <span class="mt-1 block text-sm text-red-700">{{ $message }}</span>
+                    @enderror
                 </div>
-            </div>
+
+                <div>
+                    <label for="mensaje" class="mb-1.5 block text-sm font-medium">{{ __('Message') }}</label>
+                    <textarea id="mensaje" wire:model="mensaje" rows="5" required class="form-field resize-none"
+                        placeholder="{{ __('Tell me about your project...') }}"></textarea>
+                    @error('mensaje')
+                        <span class="mt-1 block text-sm text-red-700">{{ $message }}</span>
+                    @enderror
+                </div>
+
+                {{-- Trampa para bots: fuera de pantalla y fuera del orden de tabulación --}}
+                <div class="absolute -left-[9999px]" aria-hidden="true">
+                    <label for="sitio_web">Website</label>
+                    <input type="text" id="sitio_web" wire:model="sitioWeb" tabindex="-1" autocomplete="off">
+                </div>
+
+                <button type="submit"
+                    class="rounded-full bg-deep px-8 py-3.5 font-semibold text-white transition-colors hover:bg-brand-800"
+                    wire:loading.attr="disabled">
+                    {{ __('Send Message') }}
+                </button>
+
+                @if ($recaptchaNotice)
+                    <p class="text-xs text-muted">{{ $recaptchaNotice }}</p>
+                @endif
+            </form>
         </div>
     </div>
 </section>

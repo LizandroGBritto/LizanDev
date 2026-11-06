@@ -1,29 +1,53 @@
 /*
- * Tokens del sitio. Superficies planas y un solo acento (esmeralda); sin
- * transparencias ni degradados. Los componentes de css/components leen estos
- * valores con var().
+ * Tokens del sitio (paleta del mockup «carnet y robot»). Superficies planas
+ * y un solo acento verde; el ámbar es solo para destacar (resaltado del
+ * nombre, tecnología sostenida, LED). Sin transparencias ni degradados. Los
+ * componentes de css/components leen estos valores con var().
  *
- * Contraste (WCAG): blanco sobre brand-700 = 5,5:1; brand-400 sobre ink = 9:1;
- * brand-600 con texto blanco NO llega a 4,5:1, por eso los botones sobre claro
- * usan brand-700 y brand-600 queda para superficies grandes.
+ * Contraste (WCAG): blanco sobre deep = 9,7:1; ink sobre paper = 15,9:1;
+ * brand-700 sobre paper = 5,1:1 (por eso los textos de acento usan brand-700
+ * y no brand-600, que da 3,5:1); mint sobre deep = 8,6:1; brand-300 sobre
+ * deep = 6,4:1; amber-ink sobre amber = 8,3:1.
  */
 @theme {
     --font-sans: "Figtree", ui-sans-serif, system-ui, sans-serif,
         "Apple Color Emoji", "Segoe UI Emoji";
-    --font-display: "Bricolage Grotesque", "Figtree", ui-sans-serif, system-ui, sans-serif;
+    --font-display: "Familjen Grotesk", "Figtree", ui-sans-serif, system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Consolas, monospace;
 
-    --color-ink: #0b1511;
-    --color-ink-raised: #12211a;
-    --color-line-dark: #223a30;
-    --color-paper: #f6f8f6;
-    --color-line: #dce4df;
+    /* Claros */
+    --color-paper: #f3f7f4;
+    --color-card: #ffffff;
+    --color-line: #d5e0d9;
+    --color-ink: #0c1f17;
+    --color-muted: #4a5f55;
 
+    /* Verde profundo (hero oscuro, tecnologías, cierre) */
+    --color-deep: #064e3b;
+    --color-deep-raised: #05402f;
+    --color-deep-sunk: #043a2c;
+    --color-deep-line: #3a6b5c;
+    --color-deep-chip: #1d5645;
+    --color-mint: #d1fae5;
+    --color-mint-soft: #b6e8d2;
+
+    /* Acento */
+    --color-brand-300: #6ee7b7;
     --color-brand-400: #34d399;
     --color-brand-500: #10b981;
     --color-brand-600: #059669;
     --color-brand-700: #047857;
+    --color-brand-800: #0a6a4f;
 
-    --color-ink-800: #1e293b;
+    /* Ámbar */
+    --color-amber: #fbbf24;
+    --color-amber-ink: #3a2a00;
+    --color-amber-line: #fff1b8;
+
+    /* Robot 3D y robot de Sobre mí */
+    --color-robot-body: #16a67a;
+    --color-robot-pupil: #0b2a1e;
     --color-led-amber: #fbbf24;
-    --color-led-blue: #3b82f6;
+    --color-led-blue: #60a5fa;
+    --color-metal: #b6c2bb;
 }

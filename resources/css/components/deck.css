@@ -1,0 +1,125 @@
+/*
+ * Baraja de proyectos: las tarjetas se apilan en 3D; --o (0 = al frente) lo
+ * recalcula features/deck.js al avanzar.
+ */
+.deck {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    height: 340px;
+    perspective: 1200px;
+}
+
+.deck__slide {
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 76%;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid var(--color-line);
+    background: var(--color-card);
+    transform-origin: 50% 100%;
+    transform: translate3d(calc(var(--o) * 8%), calc(var(--o) * -9%), calc(var(--o) * -60px)) rotateZ(calc(var(--o) * 2.4deg));
+    opacity: calc(1 - var(--o) * 0.25);
+    z-index: calc(10 - var(--o));
+    transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.65s;
+}
+
+.deck__captura {
+    display: grid;
+    place-items: center;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--color-mint);
+}
+
+.deck__captura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.deck__captura--vacia {
+    background: var(--color-brand-300);
+    color: var(--color-deep);
+    font: 700 40px var(--font-display);
+}
+
+/* Descripciones apiladas en una celda: solo la activa se ve */
+.deck__descs {
+    display: grid;
+}
+
+.deck__desc {
+    grid-area: 1 / 1;
+    visibility: hidden;
+}
+
+.deck__desc.is-active {
+    visibility: visible;
+}
+
+/*
+ * Una línea por proyecto. La de la card activa se rellena en 5 s y, al
+ * terminar la animación, deck.js pasa a la siguiente: la línea es el temporizador.
+ */
+.deck__pasos {
+    display: flex;
+    gap: 8px;
+}
+
+.deck__paso {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    height: 24px;
+    cursor: pointer;
+}
+
+.deck__linea {
+    display: block;
+    width: 100%;
+    height: 3px;
+    overflow: hidden;
+    border-radius: 2px;
+    background: var(--color-line);
+}
+
+.deck__relleno {
+    display: block;
+    width: 0;
+    height: 100%;
+    background: var(--color-deep);
+}
+
+.deck__paso.is-done .deck__relleno {
+    width: 100%;
+}
+
+.deck__paso.is-current .deck__relleno {
+    animation: deck-relleno 5s linear forwards;
+}
+
+@keyframes deck-relleno {
+    to { width: 100%; }
+}
+
+/* Mientras se mira la card (cursor, foco, fuera de pantalla) la línea se congela */
+[data-deck-root].is-held .deck__paso.is-current .deck__relleno {
+    animation-play-state: paused;
+}
+
+/* Tocar una card detiene el avance: la línea actual queda llena */
+[data-deck-root].is-stopped .deck__paso.is-current .deck__relleno {
+    animation: none;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .deck {
+        max-width: 620px;
+        height: 440px;
+    }
+}

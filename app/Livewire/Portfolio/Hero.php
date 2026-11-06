@@ -8,13 +8,20 @@ class Hero extends Component
 {
     public function render()
     {
-        $name = config('portfolio.name');
+        [$firstName, $lastName] = array_pad(explode(' ', config('portfolio.name'), 2), 2, '');
+        $role = __(config('portfolio.role'));
         $description = __(config('portfolio.hero.description'));
-        $roles = array_map('__', config('portfolio.hero.roles'));
-        $socials = config('portfolio.socials');
-        // En inglés el rol va antes de "Developer"; en español, después.
-        $roleFirst = app()->getLocale() === 'en';
+        $status = __(config('portfolio.hero.status'));
+        $photo = $this->photo();
+        $skills = array_map(fn (array $skill) => [__($skill[0]), __($skill[1])], config('portfolio.carnet_skills'));
 
-        return view('livewire.portfolio.hero', compact('name', 'description', 'roles', 'socials', 'roleFirst'));
+        return view('livewire.portfolio.hero', compact('firstName', 'lastName', 'role', 'description', 'status', 'photo', 'skills'));
+    }
+
+    private function photo(): ?string
+    {
+        $path = config('portfolio.photo');
+
+        return is_file(public_path($path)) ? asset($path) : null;
     }
 }

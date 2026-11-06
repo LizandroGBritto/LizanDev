@@ -3,19 +3,16 @@
 
 @include('partials.head')
 
-<body class="antialiased">
-    <!-- Language Switcher -->
-    @livewire('language-switcher')
-
+<body class="bg-paper text-ink antialiased">
     <div id="app">
         <x-navigation />
         <main>
             @yield('content')
         </main>
+        <x-footer />
     </div>
 
     @livewireScripts
-    <x-footer />
     @yield('especifico')
 </body>
 

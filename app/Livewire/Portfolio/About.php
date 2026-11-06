@@ -8,9 +8,9 @@ class About extends Component
 {
     public function render()
     {
-        $bio = config('portfolio.about.bio');
-        $photoPath = config('portfolio.about.photo');
-        $photo = is_file(public_path($photoPath)) ? asset($photoPath) : null;
+        $bio = __(config('portfolio.about.bio'));
+        $path = config('portfolio.photo');
+        $photo = is_file(public_path($path)) ? asset($path) : null;
 
         return view('livewire.portfolio.about', compact('bio', 'photo'));
     }

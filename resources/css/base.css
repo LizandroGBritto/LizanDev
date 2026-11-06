@@ -1,15 +1,15 @@
 @layer base {
     html {
         scroll-behavior: smooth;
-        scroll-padding-top: 4rem;
+        scroll-padding-top: 4.5rem;
     }
 
     body {
         font-family: var(--font-sans);
-        background: var(--color-ink);
+        background: var(--color-paper);
+        color: var(--color-ink);
     }
 
-    /* Tracking según tamaño: los títulos grandes se cierran un poco, el texto no */
     h1,
     h2,
     h3,
@@ -19,10 +19,33 @@
         text-wrap: balance;
     }
 
+    [x-cloak] {
+        display: none !important;
+    }
+
     :focus-visible {
-        outline: 2px solid var(--color-brand-400);
+        outline: 3px solid var(--color-brand-600);
         outline-offset: 3px;
     }
+}
+
+/* Sobre fondos verdes el foco usa ámbar para no perderse */
+.on-deep :focus-visible {
+    outline-color: var(--color-amber);
+}
+
+/* Etiqueta de sección: tipografía mono pequeña en mayúsculas */
+.eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-brand-700);
+}
+
+.on-deep .eyebrow {
+    color: var(--color-brand-300);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -30,13 +53,10 @@
         scroll-behavior: auto;
     }
 
-    .role-carousel-inner,
-    .robot-container,
-    .robot-head,
-    .antenna-ball,
-    .indicator,
-    .code-line,
-    .leg {
+    *,
+    *::before,
+    *::after {
         animation: none !important;
+        transition: none !important;
     }
 }

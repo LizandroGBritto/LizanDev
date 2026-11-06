@@ -10,54 +10,45 @@ use Symfony\Component\HttpFoundation\Response;
 
 class SetLocale
 {
+    private const DEFAULT = 'en';
+
     /**
-     * Handle an incoming request.
+     * Toma el idioma de la sesión o, en la primera visita, del navegador.
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Verificar si hay un idioma en la sesión
-        if (Session::has('locale')) {
-            $locale = Session::get('locale');
-        } else {
-            // Detectar idioma del navegador
-            $locale = $this->detectBrowserLocale($request);
+        $disponibles = config('app.available_locales', ['es', 'en']);
+        $locale = Session::get('locale');
+
+        if (! in_array($locale, $disponibles, true)) {
+            $locale = $this->detectBrowserLocale($request, $disponibles);
             Session::put('locale', $locale);
         }
 
-        // Establecer el idioma de la aplicación
         App::setLocale($locale);
 
         return $next($request);
     }
 
     /**
-     * Detectar el idioma preferido del navegador
+     * Primer idioma de Accept-Language que el sitio tenga, con o sin región
+     * (es-PY, en-GB). Si ninguno coincide cae en inglés: Symfony en ese caso
+     * devolvería el primer idioma disponible, que sería español.
+     *
+     * @param  list<string>  $disponibles
      */
-    private function detectBrowserLocale(Request $request): string
+    private function detectBrowserLocale(Request $request, array $disponibles): string
     {
-        $availableLocales = config('app.available_locales', ['es', 'en']);
-        $browserLocale = $request->getPreferredLanguage($availableLocales);
+        foreach ($request->getLanguages() as $idioma) {
+            $base = strtolower(substr($idioma, 0, 2));
 
-        // Si el navegador devuelve algo válido, usarlo
-        if ($browserLocale && in_array($browserLocale, $availableLocales)) {
-            return $browserLocale;
-        }
-
-        // Si el navegador usa variantes (es-ES, es-MX, en-US, en-GB)
-        $acceptLanguage = $request->header('Accept-Language');
-        if ($acceptLanguage) {
-            $languages = explode(',', $acceptLanguage);
-            foreach ($languages as $language) {
-                $lang = substr($language, 0, 2);
-                if (in_array($lang, $availableLocales)) {
-                    return $lang;
-                }
+            if (in_array($base, $disponibles, true)) {
+                return $base;
             }
         }
 
-        // Por defecto, usar ingles
-        return 'en';
+        return self::DEFAULT;
     }
 }

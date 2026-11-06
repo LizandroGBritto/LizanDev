@@ -1,70 +1,33 @@
 <div>
-    <section id="hero-section"
-        class="relative min-h-screen flex items-center justify-center bg-ink overflow-hidden pt-24 pb-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-12 items-center">
+    <section id="hero-section" class="px-5 pt-8 pb-5 lg:px-12 lg:pt-14 lg:pb-6">
+        <div class="mx-auto grid max-w-7xl items-center gap-4 lg:grid-cols-[1.15fr_.85fr] lg:gap-8">
+            <div>
+                <h1 class="text-[clamp(2.6rem,12vw,5.25rem)] leading-[.98] font-bold">
+                    {{ __("Hello, I'm") }}
+                    <mark class="hero-mark">{{ $firstName }}</mark> {{ $lastName }}.
+                </h1>
 
-                <div class="text-center lg:text-left space-y-8">
-                    <div class="space-y-4">
-                        <h1 class="text-5xl md:text-7xl font-semibold text-white leading-[1.02]">
-                            {{ __("Hello, I'm") }} <span class="text-brand-400">{{ $name }}</span>
-                        </h1>
+                <p class="mt-3.5 max-w-[42ch] text-[17px] text-muted">{{ $description }}</p>
 
-                        <div
-                            class="text-2xl md:text-3xl text-slate-300 font-light flex items-center justify-center lg:justify-start gap-3">
-                            <div class="role-carousel" aria-label="{{ implode(', ', $roles) }}">
-                                <div class="role-carousel-inner" aria-hidden="true">
-                                    @foreach ($roles as $role)
-                                        <span class="role-item">{{ $role }}</span>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <span @class(['order-first' => ! $roleFirst])>{{ __('Developer') }}</span>
-                        </div>
-
-                        <p class="text-lg md:text-xl text-slate-400 max-w-xl mx-auto lg:mx-0">
-                            {{ $description }}
-                        </p>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start items-center pt-4">
-                        <a href="#projects"
-                            class="px-7 py-3.5 bg-brand-500 hover:bg-brand-400 text-ink rounded-lg font-semibold transition-colors">
-                            {{ __('View Projects') }}
-                        </a>
-                        <a href="#contact"
-                            class="px-7 py-3.5 border border-slate-600 hover:border-slate-300 text-white rounded-lg font-semibold transition-colors">
-                            {{ __('Contact Me') }}
-                        </a>
-                    </div>
-
-                    <div class="flex gap-5 justify-center lg:justify-start pt-4">
-                        <a href="{{ $socials['github'] }}" target="_blank" rel="noopener" aria-label="GitHub"
-                            class="text-slate-400 hover:text-white transition-colors">
-                            <x-icon name="github" class="w-7 h-7" />
-                        </a>
-                        <a href="{{ $socials['linkedin'] }}" target="_blank" rel="noopener" aria-label="LinkedIn"
-                            class="text-slate-400 hover:text-white transition-colors">
-                            <x-icon name="linkedin" class="w-7 h-7" />
-                        </a>
-                        <a href="mailto:{{ $socials['email'] }}" aria-label="Email"
-                            class="text-slate-400 hover:text-white transition-colors">
-                            <x-icon name="mail" class="w-7 h-7" />
-                        </a>
-                    </div>
+                <div class="mt-[22px] flex flex-wrap gap-2.5">
+                    <a href="#projects" data-scroll-to="projects"
+                        class="rounded-full bg-deep px-5 py-[11px] text-sm font-semibold text-white transition-colors hover:bg-brand-800">
+                        {{ __('View Projects') }}
+                    </a>
+                    <a href="#contact" data-scroll-to="contact"
+                        class="rounded-full border-[1.5px] border-ink px-5 py-[11px] text-sm font-semibold text-ink transition-colors hover:bg-ink hover:text-white">
+                        {{ __('Contact Me') }}
+                    </a>
                 </div>
 
-                <div class="relative h-[300px] lg:h-[600px] flex items-center justify-center scale-[0.5] lg:scale-100"
-                    id="robot-area">
-                    <x-portfolio.robot id="robot" data-robot :lines="3" />
-                </div>
-
+                <span
+                    class="mt-5 inline-flex items-center gap-2 rounded-full bg-mint px-3.5 py-1.5 text-[13px] font-semibold text-deep">
+                    <span class="h-2 w-2 rounded-full bg-brand-600" aria-hidden="true"></span>
+                    {{ $status }}
+                </span>
             </div>
-        </div>
 
-        <a href="#projects" aria-label="{{ __('Projects') }}"
-            class="absolute bottom-8 left-1/2 -translate-x-1/2 text-slate-500 hover:text-white transition-colors">
-            <x-icon name="arrow-down" class="w-6 h-6" />
-        </a>
+            <x-three.carnet :photo="$photo" :name="$firstName . ' ' . $lastName" :role="$role" :skills="$skills" />
+        </div>
     </section>
 </div>
