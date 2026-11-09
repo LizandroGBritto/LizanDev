@@ -1,7 +1,8 @@
 /**
  * Registra qué mira el visitante, sin cookies ni datos personales: proyecto
  * visto (la card del frente, visible, durante un momento), cambio de
- * notebook/celular, clic en «Ver Proyecto» y tecnología tocada. El servidor
+ * notebook/celular, apertura del modal de detalles, clic en «Ver Proyecto» y
+ * tecnología tocada. El servidor
  * valida cada evento contra la lista de proyectos y tecnologías.
  *
  * Se envía con sendBeacon (no frena la página ni se pierde al salir) y, si
@@ -60,6 +61,8 @@ export function initTracking() {
             consider();
         });
     }
+
+    document.addEventListener('project:detail', (event) => send('detalle_abierto', event.detail.project));
 
     document.addEventListener('click', (event) => {
         const slide = event.target.closest('[data-project]');

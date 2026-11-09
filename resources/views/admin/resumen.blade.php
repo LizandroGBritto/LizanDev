@@ -51,13 +51,14 @@
             <p class="mb-4 text-sm text-muted">{{ __('A project counts as viewed after it stays on screen for a moment.') }}</p>
 
             <div class="overflow-x-auto">
-                <table class="w-full min-w-[32rem] text-left text-sm">
+                <table class="w-full min-w-[36rem] text-left text-sm">
                     <thead class="text-muted">
                         <tr>
                             <th scope="col" class="py-2 pr-3 font-medium">{{ __('Project') }}</th>
                             <th scope="col" class="px-3 py-2 text-right font-medium">{{ __('Views') }}</th>
                             <th scope="col" class="px-3 py-2 text-right font-medium">{{ __('Visitors') }}</th>
                             <th scope="col" class="px-3 py-2 text-right font-medium">{{ __('On phone') }}</th>
+                            <th scope="col" class="px-3 py-2 text-right font-medium">{{ __('Details opened') }}</th>
                             <th scope="col" class="py-2 pl-3 text-right font-medium">{{ __('Demo clicks') }}</th>
                         </tr>
                     </thead>
@@ -68,6 +69,7 @@
                                 <td class="px-3 py-2.5 text-right">{{ $proyecto['vistas'] }}</td>
                                 <td class="px-3 py-2.5 text-right">{{ $proyecto['visitantes'] }}</td>
                                 <td class="px-3 py-2.5 text-right">{{ $proyecto['celular'] }}</td>
+                                <td class="px-3 py-2.5 text-right">{{ $proyecto['detalles'] }}</td>
                                 <td class="py-2.5 pl-3 text-right">{{ $proyecto['demos'] }}</td>
                             </tr>
                         @endforeach

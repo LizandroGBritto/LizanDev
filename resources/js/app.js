@@ -11,6 +11,7 @@ const lazy = [
     ['[data-tilt]', () => import('./features/tilt').then((m) => m.initTilt())],
     ['[data-flip]', () => import('./features/carnet').then((m) => m.initCarnet())],
     ['[data-deck-root]', () => import('./features/deck').then((m) => m.initDeck())],
+    ['[data-detail]', () => import('./features/project-detail').then((m) => m.initProjectDetail())],
     ['[data-device-toggle]', () => import('./features/device').then((m) => m.initDevice())],
     ['[data-tech]', () => import('./features/tech-robot').then((m) => m.initTechRobot())],
     ['[data-about-robot]', () => import('./features/about-robot').then((m) => m.initAboutRobot())],

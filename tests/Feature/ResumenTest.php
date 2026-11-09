@@ -119,7 +119,7 @@ class ResumenTest extends TestCase
         $html = $this->panel()->getContent();
 
         $this->assertLessThan(strpos($html, 'SIS System'), strpos($html, 'Amalia Acosta'));
-        $this->assertMatchesRegularExpression('/Amalia Acosta<\/th>\s*<td[^>]*>3<\/td>\s*<td[^>]*>3<\/td>\s*<td[^>]*>1<\/td>\s*<td[^>]*>1<\/td>/', $html);
+        $this->assertMatchesRegularExpression('/Amalia Acosta<\/th>\s*<td[^>]*>3<\/td>\s*<td[^>]*>3<\/td>\s*<td[^>]*>1<\/td>\s*<td[^>]*>0<\/td>\s*<td[^>]*>1<\/td>/', $html);
     }
 
     public function test_re07_old_interactions_are_left_out(): void

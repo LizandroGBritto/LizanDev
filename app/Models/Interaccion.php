@@ -12,8 +12,9 @@ class Interaccion extends Model
     public const VISTA_DISPOSITIVO = 'vista_dispositivo';
     public const DEMO_CLIC = 'demo_clic';
     public const TECNOLOGIA = 'tecnologia';
+    public const DETALLE_ABIERTO = 'detalle_abierto';
 
-    public const TIPOS = [self::PROYECTO_VISTO, self::VISTA_DISPOSITIVO, self::DEMO_CLIC, self::TECNOLOGIA];
+    public const TIPOS = [self::PROYECTO_VISTO, self::VISTA_DISPOSITIVO, self::DEMO_CLIC, self::TECNOLOGIA, self::DETALLE_ABIERTO];
 
     protected $table = 'interacciones';
 

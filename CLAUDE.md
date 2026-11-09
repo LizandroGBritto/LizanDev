@@ -38,6 +38,7 @@ Las vistas Blade **no llevan PHP, `<style>`, `<script>` ni `onclick`**; lo verif
   textos en `es.json`. **Agregar una tecnología al anillo = una entrada en `technologies`**;
   el «dónde la usé» sale solo de las etiquetas de los proyectos (`match`), sin inventar uso.
 - **Proyectos con captura en celular**: si la entrada de `projects` trae `mobile`, la card muestra un notebook 3D y un selector notebook/celular (`features/device.js` gira el objeto con `is-phone`); sin `mobile` solo se ve la captura plana. Capturas de escritorio 960 px y de celular 390 px.
+- **Modal de detalles**: tocar la card del frente (o «Detalles») abre un `<dialog>` por proyecto (`features/project-detail.js`, `css/components/detalle.css`). Sale de `views` (vistas extra con `image` 960 px y `mobile` 390 px), `highlights` y `main_label` en `config/portfolio.php`; la vista «Inicio» sale de `image`/`mobile`. Los `highlights` se arman con lo que dice la descripción, sin inventar alcance.
 - Imágenes en WebP. Para convertir una nueva: `npm run imagenes -- <origen> <destino.webp> [ancho]`.
 
 ## CSS y JS

@@ -70,6 +70,8 @@ class ResumenController extends Controller
             ->groupBy('sujeto')->get()->keyBy('sujeto');
         $celular = $base(Interaccion::VISTA_DISPOSITIVO)->where('detalle', 'phone')
             ->select('sujeto', DB::raw('count(*) as total'))->groupBy('sujeto')->pluck('total', 'sujeto');
+        $detalles = $base(Interaccion::DETALLE_ABIERTO)
+            ->select('sujeto', DB::raw('count(*) as total'))->groupBy('sujeto')->pluck('total', 'sujeto');
         $demos = $base(Interaccion::DEMO_CLIC)
             ->select('sujeto', DB::raw('count(*) as total'))->groupBy('sujeto')->pluck('total', 'sujeto');
 
@@ -78,6 +80,7 @@ class ResumenController extends Controller
             'vistas' => (int) ($vistos[$proyecto['slug']]->vistas ?? 0),
             'visitantes' => (int) ($vistos[$proyecto['slug']]->visitantes ?? 0),
             'celular' => (int) ($celular[$proyecto['slug']] ?? 0),
+            'detalles' => (int) ($detalles[$proyecto['slug']] ?? 0),
             'demos' => (int) ($demos[$proyecto['slug']] ?? 0),
         ])->sortByDesc('vistas')->values();
     }

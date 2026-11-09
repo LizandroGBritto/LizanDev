@@ -19,7 +19,7 @@ grep -q '^APP_ENV=production' .env || { echo "APP_ENV debe ser production"; exit
 [ -f public/build/manifest.json ] || { echo "Falta public/build: corré npm run build antes de subir"; exit 1; }
 
 # El código recién subido llega como root: composer y artisan necesitan escribir acá.
-chown -R "$USUARIO":"$USUARIO" storage bootstrap/cache
+chown -R "$USUARIO":"$USUARIO" storage bootstrap/cache vendor
 
 sudo -u "$USUARIO" env COMPOSER_HOME=/var/lib/lizandev-composer $PHP /usr/local/bin/composer install --no-dev --optimize-autoloader --no-interaction
 sudo -u "$USUARIO" -H $PHP artisan migrate --force

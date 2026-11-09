@@ -158,7 +158,21 @@ Repetirla después de cada despliegue:
 6. En consola del navegador, `fetch('/seguimiento', {method:'POST'})` sin token → 419 (IN-10).
 7. `php artisan migrate --force` ya corrió (tablas `visitas` e `interacciones` existen) y `storage/logs` no muestra errores nuevos.
 
-## 10. Fuera de alcance (a propósito)
+## 10. Modal de detalles de proyecto
+
+Al tocar la card del frente (o «Detalles») se abre un `<dialog>` con descripción, puntos clave,
+tecnologías y galería (vistas extra, notebook/celular). Cuenta como interacción `detalle_abierto`.
+
+| ID | Caso | Resultado esperado | Prueba |
+|---|---|---|---|
+| DP-01 | Cada proyecto tiene su modal y su botón «Detalles» | Un `<dialog>` por proyecto en la home | `DetalleProyectoTest` |
+| DP-02 | Las imágenes de `views` existen | Ningún archivo faltante | `DetalleProyectoTest` |
+| DP-03 | Abrir un modal se registra; un proyecto inexistente se rechaza | 204 / 422 | `DetalleProyectoTest` |
+| DP-04 | Los textos del modal salen traducidos | «Puntos clave» en español | `DetalleProyectoTest` |
+| DP-05 | Tocar la card abre; Esc, la X y el telón cierran; el fondo no se desplaza | Manual (escritorio y celular) | Manual |
+| DP-06 | Tocar «Ver Proyecto» o el selector notebook/celular de la card no abre el modal; arrastrar tampoco | Manual | Manual |
+
+## 11. Fuera de alcance (a propósito)
 
 Cambio de contraseña desde el panel, varios roles, exportar a CSV, correo de aviso por mensaje
 nuevo, geolocalización por país y rastreo entre días (contradice la política de privacidad).

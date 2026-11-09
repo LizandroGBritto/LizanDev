@@ -50,4 +50,7 @@
     --color-led-amber: #fbbf24;
     --color-led-blue: #60a5fa;
     --color-metal: #b6c2bb;
+
+    /* Telón detrás de los modales */
+    --color-scrim: #0c1f17b8;
 }

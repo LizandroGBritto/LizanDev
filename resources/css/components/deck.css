@@ -22,6 +22,15 @@
     transition: none;
 }
 
+/* La card del frente abre el modal de detalles */
+.deck__slide:not([inert]) {
+    cursor: pointer;
+}
+
+.deck.is-dragging .deck__slide {
+    cursor: grabbing;
+}
+
 .deck__slide {
     position: absolute;
     left: 0;
