@@ -106,6 +106,48 @@ class ContactoTest extends TestCase
             ->assertHasErrors(['nombre', 'correo', 'mensaje']);
     }
 
+    public function test_an_email_without_a_real_domain_is_refused(): void
+    {
+        foreach (['ana@localhost', 'ana@b', 'ana@x.', 'ana @example.com'] as $correo) {
+            $this->formulario(['correo' => $correo])->call('submit')->assertHasErrors('correo');
+        }
+
+        $this->assertSame(0, MensajeContacto::count());
+    }
+
+    public function test_spaces_around_the_fields_are_trimmed_and_do_not_count(): void
+    {
+        $this->configurarRecaptcha();
+        Http::fake(['www.google.com/*' => Http::response(['success' => true, 'score' => 0.9, 'action' => 'contacto'])]);
+
+        $this->formulario(['nombre' => '  Ana Gómez  ', 'correo' => ' ana@example.com ', 'token' => 'tok'])->call('submit')->assertHasNoErrors();
+        $this->assertSame('Ana Gómez', MensajeContacto::sole()->nombre);
+
+        $this->formulario(['mensaje' => '      hola      '])->call('submit')->assertHasErrors('mensaje');
+        $this->formulario(['nombre' => '     '])->call('submit')->assertHasErrors('nombre');
+    }
+
+    public function test_errors_are_readable_and_translated_without_internal_field_names(): void
+    {
+        app()->setLocale('es');
+
+        $html = $this->formulario(['nombre' => '', 'correo' => 'nada', 'mensaje' => 'corto'])->call('submit')->html();
+
+        $this->assertStringContainsString('Escribe tu nombre.', $html);
+        $this->assertStringContainsString('Escribe un correo válido, como nombre@ejemplo.com.', $html);
+        $this->assertStringContainsString('Tu mensaje debe tener al menos 10 caracteres.', $html);
+        $this->assertStringNotContainsString('field is required', $html);
+        $this->assertStringContainsString('aria-invalid="true"', $html);
+    }
+
+    public function test_required_fields_are_marked_in_the_form(): void
+    {
+        $html = $this->get('/')->getContent();
+
+        $this->assertStringContainsString('Fields marked with * are required.', $html);
+        $this->assertSame(3, substr_count($html, 'aria-hidden="true">*</span>'));
+    }
+
     public function test_it_limits_how_many_messages_one_ip_can_send(): void
     {
         for ($i = 0; $i < 5; $i++) {

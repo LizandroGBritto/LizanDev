@@ -156,5 +156,15 @@
     "Modules for appointments, doctors, rooms, specialties, users, and reports": "Módulos de turnos, médicos, salas, especialidades, usuarios y reportes",
     "Role-based access control with a dashboard for each role": "Control de acceso por roles con un panel para cada rol",
     "Real-time operation protected against multiple edits of the same value": "Operación en tiempo real protegida contra ediciones múltiples del mismo valor",
-    "Created for a Family Health Unit in Encarnación": "Creado para una Unidad de Salud Familiar de Encarnación"
+    "Created for a Family Health Unit in Encarnación": "Creado para una Unidad de Salud Familiar de Encarnación",
+    "Please enter your name.": "Escribe tu nombre.",
+    "Your name must have at least :min characters.": "Tu nombre debe tener al menos :min caracteres.",
+    "Your name cannot be longer than :max characters.": "Tu nombre no puede tener más de :max caracteres.",
+    "Please enter your email.": "Escribe tu correo.",
+    "Enter a valid email, like name@example.com.": "Escribe un correo válido, como nombre@ejemplo.com.",
+    "Your email cannot be longer than :max characters.": "Tu correo no puede tener más de :max caracteres.",
+    "Please write your message.": "Escribe tu mensaje.",
+    "Your message must have at least :min characters.": "Tu mensaje debe tener al menos :min caracteres.",
+    "Your message cannot be longer than :max characters.": "Tu mensaje no puede tener más de :max caracteres.",
+    "Fields marked with * are required.": "Los campos marcados con * son obligatorios."
 }

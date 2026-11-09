@@ -38,30 +38,33 @@
 
             <form wire:submit="submit" class="grid gap-5" data-contact-form
                 @if ($recaptchaSiteKey) data-recaptcha-site-key="{{ $recaptchaSiteKey }}" @endif novalidate>
+                <p class="text-sm text-muted">{{ __('Fields marked with * are required.') }}</p>
+
                 <div>
-                    <label for="nombre" class="mb-1.5 block text-sm font-medium">{{ __('Full name') }}</label>
-                    <input type="text" id="nombre" wire:model="nombre" autocomplete="name" required
-                        class="form-field" placeholder="{{ __('Your name') }}">
+                    <label for="nombre" class="mb-1.5 block text-sm font-medium">{{ __('Full name') }} <span class="text-red-700" aria-hidden="true">*</span></label>
+                    <input type="text" id="nombre" wire:model="nombre" autocomplete="name" required maxlength="120"
+                        @error('nombre') aria-invalid="true" aria-describedby="nombre-error" @enderror class="form-field" placeholder="{{ __('Your name') }}">
                     @error('nombre')
-                        <span class="mt-1 block text-sm text-red-700">{{ $message }}</span>
+                        <span id="nombre-error" role="alert" class="mt-1 block text-sm text-red-700">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="correo" class="mb-1.5 block text-sm font-medium">Email</label>
-                    <input type="email" id="correo" wire:model="correo" autocomplete="email" required
-                        class="form-field" placeholder="tu@email.com">
+                    <label for="correo" class="mb-1.5 block text-sm font-medium">Email <span class="text-red-700" aria-hidden="true">*</span></label>
+                    <input type="email" id="correo" wire:model="correo" autocomplete="email" required maxlength="190"
+                        @error('correo') aria-invalid="true" aria-describedby="correo-error" @enderror class="form-field" placeholder="tu@email.com">
                     @error('correo')
-                        <span class="mt-1 block text-sm text-red-700">{{ $message }}</span>
+                        <span id="correo-error" role="alert" class="mt-1 block text-sm text-red-700">{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div>
-                    <label for="mensaje" class="mb-1.5 block text-sm font-medium">{{ __('Message') }}</label>
-                    <textarea id="mensaje" wire:model="mensaje" rows="5" required class="form-field resize-none"
+                    <label for="mensaje" class="mb-1.5 block text-sm font-medium">{{ __('Message') }} <span class="text-red-700" aria-hidden="true">*</span></label>
+                    <textarea id="mensaje" wire:model="mensaje" rows="5" required maxlength="3000"
+                        @error('mensaje') aria-invalid="true" aria-describedby="mensaje-error" @enderror class="form-field resize-none"
                         placeholder="{{ __('Tell me about your project...') }}"></textarea>
                     @error('mensaje')
-                        <span class="mt-1 block text-sm text-red-700">{{ $message }}</span>
+                        <span id="mensaje-error" role="alert" class="mt-1 block text-sm text-red-700">{{ $message }}</span>
                     @enderror
                 </div>
 

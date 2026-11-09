@@ -156,5 +156,15 @@
     "Modules for appointments, doctors, rooms, specialties, users, and reports": "Modules for appointments, doctors, rooms, specialties, users, and reports",
     "Role-based access control with a dashboard for each role": "Role-based access control with a dashboard for each role",
     "Real-time operation protected against multiple edits of the same value": "Real-time operation protected against multiple edits of the same value",
-    "Created for a Family Health Unit in Encarnación": "Created for a Family Health Unit in Encarnación"
+    "Created for a Family Health Unit in Encarnación": "Created for a Family Health Unit in Encarnación",
+    "Please enter your name.": "Please enter your name.",
+    "Your name must have at least :min characters.": "Your name must have at least :min characters.",
+    "Your name cannot be longer than :max characters.": "Your name cannot be longer than :max characters.",
+    "Please enter your email.": "Please enter your email.",
+    "Enter a valid email, like name@example.com.": "Enter a valid email, like name@example.com.",
+    "Your email cannot be longer than :max characters.": "Your email cannot be longer than :max characters.",
+    "Please write your message.": "Please write your message.",
+    "Your message must have at least :min characters.": "Your message must have at least :min characters.",
+    "Your message cannot be longer than :max characters.": "Your message cannot be longer than :max characters.",
+    "Fields marked with * are required.": "Fields marked with * are required."
 }

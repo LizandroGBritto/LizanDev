@@ -63,6 +63,8 @@ html.detalle-abierto {
 
 .detalle__cuerpo {
     display: grid;
+    /* minmax(0, …): sin esto las miniaturas ensanchan la columna más que la pantalla */
+    grid-template-columns: minmax(0, 1fr);
     align-content: start;
     gap: 22px;
     padding: 18px 20px 28px;
@@ -144,10 +146,24 @@ html.detalle-abierto {
 }
 
 .detalle__controles {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.detalle__controles .deck__vista {
+    justify-self: start;
+}
+
+@media (min-width: 640px) {
+    .detalle__controles {
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+    }
+
+    .detalle__controles .deck__vista {
+        grid-column: 2;
+    }
 }
 
 .detalle__miniaturas {
