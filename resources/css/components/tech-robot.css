@@ -292,9 +292,20 @@
     animation: bot-spin 40s linear infinite;
 }
 
-.bot-orbit:hover,
-.bot-orbit:focus-within {
+/*
+ * El anillo se pausa con el cursor encima o con foco de teclado, para poder leer y
+ * tocar una tecnología. Nunca con :focus a secas ni con :hover en pantallas táctiles:
+ * al soltar la pill el foco vuelve al botón del anillo y, en el celular, el último
+ * toque deja el :hover pegado, y la rueda quedaba parada hasta tocar otro lado.
+ */
+.bot-orbit:has(:focus-visible) {
     animation-play-state: paused;
+}
+
+@media (hover: hover) {
+    .bot-orbit:hover {
+        animation-play-state: paused;
+    }
 }
 
 @keyframes bot-spin {
